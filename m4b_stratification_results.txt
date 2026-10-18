@@ -1,0 +1,16 @@
+rows 1934 | formation_ok==0: 143
+
+=== A. PARTICLE SIZE: effect of removing failed formations ===
+A1 raw (current model)                 n= 1736 papers= 88 groupedR2= -0.152 MAE=3516.6 rho_med= 0.108
+A2 drop formation_ok==0                n= 1593 papers= 88 groupedR2=  0.091 MAE= 394.5 rho_med= 0.119
+A3 + window 20-500nm                   n= 1523 papers= 87 groupedR2= -0.323 MAE=  51.2 rho_med= 0.153
+
+=== B. payload stratification ON CLEAN DATA ===
+B1 mRNA only                           n=  586 papers= 37 groupedR2= -0.021 MAE=  34.5 rho_med= 0.195
+B2 siRNA only                          n=  161 papers= 17 groupedR2= -0.358 MAE=  48.7 rho_med= 0.057
+B3 nucleic acid                        n=  888 papers= 55 groupedR2=  0.026 MAE=  38.2 rho_med= 0.151
+B4 empty (Luciani)                     n=  445 papers=  8 groupedR2= -0.758 MAE=  92.7 rho_med= 0.273
+
+=== C. EE and PDI on clean data ===
+C1 EE all                              n=  563 papers= 43 groupedR2=  0.069 MAE=  15.3 rho_med=-0.096
+C2 EE mRNA                             n=  459 papers= 34 groupedR2= -0.149 MAE=  17.6 rho_med= 0.053

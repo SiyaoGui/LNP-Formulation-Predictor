@@ -1,0 +1,487 @@
+feature,role,kind,mean_abs_shap,mean_shap_signed,rank
+flow_ratio_imbalance,process,process_numeric,0.08281375831594574,-0.004699306610981742,1
+peg_lipid_pct,peg,composition_pct,0.05437087812162372,-0.006099383654625514,2
+prep_method_std_Microfluidic,process,process_categorical,0.03351107344283165,4.2003009764182834e-05,3
+helper_MolWt,helper,rdkit_descriptor,0.029627717005020787,-0.0033192882637397645,4
+helper_LogP,helper,rdkit_descriptor,0.02280037836175171,0.006856105889795426,5
+ionizable_fp_46,ionizable,fingerprint_bit,0.01564186753667583,0.0006806188747315893,6
+sterol_lipid_pct,sterol,composition_pct,0.015400221592005103,0.0022707675449439315,7
+helper_lipid_pct,helper,composition_pct,0.015130634595335979,0.002188109058093303,8
+peg_MolWt,peg,rdkit_descriptor,0.013732843217737678,0.0008055914283311679,9
+total_flow_rate_ml_min_std,process,process_numeric,0.013322710834033274,-0.00159194946155707,10
+ionizable_LogP,ionizable,rdkit_descriptor,0.012245309931757917,0.000521249654233313,11
+helper_TPSA,helper,rdkit_descriptor,0.00918209113571369,0.0022972096484257334,12
+helper_NumRotatableBonds,helper,rdkit_descriptor,0.008423943821570508,0.0010542779607815608,13
+ionizable_lipid_pct,ionizable,composition_pct,0.008248741365967871,0.0013617713648110491,14
+process_temp_c_std,process,process_numeric,0.007696775384170125,-0.0008859835586700714,15
+payload_type_siRNA,payload,payload_type_onehot,0.007475501800610245,-0.00018841591907913443,16
+payload_fp_38,payload,fingerprint_bit,0.006187328964713755,0.0014863641008783985,17
+device_or_chip_std_T-junction mixer,process,process_categorical,0.005677636106828158,0.00010216269964274551,18
+ionizable_TPSA,ionizable,rdkit_descriptor,0.004937508934282907,0.00044797319532265524,19
+payload_type_empty,payload,payload_type_onehot,0.0046017389419497744,-0.0024713171918339036,20
+helper_NumHAcceptors,helper,rdkit_descriptor,0.004462516894536299,0.0006533441291005518,21
+ionizable_MolWt,ionizable,rdkit_descriptor,0.003446447795921079,-0.0008362365575894324,22
+peg_LogP,peg,rdkit_descriptor,0.002774439476793362,-0.000631257579102456,23
+payload_type_mRNA,payload,payload_type_onehot,0.002422121141779206,-0.00011397111128233913,24
+device_or_chip_std_Luciani_chip_1,process,process_categorical,0.0023959697216990004,0.00029295126295844875,25
+ionizable_NumHDonors,ionizable,rdkit_descriptor,0.0023329038334388473,0.00010397693947852083,26
+device_or_chip_std_Luciani_chip_2,process,process_categorical,0.0023061615369232816,-0.0005478626622959982,27
+ionizable_NumRotatableBonds,ionizable,rdkit_descriptor,0.0022208855830292275,2.5347459486525918e-05,28
+helper_NumHDonors,helper,rdkit_descriptor,0.002129332874382938,0.0002715353959447071,29
+prep_method_std_Microfluidic mixing,process,process_categorical,0.001995638841620158,8.905210469177677e-05,30
+peg_lipid_status_approximated,peg,resolution_status,0.0018273065085256442,0.0008098655520008309,31
+sterol_fp_21,sterol,fingerprint_bit,0.0017802485532338224,-0.0001673454078380526,32
+peg_fp_1,peg,fingerprint_bit,0.0015793016661825798,3.3216334690964113e-05,33
+ionizable_fp_47,ionizable,fingerprint_bit,0.001568944796563019,-0.00020183496882889053,34
+payload_TPSA,payload,rdkit_descriptor,0.0013783916817833048,-0.0002720783203543675,35
+payload_NumRotatableBonds,payload,rdkit_descriptor,0.0012878987655222903,-0.00033452161503440584,36
+peg_TPSA,peg,rdkit_descriptor,0.0012531559459526174,3.201412757514404e-05,37
+ionizable_lipid_status_unresolved,ionizable,resolution_status,0.0012336154147665403,-0.0002920756933322513,38
+prep_method_std_Microfluidic (chip-based),process,process_categorical,0.0011676958419099132,0.0008988691003718214,39
+payload_type_DNA,payload,payload_type_onehot,0.001092696604591694,-4.3652800025972656e-05,40
+ionizable_fp_10,ionizable,fingerprint_bit,0.0010277767980553087,-0.0004263653925093516,41
+device_or_chip_std_microfluidic device,process,process_categorical,0.001018932666566745,6.348581973476567e-05,42
+peg_fp_34,peg,fingerprint_bit,0.000988603651784484,-0.0005571547888084319,43
+peg_NumHDonors,peg,rdkit_descriptor,0.0009534328899854941,0.0003570137183102136,44
+payload_MolWt,payload,rdkit_descriptor,0.0008508106141269331,4.023721119769245e-05,45
+helper_fp_10,helper,fingerprint_bit,0.0007892810282780794,0.00012134268793135487,46
+prep_method_std_Ethanol injection,process,process_categorical,0.0007412261235059278,-3.171169231925159e-05,47
+ionizable_fp_1,ionizable,fingerprint_bit,0.0006967014589121087,0.00035578361055958594,48
+peg_fp_10,peg,fingerprint_bit,0.0006801245778835597,-0.00019187026727238965,49
+ionizable_RingCount,ionizable,rdkit_descriptor,0.0006776320008523056,-8.873827080515227e-05,50
+ionizable_fp_28,ionizable,fingerprint_bit,0.0006123153149136135,-1.578483243858437e-05,51
+helper_fp_51,helper,fingerprint_bit,0.0005931015205091096,0.0001293865585490874,52
+ionizable_NumHAcceptors,ionizable,rdkit_descriptor,0.0005272990395722285,-3.415887882233121e-06,53
+device_or_chip_std_microfluidic chip device,process,process_categorical,0.0005237847327849752,-3.665905472690473e-05,54
+ionizable_fp_45,ionizable,fingerprint_bit,0.0004823708257576852,0.00011694289051474,55
+ionizable_fp_59,ionizable,fingerprint_bit,0.0004687286437702627,-0.0001675756267027228,56
+measurement_instrument_std_DLS (Nano-ZS),process,process_categorical,0.00042310186366853426,0.0001205221712979212,57
+ionizable_fp_36,ionizable,fingerprint_bit,0.00040519542134010453,3.338117782722982e-05,58
+ionizable_fp_13,ionizable,fingerprint_bit,0.0002866077092612271,-0.00021689227628407295,59
+payload_RingCount,payload,rdkit_descriptor,0.0002477675035861146,1.2469442645310903e-05,60
+peg_fp_51,peg,fingerprint_bit,0.00023453515433601686,-0.00016050611450712165,61
+helper_fp_13,helper,fingerprint_bit,0.00022843127116372106,7.4474894272937935e-06,62
+payload_type_ASO,payload,payload_type_onehot,0.00022439402694159906,-3.121058968450508e-05,63
+payload_fp_1,payload,fingerprint_bit,0.0001928500974389052,9.833560491055074e-05,64
+payload_NumHDonors,payload,rdkit_descriptor,0.00018090010164294038,2.2991600947859147e-06,65
+peg_fp_22,peg,fingerprint_bit,0.00018007212176695641,-8.46174614545949e-06,66
+ionizable_fp_29,ionizable,fingerprint_bit,0.00017267276666672147,9.666420408250851e-08,67
+peg_fp_45,peg,fingerprint_bit,0.00017075863707746505,-0.0001055798199891873,68
+payload_fp_46,payload,fingerprint_bit,0.00016237257740535707,5.135576946181951e-06,69
+peg_NumRotatableBonds,peg,rdkit_descriptor,0.0001575976518835544,-4.914532695418837e-06,70
+payload_LogP,payload,rdkit_descriptor,0.00014235118522335334,-2.8951655415856033e-05,71
+ionizable_fp_42,ionizable,fingerprint_bit,0.00014066858682450383,-4.062811601358019e-05,72
+ionizable_fp_4,ionizable,fingerprint_bit,0.00014016668494544628,2.8644639628122693e-05,73
+ionizable_fp_16,ionizable,fingerprint_bit,0.0001070883356451121,8.736943273954335e-06,74
+ionizable_fp_51,ionizable,fingerprint_bit,0.00010346081280823495,-1.2063304272194088e-05,75
+ionizable_fp_34,ionizable,fingerprint_bit,0.00010267600297388617,1.1040696307684049e-05,76
+peg_lipid_status_not_applicable,peg,resolution_status,9.761430649584798e-05,-4.684929562789566e-06,77
+payload_NumHAcceptors,payload,rdkit_descriptor,9.72844618214036e-05,-1.254048647448163e-05,78
+device_or_chip_std_NanoAssemblr Benchtop,process,process_categorical,4.72807871562322e-05,2.1623883235877828e-06,79
+measurement_instrument_std_DLS (3000HSa),process,process_categorical,3.253030864698983e-05,5.38601489020607e-06,80
+ionizable_fp_15,ionizable,fingerprint_bit,2.508528467542631e-05,-2.036541947695134e-06,81
+payload_fp_36,payload,fingerprint_bit,0.0,0.0,82
+payload_fp_37,payload,fingerprint_bit,0.0,0.0,83
+payload_fp_35,payload,fingerprint_bit,0.0,0.0,84
+payload_fp_34,payload,fingerprint_bit,0.0,0.0,85
+payload_fp_33,payload,fingerprint_bit,0.0,0.0,86
+payload_fp_31,payload,fingerprint_bit,0.0,0.0,87
+payload_fp_30,payload,fingerprint_bit,0.0,0.0,88
+payload_fp_29,payload,fingerprint_bit,0.0,0.0,89
+payload_fp_28,payload,fingerprint_bit,0.0,0.0,90
+payload_fp_27,payload,fingerprint_bit,0.0,0.0,91
+payload_fp_25,payload,fingerprint_bit,0.0,0.0,92
+payload_fp_32,payload,fingerprint_bit,0.0,0.0,93
+payload_fp_58,payload,fingerprint_bit,0.0,0.0,94
+payload_fp_56,payload,fingerprint_bit,0.0,0.0,95
+payload_fp_55,payload,fingerprint_bit,0.0,0.0,96
+payload_fp_54,payload,fingerprint_bit,0.0,0.0,97
+payload_fp_53,payload,fingerprint_bit,0.0,0.0,98
+payload_fp_52,payload,fingerprint_bit,0.0,0.0,99
+payload_fp_51,payload,fingerprint_bit,0.0,0.0,100
+payload_fp_50,payload,fingerprint_bit,0.0,0.0,101
+payload_fp_26,payload,fingerprint_bit,0.0,0.0,102
+payload_fp_48,payload,fingerprint_bit,0.0,0.0,103
+payload_fp_47,payload,fingerprint_bit,0.0,0.0,104
+payload_fp_45,payload,fingerprint_bit,0.0,0.0,105
+payload_fp_44,payload,fingerprint_bit,0.0,0.0,106
+payload_fp_43,payload,fingerprint_bit,0.0,0.0,107
+payload_fp_42,payload,fingerprint_bit,0.0,0.0,108
+payload_fp_41,payload,fingerprint_bit,0.0,0.0,109
+payload_fp_40,payload,fingerprint_bit,0.0,0.0,110
+payload_fp_39,payload,fingerprint_bit,0.0,0.0,111
+payload_fp_49,payload,fingerprint_bit,0.0,0.0,112
+peg_fp_63,peg,fingerprint_bit,0.0,0.0,113
+peg_fp_62,peg,fingerprint_bit,0.0,0.0,114
+peg_fp_61,peg,fingerprint_bit,0.0,0.0,115
+peg_fp_60,peg,fingerprint_bit,0.0,0.0,116
+peg_fp_59,peg,fingerprint_bit,0.0,0.0,117
+peg_fp_58,peg,fingerprint_bit,0.0,0.0,118
+peg_fp_57,peg,fingerprint_bit,0.0,0.0,119
+peg_fp_56,peg,fingerprint_bit,0.0,0.0,120
+peg_fp_55,peg,fingerprint_bit,0.0,0.0,121
+peg_fp_54,peg,fingerprint_bit,0.0,0.0,122
+peg_fp_53,peg,fingerprint_bit,0.0,0.0,123
+payload_fp_57,payload,fingerprint_bit,0.0,0.0,124
+peg_fp_50,peg,fingerprint_bit,0.0,0.0,125
+peg_fp_49,peg,fingerprint_bit,0.0,0.0,126
+peg_fp_48,peg,fingerprint_bit,0.0,0.0,127
+peg_fp_47,peg,fingerprint_bit,0.0,0.0,128
+peg_fp_46,peg,fingerprint_bit,0.0,0.0,129
+peg_fp_44,peg,fingerprint_bit,0.0,0.0,130
+peg_fp_43,peg,fingerprint_bit,0.0,0.0,131
+peg_fp_42,peg,fingerprint_bit,0.0,0.0,132
+peg_fp_41,peg,fingerprint_bit,0.0,0.0,133
+peg_fp_40,peg,fingerprint_bit,0.0,0.0,134
+peg_fp_38,peg,fingerprint_bit,0.0,0.0,135
+peg_fp_52,peg,fingerprint_bit,0.0,0.0,136
+payload_fp_24,payload,fingerprint_bit,0.0,0.0,137
+payload_fp_23,payload,fingerprint_bit,0.0,0.0,138
+payload_fp_22,payload,fingerprint_bit,0.0,0.0,139
+payload_fp_21,payload,fingerprint_bit,0.0,0.0,140
+payload_fp_20,payload,fingerprint_bit,0.0,0.0,141
+payload_fp_19,payload,fingerprint_bit,0.0,0.0,142
+payload_fp_18,payload,fingerprint_bit,0.0,0.0,143
+payload_fp_17,payload,fingerprint_bit,0.0,0.0,144
+payload_fp_16,payload,fingerprint_bit,0.0,0.0,145
+payload_fp_15,payload,fingerprint_bit,0.0,0.0,146
+payload_fp_14,payload,fingerprint_bit,0.0,0.0,147
+payload_fp_0,payload,fingerprint_bit,0.0,0.0,148
+payload_fp_12,payload,fingerprint_bit,0.0,0.0,149
+payload_fp_11,payload,fingerprint_bit,0.0,0.0,150
+payload_fp_10,payload,fingerprint_bit,0.0,0.0,151
+payload_fp_9,payload,fingerprint_bit,0.0,0.0,152
+payload_fp_8,payload,fingerprint_bit,0.0,0.0,153
+payload_fp_7,payload,fingerprint_bit,0.0,0.0,154
+payload_fp_6,payload,fingerprint_bit,0.0,0.0,155
+payload_fp_5,payload,fingerprint_bit,0.0,0.0,156
+payload_fp_4,payload,fingerprint_bit,0.0,0.0,157
+payload_fp_3,payload,fingerprint_bit,0.0,0.0,158
+payload_fp_2,payload,fingerprint_bit,0.0,0.0,159
+payload_fp_13,payload,fingerprint_bit,0.0,0.0,160
+device_or_chip_std_Microfluidic device with staggered herringbone features,process,process_categorical,0.0,0.0,161
+device_or_chip_std_Microfluidic device with herringbone features,process,process_categorical,0.0,0.0,162
+device_or_chip_std_Microfluidic device or pipet,process,process_categorical,0.0,0.0,163
+device_or_chip_std_Microfluidic device,process,process_categorical,0.0,0.0,164
+device_or_chip_std_Lipex Extruder,process,process_categorical,0.0,0.0,165
+device_or_chip_std_KDS-220 syringe pump with T-junction mixing,process,process_categorical,0.0,0.0,166
+device_or_chip_std_KDS-220 syringe pump (kdScientific) with T-junction mixing,process,process_categorical,0.0,0.0,167
+"device_or_chip_std_Ignite, PNI, Canada",process,process_categorical,0.0,0.0,168
+"device_or_chip_std_INano L, Micro&Nano Technology Inc, China",process,process_categorical,0.0,0.0,169
+"device_or_chip_std_Extruder (Northern Lipids, Vancouver, British Columbia, Canada)",process,process_categorical,0.0,0.0,170
+device_or_chip_std_Automated liquid handler (OT-2),process,process_categorical,0.0,0.0,171
+peg_fp_39,peg,fingerprint_bit,0.0,0.0,172
+prep_method_std_microfluidics,process,process_categorical,0.0,0.0,173
+prep_method_std_Two-step WS method,process,process_categorical,0.0,0.0,174
+prep_method_std_Thin lipid film hydration and sonication and extrusion,process,process_categorical,0.0,0.0,175
+prep_method_std_Thin lipid film hydration and sonication,process,process_categorical,0.0,0.0,176
+prep_method_std_Thin lipid film hydration and freeze thawing and extrusion,process,process_categorical,0.0,0.0,177
+prep_method_std_Thin lipid film hydration and extrusion ,process,process_categorical,0.0,0.0,178
+prep_method_std_Thin lipid film hydration and extrusion,process,process_categorical,0.0,0.0,179
+prep_method_std_Thin lipid film hydration and agitation,process,process_categorical,0.0,0.0,180
+prep_method_std_Thin lipid film hydration,process,process_categorical,0.0,0.0,181
+prep_method_std_T-junction mixing,process,process_categorical,0.0,0.0,182
+prep_method_std_T-junction mixer,process,process_categorical,0.0,0.0,183
+prep_method_std_T-junction microfluidic mixing,process,process_categorical,0.0,0.0,184
+prep_method_std_nanoprecipitation,process,process_categorical,0.0,0.0,185
+ionizable_fp_9,ionizable,fingerprint_bit,0.0,0.0,186
+ionizable_fp_8,ionizable,fingerprint_bit,0.0,0.0,187
+ionizable_fp_7,ionizable,fingerprint_bit,0.0,0.0,188
+ionizable_fp_6,ionizable,fingerprint_bit,0.0,0.0,189
+ionizable_fp_5,ionizable,fingerprint_bit,0.0,0.0,190
+ionizable_fp_3,ionizable,fingerprint_bit,0.0,0.0,191
+ionizable_fp_2,ionizable,fingerprint_bit,0.0,0.0,192
+ionizable_fp_0,ionizable,fingerprint_bit,0.0,0.0,193
+measurement_instrument_std_NTA,process,process_categorical,0.0,0.0,194
+measurement_instrument_std_DLS (Zetasizer pro),process,process_categorical,0.0,0.0,195
+measurement_instrument_std_DLS (Submicro Particle sizer),process,process_categorical,0.0,0.0,196
+measurement_instrument_std_DLS (Submicro Particle Sizer),process,process_categorical,0.0,0.0,197
+device_or_chip_std_NanoAssemblr,process,process_categorical,0.0,0.0,198
+measurement_instrument_std_DLS (Nicomp-380),process,process_categorical,0.0,0.0,199
+measurement_instrument_std_DLS (Nanobook Omni),process,process_categorical,0.0,0.0,200
+measurement_instrument_std_DLS,process,process_categorical,0.0,0.0,201
+device_or_chip_std_staggered herringbone micromixer,process,process_categorical,0.0,0.0,202
+device_or_chip_std_peristaltic pump with dual pump heads,process,process_categorical,0.0,0.0,203
+device_or_chip_std_micromixer (Precision Nanosystems),process,process_categorical,0.0,0.0,204
+device_or_chip_std_microfluidic-based system,process,process_categorical,0.0,0.0,205
+device_or_chip_std_NanoAssemblr microfluidic mixer (Precision Nanosystems),process,process_categorical,0.0,0.0,206
+device_or_chip_std_NanoAssemblr benchtop,process,process_categorical,0.0,0.0,207
+device_or_chip_std_NanoAssemblr IgniteTM,process,process_categorical,0.0,0.0,208
+device_or_chip_std_NanoAssemblr Ignite,process,process_categorical,0.0,0.0,209
+device_or_chip_std_NanoAssemblr (Precision NanoSystems Inc),process,process_categorical,0.0,0.0,210
+measurement_instrument_std_DLS (PSA NANO2590),process,process_categorical,0.0,0.0,211
+prep_method_std_Ethanol dilution,process,process_categorical,0.0,0.0,212
+prep_method_std_Direct dissolution,process,process_categorical,0.0,0.0,213
+prep_method_std_Continuous (T-mixer),process,process_categorical,0.0,0.0,214
+prep_method_std_Batch (pipetting),process,process_categorical,0.0,0.0,215
+prep_method_std_3CR-Ugi reaction,process,process_categorical,0.0,0.0,216
+peg_lipid_status_unresolved,peg,resolution_status,0.0,0.0,217
+peg_lipid_status_unparseable,peg,resolution_status,0.0,0.0,218
+peg_lipid_status_resolved,peg,resolution_status,0.0,0.0,219
+sterol_lipid_status_resolved,sterol,resolution_status,0.0,0.0,220
+sterol_lipid_status_not_applicable,sterol,resolution_status,0.0,0.0,221
+helper_lipid_status_unresolved,helper,resolution_status,0.0,0.0,222
+helper_lipid_status_resolved,helper,resolution_status,0.0,0.0,223
+prep_method_std_Spray drying,process,process_categorical,0.0,0.0,224
+ionizable_lipid_status_unparseable,ionizable,resolution_status,0.0,0.0,225
+ionizable_lipid_status_resolved,ionizable,resolution_status,0.0,0.0,226
+ionizable_lipid_status_not_applicable,ionizable,resolution_status,0.0,0.0,227
+payload_type_small_molecule_drug,payload,payload_type_onehot,0.0,0.0,228
+payload_type_protein,payload,payload_type_onehot,0.0,0.0,229
+"payload_type_mRNA, siRNA",payload,payload_type_onehot,0.0,0.0,230
+payload_type_gold_nanoparticles,payload,payload_type_onehot,0.0,0.0,231
+payload_fp_63,payload,fingerprint_bit,0.0,0.0,232
+payload_fp_62,payload,fingerprint_bit,0.0,0.0,233
+payload_fp_61,payload,fingerprint_bit,0.0,0.0,234
+payload_fp_60,payload,fingerprint_bit,0.0,0.0,235
+payload_fp_59,payload,fingerprint_bit,0.0,0.0,236
+helper_lipid_status_not_applicable,helper,resolution_status,0.0,0.0,237
+prep_method_std_Small volume loading,process,process_categorical,0.0,0.0,238
+prep_method_std_SNALP-like one-step method,process,process_categorical,0.0,0.0,239
+prep_method_std_Rapid precipitation (two-stage formulation),process,process_categorical,0.0,0.0,240
+prep_method_std_Rapid mixing/T-junction mixer,process,process_categorical,0.0,0.0,241
+prep_method_std_Rapid hand mixing,process,process_categorical,0.0,0.0,242
+prep_method_std_Preformed vesicle method,process,process_categorical,0.0,0.0,243
+prep_method_std_Pipette mixing,process,process_categorical,0.0,0.0,244
+prep_method_std_One-step SNALP-like method / Two-step WS method,process,process_categorical,0.0,0.0,245
+prep_method_std_One-step SNALP-like method,process,process_categorical,0.0,0.0,246
+prep_method_std_Microfluidic mixing or pipette mixing,process,process_categorical,0.0,0.0,247
+prep_method_std_Microfluidic mixing or pipet mixing,process,process_categorical,0.0,0.0,248
+prep_method_std_Manual mixing,process,process_categorical,0.0,0.0,249
+prep_method_std_Ethanol dilution process,process,process_categorical,0.0,0.0,250
+prep_method_std_High-throughput screening (HTS),process,process_categorical,0.0,0.0,251
+prep_method_std_High pressure injection and homogenization,process,process_categorical,0.0,0.0,252
+prep_method_std_High pressure injection and extrusion,process,process_categorical,0.0,0.0,253
+prep_method_std_High pressure injection and TFF - scale,process,process_categorical,0.0,0.0,254
+prep_method_std_High pressure injection and TFF ,process,process_categorical,0.0,0.0,255
+prep_method_std_High pressure injection and TFF,process,process_categorical,0.0,0.0,256
+prep_method_std_Film hydration,process,process_categorical,0.0,0.0,257
+prep_method_std_Ethanolic injection and extrusion,process,process_categorical,0.0,0.0,258
+prep_method_std_Ethanol-drop nanoprecipitation,process,process_categorical,0.0,0.0,259
+prep_method_std_Ethanol injection/rapid-mixing,process,process_categorical,0.0,0.0,260
+prep_method_std_Ethanol injection with extrusion,process,process_categorical,0.0,0.0,261
+prep_method_std_Ethanol injection (spontaneous vesicle formation),process,process_categorical,0.0,0.0,262
+prep_method_std_Lipid pouring and extrusion ,process,process_categorical,0.0,0.0,263
+helper_fp_27,helper,fingerprint_bit,0.0,0.0,264
+helper_fp_26,helper,fingerprint_bit,0.0,0.0,265
+helper_fp_25,helper,fingerprint_bit,0.0,0.0,266
+helper_fp_24,helper,fingerprint_bit,0.0,0.0,267
+helper_fp_23,helper,fingerprint_bit,0.0,0.0,268
+helper_fp_22,helper,fingerprint_bit,0.0,0.0,269
+helper_fp_21,helper,fingerprint_bit,0.0,0.0,270
+helper_fp_20,helper,fingerprint_bit,0.0,0.0,271
+helper_fp_19,helper,fingerprint_bit,0.0,0.0,272
+helper_fp_18,helper,fingerprint_bit,0.0,0.0,273
+helper_fp_17,helper,fingerprint_bit,0.0,0.0,274
+helper_fp_16,helper,fingerprint_bit,0.0,0.0,275
+peg_fp_18,peg,fingerprint_bit,0.0,0.0,276
+helper_fp_14,helper,fingerprint_bit,0.0,0.0,277
+helper_fp_12,helper,fingerprint_bit,0.0,0.0,278
+helper_fp_11,helper,fingerprint_bit,0.0,0.0,279
+helper_fp_9,helper,fingerprint_bit,0.0,0.0,280
+helper_fp_8,helper,fingerprint_bit,0.0,0.0,281
+helper_fp_7,helper,fingerprint_bit,0.0,0.0,282
+helper_fp_6,helper,fingerprint_bit,0.0,0.0,283
+helper_fp_5,helper,fingerprint_bit,0.0,0.0,284
+helper_fp_4,helper,fingerprint_bit,0.0,0.0,285
+helper_fp_3,helper,fingerprint_bit,0.0,0.0,286
+helper_fp_2,helper,fingerprint_bit,0.0,0.0,287
+helper_fp_1,helper,fingerprint_bit,0.0,0.0,288
+helper_fp_0,helper,fingerprint_bit,0.0,0.0,289
+helper_fp_15,helper,fingerprint_bit,0.0,0.0,290
+helper_fp_56,helper,fingerprint_bit,0.0,0.0,291
+helper_fp_55,helper,fingerprint_bit,0.0,0.0,292
+helper_fp_54,helper,fingerprint_bit,0.0,0.0,293
+helper_fp_53,helper,fingerprint_bit,0.0,0.0,294
+helper_fp_52,helper,fingerprint_bit,0.0,0.0,295
+helper_fp_50,helper,fingerprint_bit,0.0,0.0,296
+helper_fp_49,helper,fingerprint_bit,0.0,0.0,297
+helper_fp_48,helper,fingerprint_bit,0.0,0.0,298
+helper_fp_47,helper,fingerprint_bit,0.0,0.0,299
+helper_fp_46,helper,fingerprint_bit,0.0,0.0,300
+helper_fp_45,helper,fingerprint_bit,0.0,0.0,301
+helper_fp_44,helper,fingerprint_bit,0.0,0.0,302
+helper_fp_43,helper,fingerprint_bit,0.0,0.0,303
+helper_fp_28,helper,fingerprint_bit,0.0,0.0,304
+helper_fp_41,helper,fingerprint_bit,0.0,0.0,305
+helper_fp_40,helper,fingerprint_bit,0.0,0.0,306
+helper_fp_39,helper,fingerprint_bit,0.0,0.0,307
+helper_fp_38,helper,fingerprint_bit,0.0,0.0,308
+helper_fp_37,helper,fingerprint_bit,0.0,0.0,309
+helper_fp_36,helper,fingerprint_bit,0.0,0.0,310
+helper_fp_35,helper,fingerprint_bit,0.0,0.0,311
+helper_fp_34,helper,fingerprint_bit,0.0,0.0,312
+helper_fp_33,helper,fingerprint_bit,0.0,0.0,313
+helper_fp_32,helper,fingerprint_bit,0.0,0.0,314
+helper_fp_31,helper,fingerprint_bit,0.0,0.0,315
+helper_fp_30,helper,fingerprint_bit,0.0,0.0,316
+helper_fp_29,helper,fingerprint_bit,0.0,0.0,317
+helper_fp_42,helper,fingerprint_bit,0.0,0.0,318
+ionizable_fp_25,ionizable,fingerprint_bit,0.0,0.0,319
+ionizable_fp_24,ionizable,fingerprint_bit,0.0,0.0,320
+ionizable_fp_23,ionizable,fingerprint_bit,0.0,0.0,321
+ionizable_fp_22,ionizable,fingerprint_bit,0.0,0.0,322
+ionizable_fp_21,ionizable,fingerprint_bit,0.0,0.0,323
+ionizable_fp_20,ionizable,fingerprint_bit,0.0,0.0,324
+ionizable_fp_19,ionizable,fingerprint_bit,0.0,0.0,325
+ionizable_fp_18,ionizable,fingerprint_bit,0.0,0.0,326
+ionizable_fp_17,ionizable,fingerprint_bit,0.0,0.0,327
+ionizable_fp_14,ionizable,fingerprint_bit,0.0,0.0,328
+ionizable_fp_12,ionizable,fingerprint_bit,0.0,0.0,329
+ionizable_fp_11,ionizable,fingerprint_bit,0.0,0.0,330
+device_or_chip_std_microfluidic chip device using syringe pumps,process,process_categorical,0.0,0.0,331
+helper_RingCount,helper,rdkit_descriptor,0.0,0.0,332
+device_or_chip_std_TECAN Freedom EVO robotic liquid handler,process,process_categorical,0.0,0.0,333
+device_or_chip_std_T-mixer,process,process_categorical,0.0,0.0,334
+device_or_chip_std_T-junction mixing,process,process_categorical,0.0,0.0,335
+device_or_chip_std_T-junction device,process,process_categorical,0.0,0.0,336
+device_or_chip_std_T-junction (IDEX Health and Science),process,process_categorical,0.0,0.0,337
+device_or_chip_std_Precision Nanosystems microfluidic mixers,process,process_categorical,0.0,0.0,338
+device_or_chip_std_Pipetting,process,process_categorical,0.0,0.0,339
+device_or_chip_std_Pipette mixing,process,process_categorical,0.0,0.0,340
+device_or_chip_std_Nanoassemblr Benchtop,process,process_categorical,0.0,0.0,341
+device_or_chip_std_NanoGenerator Flex,process,process_categorical,0.0,0.0,342
+device_or_chip_std_NanoAssemblr microfluidic mixing system,process,process_categorical,0.0,0.0,343
+measurement_instrument_std_NanoBrook 90Plus,process,process_categorical,0.0,0.0,344
+device_or_chip_std_microfluidic herringbone mixing devices,process,process_categorical,0.0,0.0,345
+device_or_chip_std_high-efficiency mixer,process,process_categorical,0.0,0.0,346
+ionizable_fp_63,ionizable,fingerprint_bit,0.0,0.0,347
+ionizable_fp_62,ionizable,fingerprint_bit,0.0,0.0,348
+ionizable_fp_61,ionizable,fingerprint_bit,0.0,0.0,349
+ionizable_fp_60,ionizable,fingerprint_bit,0.0,0.0,350
+ionizable_fp_58,ionizable,fingerprint_bit,0.0,0.0,351
+ionizable_fp_57,ionizable,fingerprint_bit,0.0,0.0,352
+ionizable_fp_56,ionizable,fingerprint_bit,0.0,0.0,353
+ionizable_fp_55,ionizable,fingerprint_bit,0.0,0.0,354
+ionizable_fp_54,ionizable,fingerprint_bit,0.0,0.0,355
+ionizable_fp_53,ionizable,fingerprint_bit,0.0,0.0,356
+ionizable_fp_52,ionizable,fingerprint_bit,0.0,0.0,357
+ionizable_fp_50,ionizable,fingerprint_bit,0.0,0.0,358
+ionizable_fp_49,ionizable,fingerprint_bit,0.0,0.0,359
+ionizable_fp_26,ionizable,fingerprint_bit,0.0,0.0,360
+ionizable_fp_44,ionizable,fingerprint_bit,0.0,0.0,361
+ionizable_fp_43,ionizable,fingerprint_bit,0.0,0.0,362
+ionizable_fp_41,ionizable,fingerprint_bit,0.0,0.0,363
+ionizable_fp_40,ionizable,fingerprint_bit,0.0,0.0,364
+ionizable_fp_39,ionizable,fingerprint_bit,0.0,0.0,365
+ionizable_fp_38,ionizable,fingerprint_bit,0.0,0.0,366
+ionizable_fp_37,ionizable,fingerprint_bit,0.0,0.0,367
+ionizable_fp_35,ionizable,fingerprint_bit,0.0,0.0,368
+ionizable_fp_33,ionizable,fingerprint_bit,0.0,0.0,369
+ionizable_fp_32,ionizable,fingerprint_bit,0.0,0.0,370
+ionizable_fp_31,ionizable,fingerprint_bit,0.0,0.0,371
+ionizable_fp_30,ionizable,fingerprint_bit,0.0,0.0,372
+ionizable_fp_27,ionizable,fingerprint_bit,0.0,0.0,373
+ionizable_fp_48,ionizable,fingerprint_bit,0.0,0.0,374
+peg_fp_5,peg,fingerprint_bit,0.0,0.0,375
+peg_fp_4,peg,fingerprint_bit,0.0,0.0,376
+peg_fp_3,peg,fingerprint_bit,0.0,0.0,377
+peg_fp_2,peg,fingerprint_bit,0.0,0.0,378
+peg_fp_0,peg,fingerprint_bit,0.0,0.0,379
+peg_RingCount,peg,rdkit_descriptor,0.0,0.0,380
+peg_NumHAcceptors,peg,rdkit_descriptor,0.0,0.0,381
+sterol_fp_63,sterol,fingerprint_bit,0.0,0.0,382
+sterol_fp_62,sterol,fingerprint_bit,0.0,0.0,383
+sterol_fp_61,sterol,fingerprint_bit,0.0,0.0,384
+sterol_fp_60,sterol,fingerprint_bit,0.0,0.0,385
+sterol_fp_59,sterol,fingerprint_bit,0.0,0.0,386
+sterol_fp_58,sterol,fingerprint_bit,0.0,0.0,387
+helper_fp_57,helper,fingerprint_bit,0.0,0.0,388
+sterol_fp_56,sterol,fingerprint_bit,0.0,0.0,389
+sterol_fp_55,sterol,fingerprint_bit,0.0,0.0,390
+sterol_fp_54,sterol,fingerprint_bit,0.0,0.0,391
+sterol_fp_53,sterol,fingerprint_bit,0.0,0.0,392
+sterol_fp_52,sterol,fingerprint_bit,0.0,0.0,393
+sterol_fp_51,sterol,fingerprint_bit,0.0,0.0,394
+sterol_fp_50,sterol,fingerprint_bit,0.0,0.0,395
+sterol_fp_49,sterol,fingerprint_bit,0.0,0.0,396
+sterol_fp_48,sterol,fingerprint_bit,0.0,0.0,397
+sterol_fp_47,sterol,fingerprint_bit,0.0,0.0,398
+sterol_fp_46,sterol,fingerprint_bit,0.0,0.0,399
+sterol_fp_45,sterol,fingerprint_bit,0.0,0.0,400
+sterol_fp_44,sterol,fingerprint_bit,0.0,0.0,401
+sterol_fp_57,sterol,fingerprint_bit,0.0,0.0,402
+peg_fp_37,peg,fingerprint_bit,0.0,0.0,403
+peg_fp_36,peg,fingerprint_bit,0.0,0.0,404
+peg_fp_35,peg,fingerprint_bit,0.0,0.0,405
+peg_fp_33,peg,fingerprint_bit,0.0,0.0,406
+peg_fp_32,peg,fingerprint_bit,0.0,0.0,407
+peg_fp_31,peg,fingerprint_bit,0.0,0.0,408
+peg_fp_30,peg,fingerprint_bit,0.0,0.0,409
+peg_fp_29,peg,fingerprint_bit,0.0,0.0,410
+peg_fp_28,peg,fingerprint_bit,0.0,0.0,411
+peg_fp_27,peg,fingerprint_bit,0.0,0.0,412
+peg_fp_26,peg,fingerprint_bit,0.0,0.0,413
+peg_fp_25,peg,fingerprint_bit,0.0,0.0,414
+peg_fp_24,peg,fingerprint_bit,0.0,0.0,415
+peg_fp_6,peg,fingerprint_bit,0.0,0.0,416
+peg_fp_21,peg,fingerprint_bit,0.0,0.0,417
+peg_fp_20,peg,fingerprint_bit,0.0,0.0,418
+peg_fp_19,peg,fingerprint_bit,0.0,0.0,419
+peg_fp_17,peg,fingerprint_bit,0.0,0.0,420
+peg_fp_16,peg,fingerprint_bit,0.0,0.0,421
+peg_fp_15,peg,fingerprint_bit,0.0,0.0,422
+peg_fp_14,peg,fingerprint_bit,0.0,0.0,423
+peg_fp_13,peg,fingerprint_bit,0.0,0.0,424
+peg_fp_12,peg,fingerprint_bit,0.0,0.0,425
+peg_fp_11,peg,fingerprint_bit,0.0,0.0,426
+peg_fp_9,peg,fingerprint_bit,0.0,0.0,427
+peg_fp_8,peg,fingerprint_bit,0.0,0.0,428
+peg_fp_7,peg,fingerprint_bit,0.0,0.0,429
+peg_fp_23,peg,fingerprint_bit,0.0,0.0,430
+sterol_fp_13,sterol,fingerprint_bit,0.0,0.0,431
+sterol_fp_12,sterol,fingerprint_bit,0.0,0.0,432
+sterol_fp_11,sterol,fingerprint_bit,0.0,0.0,433
+sterol_fp_10,sterol,fingerprint_bit,0.0,0.0,434
+sterol_fp_9,sterol,fingerprint_bit,0.0,0.0,435
+sterol_fp_8,sterol,fingerprint_bit,0.0,0.0,436
+sterol_fp_7,sterol,fingerprint_bit,0.0,0.0,437
+sterol_fp_6,sterol,fingerprint_bit,0.0,0.0,438
+sterol_fp_5,sterol,fingerprint_bit,0.0,0.0,439
+sterol_fp_4,sterol,fingerprint_bit,0.0,0.0,440
+sterol_fp_3,sterol,fingerprint_bit,0.0,0.0,441
+sterol_fp_2,sterol,fingerprint_bit,0.0,0.0,442
+sterol_fp_1,sterol,fingerprint_bit,0.0,0.0,443
+sterol_fp_43,sterol,fingerprint_bit,0.0,0.0,444
+sterol_RingCount,sterol,rdkit_descriptor,0.0,0.0,445
+sterol_NumRotatableBonds,sterol,rdkit_descriptor,0.0,0.0,446
+sterol_NumHAcceptors,sterol,rdkit_descriptor,0.0,0.0,447
+sterol_NumHDonors,sterol,rdkit_descriptor,0.0,0.0,448
+sterol_TPSA,sterol,rdkit_descriptor,0.0,0.0,449
+sterol_LogP,sterol,rdkit_descriptor,0.0,0.0,450
+sterol_MolWt,sterol,rdkit_descriptor,0.0,0.0,451
+helper_fp_63,helper,fingerprint_bit,0.0,0.0,452
+helper_fp_62,helper,fingerprint_bit,0.0,0.0,453
+helper_fp_61,helper,fingerprint_bit,0.0,0.0,454
+helper_fp_60,helper,fingerprint_bit,0.0,0.0,455
+helper_fp_59,helper,fingerprint_bit,0.0,0.0,456
+helper_fp_58,helper,fingerprint_bit,0.0,0.0,457
+sterol_fp_0,sterol,fingerprint_bit,0.0,0.0,458
+sterol_fp_42,sterol,fingerprint_bit,0.0,0.0,459
+sterol_fp_41,sterol,fingerprint_bit,0.0,0.0,460
+sterol_fp_40,sterol,fingerprint_bit,0.0,0.0,461
+sterol_fp_39,sterol,fingerprint_bit,0.0,0.0,462
+sterol_fp_38,sterol,fingerprint_bit,0.0,0.0,463
+sterol_fp_37,sterol,fingerprint_bit,0.0,0.0,464
+sterol_fp_36,sterol,fingerprint_bit,0.0,0.0,465
+sterol_fp_35,sterol,fingerprint_bit,0.0,0.0,466
+sterol_fp_34,sterol,fingerprint_bit,0.0,0.0,467
+sterol_fp_33,sterol,fingerprint_bit,0.0,0.0,468
+sterol_fp_32,sterol,fingerprint_bit,0.0,0.0,469
+sterol_fp_31,sterol,fingerprint_bit,0.0,0.0,470
+sterol_fp_30,sterol,fingerprint_bit,0.0,0.0,471
+sterol_fp_14,sterol,fingerprint_bit,0.0,0.0,472
+sterol_fp_28,sterol,fingerprint_bit,0.0,0.0,473
+sterol_fp_27,sterol,fingerprint_bit,0.0,0.0,474
+sterol_fp_26,sterol,fingerprint_bit,0.0,0.0,475
+sterol_fp_25,sterol,fingerprint_bit,0.0,0.0,476
+sterol_fp_24,sterol,fingerprint_bit,0.0,0.0,477
+sterol_fp_23,sterol,fingerprint_bit,0.0,0.0,478
+sterol_fp_22,sterol,fingerprint_bit,0.0,0.0,479
+sterol_fp_20,sterol,fingerprint_bit,0.0,0.0,480
+sterol_fp_19,sterol,fingerprint_bit,0.0,0.0,481
+sterol_fp_18,sterol,fingerprint_bit,0.0,0.0,482
+sterol_fp_17,sterol,fingerprint_bit,0.0,0.0,483
+sterol_fp_16,sterol,fingerprint_bit,0.0,0.0,484
+sterol_fp_15,sterol,fingerprint_bit,0.0,0.0,485
+sterol_fp_29,sterol,fingerprint_bit,0.0,0.0,486

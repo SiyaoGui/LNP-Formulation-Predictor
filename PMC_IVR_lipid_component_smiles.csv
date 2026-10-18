@@ -1,0 +1,32 @@
+component_id,component_name,role,smiles_status,smiles,pubchem_cid,full_name,notes
+1,HSPC,helper,mixture_no_single_smiles,,,Hydrogenated Soy Phosphatidylcholine,"天然来源氢化混合物，主要是二硬脂酰/二棕榈酰PC，没有单一结构式；不建议强行赋一个SMILES"
+2,Cholesterol,sterol,confirmed,CC(C)CCCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C,5997,Cholesterol,PubChem核实
+3,mPEG2000-DSPE-2k,peg,polymer_representative,,,"1,2-distearoyl-sn-glycero-3-phosphoethanolamine-N-[methoxy(PEG)-2000]","PEG链长有分布，非单一分子；如需RDKit特征化需另建近似结构（见下方说明），此处先留空避免用假SMILES"
+4,HePc,helper,confirmed,CCCCCCCCCCCCCCCCOP(=O)([O-])OCC[N+](C)(C)C,3599,Hexadecylphosphocholine (miltefosine),PubChem核实
+5,DSPC,helper,confirmed,CCCCCCCCCCCCCCCCCC(=O)OCC(COP(=O)([O-])OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCCCC,94190,"1,2-distearoyl-sn-glycero-3-phosphocholine",PubChem核实
+6,DPPC,helper,confirmed,CCCCCCCCCCCCCCCC(=O)OCC(COP(=O)([O-])OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCCCC,452110,"1,2-dipalmitoyl-sn-glycero-3-phosphocholine",PubChem核实
+7,MSPC,helper,confirmed,CCCCCCCCCCCCCCCCCC(=O)OC(COC(=O)CCCCCCCCCCCCC)COP(=O)([O-])OCC[N+](C)(C)C,131150,Monostearoyl phosphatidylcholine (lyso-PC 18:0),PubChem核实
+8,mPEG-DSPE-5K,peg,polymer_representative,,,DSPE-PEG(5000),同mPEG2000-DSPE，PEG链长分布，非单一分子
+9,mPEG-DSPE-10K,peg,polymer_representative,,,DSPE-PEG(10000),同上
+10,POPC,helper,confirmed,CCCCCCCCCCCCCCCC(=O)OCC(COP(=O)([O-])OCC[N+](C)(C)C)OC(=O)CCCCCCCC=CCCCCCCCC,5497103,1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine,PubChem核实
+11,Soy PC,helper,mixture_no_single_smiles,,,Soybean Phosphatidylcholine,天然混合物（多种不饱和脂肪酸PC），无单一结构式
+12,DSPG-Na,helper,confirmed,CCCCCCCCCCCCCCCCCC(=O)OCC(COP(=O)([O-])OCC(CO)O)OC(=O)CCCCCCCCCCCCCCCCC.[Na+],46891829,"1,2-distearoyl-sn-glycero-3-phospho-(1'-rac-glycerol) sodium salt",PubChem核实
+13,a-tocopherol,helper,confirmed,CC1=C(C2=C(CCC(O2)(C)CCCC(C)CCCC(C)CCCC(C)C)C(=C1O)C)C,14985,alpha-Tocopherol,PubChem核实
+17,EPC,helper,mixture_no_single_smiles,,,Egg Phosphatidylcholine,天然混合物，无单一结构式
+19,DPPGOG,helper,custom_unresolved,,,"1,2-dipalmitoyl-sn-glycero-3-phosphoglyceroglycerol","在源论文(Hossann 2007, DOI 10.1016/j.bbamem.2007.05.021)中确认全名与专利号(PCT/WO97/30058)，但PubChem无收录，精确结构未经二次核实，暂不赋SMILES避免出错"
+20,P-Lyso-PC,helper,confirmed,CCCCCCCCCCCCCCCC(=O)OCC(COP(=O)([O-])OCC[N+](C)(C)C)O,10097314,1-palmitoyl-2-hydroxy-sn-glycero-3-phosphocholine (lyso-PC),"源论文确认全名后在PubChem核实"
+21,DMPC,helper,confirmed,CCCCCCCCCCCCCC(=O)OCC(COP(=O)([O-])OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCCC,5459377,"1,2-dimyristoyl-sn-glycero-3-phosphocholine",PubChem核实
+22,DCP,helper,confirmed,CCCCCCCCCCCCCCCCOP(=O)(O)OCCCCCCCCCCCCCCCC,75143,Dicetyl phosphate,PubChem核实
+23,DPPG,sterol,confirmed,CCCCCCCCCCCCCCCC(=O)OCC(COP(=O)(O)OCC(CO)O)OC(=O)CCCCCCCCCCCCCCC,65144,"1,2-dipalmitoyl-sn-glycero-3-phospho-(1'-rac-glycerol)",PubChem核实
+24,DEPC,helper,confirmed,CCCCCCCCC=CCCCCCCCCCCCC(=O)OCC(COP(=O)([O-])OCC[N+](C)(C)C)OC(=O)CCCCCCCCCCCC=CCCCCCCCC,24779126,"1,2-dierucoyl-sn-glycero-3-phosphocholine",PubChem核实
+25,Tricaprylin,helper,confirmed,CCCCCCCC(=O)OCC(COC(=O)CCCCCCC)OC(=O)CCCCCCC,10850,Glyceryl trioctanoate,PubChem核实
+26,asolectin,helper,mixture_no_single_smiles,,,Asolectin (soybean lecithin mixture),天然混合物，无单一结构式
+27,stearamine,helper,confirmed_but_unused,CCCCCCCCCCCCCCCCCCN,15793,Octadecylamine (stearylamine),"PubChem核实，但在formulation_composition表里此组分实际使用次数为0，不影响当前合并表"
+28,DSPE,helper,confirmed,CCCCCCCCCCCCCCCCCC(=O)OCC(COP(=O)(O)OCCN)OC(=O)CCCCCCCCCCCCCCCCC,102547,"1,2-distearoyl-sn-glycero-3-phosphoethanolamine",PubChem核实
+29,mPEG2000-DSPE-LMWP,peg,peptide_conjugate_unresolved,,,DSPE-PEG2000-LMWP (low molecular weight protamine),"LMWP是寡肽（低分子量精蛋白），无法用单一SMILES表示，需要单独按多肽处理"
+30,DOPC,helper,confirmed,CCCCCCCCC=CCCCCCCCC(=O)OCC(COP(=O)([O-])OCC[N+](C)(C)C)OC(=O)CCCCCCCC=CCCCCCCCC,10350317,"1,2-dioleoyl-sn-glycero-3-phosphocholine",PubChem核实
+31,pH-DPPC,helper,custom_unresolved,,,"疑似 Ph-DPPC（phenoxy-conjugated DPPC，非pH敏感）","数据库命名可能是'Ph-DPPC'的拼写/OCR混淆。源论文(Nature Commun 2023, DOI 10.1038/s41467-023-41946-8)确认为lysoPC与16-phenoxy棕榈酸缩合而成，结构描述明确但未在PubChem核实，暂不赋SMILES"
+32,CM-DPPC,helper,custom_unresolved,,,Coumarin-conjugated DPPC,"同上论文，香豆素修饰的DPPC，精确结构在SI图中，未OCR提取，暂不赋SMILES"
+33,DBCO-DPPC,helper,custom_unresolved,,,Dibenzocyclooctyne-conjugated DPPC,"同上论文，DBCO点击化学修饰的DPPC，精确结构在SI图中，暂不赋SMILES"
+34,Egg SM,helper,mixture_no_single_smiles,,,Egg Sphingomyelin,天然混合物（主要成分为16:0棕榈酰鞘磷脂，但仍是混合物），无单一结构式
+35,Cholesterol-sialic acid,sterol,custom_unresolved,,,Sialic acid-cholesterol conjugate (SA-CH),"源论文(DOI见M2字典)确认为实验室自制的唾液酸-胆固醇偶联物，用于修饰脂质体表面靶向TAM，具体连接化学未在正文给出，暂不赋SMILES"

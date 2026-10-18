@@ -1,0 +1,3 @@
+metric,r2,n,n_papers_with_doi
+grouped_by_paper,-0.0332432540926193,1275,60
+random_split,0.45950084399697533,1275,60

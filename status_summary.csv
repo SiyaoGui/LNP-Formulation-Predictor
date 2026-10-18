@@ -1,0 +1,16 @@
+role,status,count
+ionizable,resolved,939
+ionizable,not_applicable,850
+ionizable,unresolved,144
+ionizable,unparseable,1
+helper,resolved,1683
+helper,unresolved,204
+helper,not_applicable,47
+sterol,resolved,1792
+sterol,not_applicable,138
+sterol,unresolved,4
+peg,resolved,902
+peg,approximated,731
+peg,not_applicable,192
+peg,unresolved,108
+peg,unparseable,1
