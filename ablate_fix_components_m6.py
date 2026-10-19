@@ -8,15 +8,17 @@ LNP_Atlas: 0.048->-0.272），只有PMC_IVR变好了(-0.160->-0.069)，Luciani�
 import pandas as pd
 import numpy as np
 import re
+import os
 import warnings
 warnings.filterwarnings('ignore')
 from sklearn.ensemble import HistGradientBoostingRegressor
 from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
-FM_ORIG = '/mnt/user-data/uploads/Liposome AI algorithm-圣草酚/feature_matrix.parquet'
-MERGED_ORIG = '/mnt/user-data/uploads/Liposome AI algorithm-圣草酚/merged_formulations.csv'
-OUT_CSV = '/mnt/user-data/outputs/fix_ablation_cv_results.csv'
+HERE = os.path.dirname(os.path.abspath(__file__))
+FM_ORIG = os.path.join(HERE, 'feature_matrix.parquet')
+MERGED_ORIG = os.path.join(HERE, 'merged_formulations.csv')
+OUT_CSV = os.path.join(HERE, 'fix_ablation_cv_results.csv')
 
 fm_base = pd.read_parquet(FM_ORIG)
 merged = pd.read_csv(MERGED_ORIG)

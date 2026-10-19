@@ -7,6 +7,7 @@ B) 去掉全部6个工艺特征，重跑按paper_doi分组CV，和M4文档已有
 """
 import pandas as pd
 import numpy as np
+import os
 import warnings
 warnings.filterwarnings('ignore')
 from sklearn.ensemble import HistGradientBoostingRegressor
@@ -15,8 +16,9 @@ from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
 pd.set_option('display.width', 160)
 
-SRC = '/mnt/user-data/uploads/Liposome AI algorithm-圣草酚/feature_matrix.parquet'
-OUT_CSV = '/mnt/user-data/outputs/process_feature_ablation_results.csv'
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE, 'feature_matrix.parquet')
+OUT_CSV = os.path.join(HERE, 'process_feature_ablation_results.csv')
 
 df = pd.read_parquet(SRC)
 mask = (df.particle_size_nm.notna()) & (df.particle_size_nm <= 1000) & (df.formation_ok.fillna(1) != 0)

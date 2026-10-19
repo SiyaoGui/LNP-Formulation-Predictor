@@ -20,10 +20,12 @@ C) measurement_instrument_std / device_or_chip_std / prep_method_std：
 import pandas as pd
 import numpy as np
 import re
+import os
 
-SRC = '/mnt/user-data/uploads/Liposome AI algorithm-圣草酚/merged_formulations.csv'
-OUT_CSV = '/mnt/user-data/outputs/merged_formulations_v2.csv'
-OUT_PARQUET = '/mnt/user-data/outputs/merged_formulations_v2.parquet'
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE, 'merged_formulations.csv')
+OUT_CSV = os.path.join(HERE, 'merged_formulations_v2.csv')
+OUT_PARQUET = os.path.join(HERE, 'merged_formulations_v2.parquet')
 
 df = pd.read_csv(SRC)
 print(f'输入: {df.shape}')

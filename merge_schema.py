@@ -1,9 +1,16 @@
 import pandas as pd
 import numpy as np
 import re
+import os
 
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', 220)
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+# 注意(2026-10-19迁移审计添加)：下面三处原始源文件未包含在本仓库中
+# (LNP_Atlas原始CSV、Luciani CSV、PMC_IVR sqlite db)，本脚本在本仓库环境下
+# 无法端到端跑通，只作为合并逻辑的历史记录保留。可复现的入口见
+# docs/migration-report.md。
 
 UNIFIED_COLS = [
     'source_dataset','source_row_id','formulation_id',
@@ -61,7 +68,7 @@ def _parse_flow_ratio_imbalance(s):
     return max(a, b) / min(a, b)
 
 # ---------- 1) LNP Atlas ----------
-lnp = pd.read_csv('/sessions/charming-focused-tesla/mnt/uploads/LNP_Atlas_DB_202509_v1.csv', encoding='cp949')
+lnp = pd.read_csv(os.path.join(HERE, 'LNP_Atlas_DB_202509_v1_raw_not_in_repo.csv'), encoding='cp949')  # 原始文件未入库，见上方说明
 
 def split_ratio(r):
     try:
@@ -139,7 +146,7 @@ lnp_out = pd.DataFrame({
 })
 
 # ---------- 2) Luciani ----------
-luc = pd.read_csv('/sessions/charming-focused-tesla/mnt/uploads/02_Liposome_data.csv')
+luc = pd.read_csv(os.path.join(HERE, '02_Liposome_data_raw_not_in_repo.csv'))  # 原始文件未入库，见上方说明
 formation_ok = (luc['Size'] <= 1000) & (luc['PDI'] <= 1)
 
 luc_out = pd.DataFrame({
@@ -185,7 +192,7 @@ luc_out = pd.DataFrame({
 # ---------- 3) PMC IVR ----------
 import sqlite3
 
-_conn = sqlite3.connect('/sessions/charming-focused-tesla/mnt/uploads/liposome_IVR.db')
+_conn = sqlite3.connect(os.path.join(HERE, 'liposome_IVR_raw_not_in_repo.db'))  # 原始文件未入库，见上方说明
 
 _cn = pd.read_sql('SELECT * FROM component_name', _conn)
 _cn['role'] = 'helper'
@@ -239,7 +246,7 @@ _full = (_ivr.merge(_formulation, left_on='formulation_ID', right_on='ID', suffi
              .merge(_wide, on='formulation_ID', how='left')
              .merge(_papers[['ID','doi']], left_on='paper_id', right_on='ID', suffixes=('','_paper')))
 
-_smiles_ref = pd.read_csv('/sessions/charming-focused-tesla/mnt/Liposome AI algorithm-圣草酚/PMC_IVR_lipid_component_smiles.csv')
+_smiles_ref = pd.read_csv(os.path.join(HERE, 'PMC_IVR_lipid_component_smiles.csv'))  # 这一个文件实际在本仓库里
 _name2smiles = dict(zip(_smiles_ref.component_name, _smiles_ref.smiles))
 
 SMILES_JOIN_DELIM = ' |&| '  # 专用分隔符：真实SMILES里的'+'是电荷符号（比如磷脂[N+](C)(C)C），

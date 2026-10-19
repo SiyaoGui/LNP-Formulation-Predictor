@@ -4,6 +4,7 @@ task#13: 用修复后的数据重新跑分组CV，和修复前的数字硬碰硬
 """
 import pandas as pd
 import numpy as np
+import os
 import warnings
 warnings.filterwarnings('ignore')
 from sklearn.ensemble import HistGradientBoostingRegressor
@@ -12,11 +13,12 @@ from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
 pd.set_option('display.width', 160)
 
-FM_ORIG = '/mnt/user-data/uploads/Liposome AI algorithm-圣草酚/feature_matrix.parquet'
-V2_MERGED = '/mnt/user-data/outputs/merged_formulations_v2.csv'
-OUT_FM_V2 = '/mnt/user-data/outputs/feature_matrix_v2.parquet'
-OUT_CV_CSV = '/mnt/user-data/outputs/fix_verification_cv_results.csv'
-OUT_ETA_CSV = '/mnt/user-data/outputs/fix_verification_eta_squared.csv'
+HERE = os.path.dirname(os.path.abspath(__file__))
+FM_ORIG = os.path.join(HERE, 'feature_matrix.parquet')
+V2_MERGED = os.path.join(HERE, 'merged_formulations_v2.csv')
+OUT_FM_V2 = os.path.join(HERE, 'feature_matrix_v2.parquet')
+OUT_CV_CSV = os.path.join(HERE, 'fix_verification_cv_results.csv')
+OUT_ETA_CSV = os.path.join(HERE, 'fix_verification_eta_squared.csv')
 
 # ============================================================
 # 1) 构造 feature_matrix_v2.parquet：只替换5个被修复的process列+加2个审计flag，

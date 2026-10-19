@@ -1,10 +1,10 @@
-import pandas as pd, numpy as np, warnings, re, sys
+import pandas as pd, numpy as np, warnings, re, sys, os
 from sklearn.ensemble import HistGradientBoostingRegressor
 from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.metrics import r2_score, mean_absolute_error
 from scipy.stats import spearmanr
 warnings.filterwarnings('ignore')
-B='/sessions/charming-focused-tesla/mnt/Liposome AI algorithm-圣草酚/'
+B=os.path.dirname(os.path.abspath(__file__)) + '/'
 f = pd.read_parquet(B+'feature_matrix.parquet')
 m = pd.read_parquet(B+'merged_formulations.parquet')
 assert (f['formulation_id'].values == m['formulation_id'].values).all(), 'row order mismatch'
