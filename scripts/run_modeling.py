@@ -93,7 +93,7 @@ def paired_ci(oof_a: E.OofResult, oof_b: E.OofResult, metric_fn, key: str, seed:
 
 
 # --------------------------------------------------------------------------- #
-def run_t1(proc: Path, out: Path, results: dict, quick: bool) -> pd.DataFrame:
+def run_t1(proc: Path, out: Path, results: dict, quick: bool, only_schemes=None) -> pd.DataFrame:
     units = pd.read_parquet(proc / "units_t1.parquet")
     X = pd.read_parquet(proc / "features_t1.parquet")
     y = units["target"].to_numpy(float)
@@ -107,7 +107,7 @@ def run_t1(proc: Path, out: Path, results: dict, quick: bool) -> pd.DataFrame:
         ("ridge", "b3_molecule_only"),
         ("hgb", "b3_molecule_only"),
     ]
-    schemes = ("S1",) if quick else E.SCHEMES
+    schemes = only_schemes or (("S1",) if quick else E.SCHEMES)
     seeds = (0,) if quick else E.SEEDS
     metric_keys = ["mae_log", "rmse_log", "r2_pooled", "median_fold_error", "mae_nm", "spearman"]
 
@@ -265,13 +265,13 @@ def run_learning_curve(proc: Path, results: dict, quick: bool) -> pd.DataFrame:
     return lc
 
 
-def run_t3(proc: Path, results: dict, quick: bool) -> pd.DataFrame:
+def run_t3(proc: Path, results: dict, quick: bool, only_schemes=None) -> pd.DataFrame:
     units = pd.read_parquet(proc / "units_t3.parquet")
     X = pd.read_parquet(proc / "features_t3.parquet")
     y = units["target"].to_numpy()
     fs = feature_sets(X)
     sim = E.payload_similarity(units)
-    schemes = ("S1",) if quick else ("S1", "S2", "S3", "S4")
+    schemes = only_schemes or (("S1",) if quick else ("S1", "S2", "S3", "S4"))
     seeds = (0,) if quick else E.SEEDS
     keys = ["balanced_accuracy", "macro_f1", "accuracy"]
     rows = []
@@ -419,6 +419,12 @@ def main() -> None:
     ap.add_argument("--out", default="modeling/2026-10-19_smallmol-baseline")
     ap.add_argument("--quick", action="store_true", help="只跑 S1 + seed 0，用于计时和调试")
     ap.add_argument("--tasks", default="t1,lc,t3,t2")
+    ap.add_argument(
+        "--schemes",
+        default="",
+        help="只跑指定划分（逗号分隔，如 S1,S2,S3）。分段跑是因为后台单条命令有 2 小时上限，"
+        "全量 T1 的纯拟合时间约 102 分钟，加 bootstrap 会超。分段结果会合并进同一个 metrics.json",
+    )
     args = ap.parse_args()
 
     cfg = yaml.safe_load((ROOT / args.config).read_text(encoding="utf-8"))
@@ -432,6 +438,14 @@ def main() -> None:
 
     X1 = pd.read_parquet(proc / "features_t1.parquet")
     fs = feature_sets(X1)
+    only_schemes = tuple(s.strip() for s in args.schemes.split(",") if s.strip()) or None
+
+    # 分段跑时把已有结果读回来合并，不覆盖（后台单条命令有 2 小时上限）
+    existing = {}
+    mj = out / "metrics.json"
+    if mj.exists():
+        existing = json.loads(mj.read_text(encoding="utf-8"))
+
     results = {
         "protocol": "docs/evaluation-protocol.md (frozen 2026-10-19, amended 2026-10-19 for T3)",
         "config": args.config,
@@ -458,10 +472,14 @@ def main() -> None:
             "xgboost": "not installed (wheel download repeatedly interrupted); "
             "HistGradientBoostingRegressor used instead, same as previous round",
         },
-        "t1": {},
-        "t2": {},
-        "t3": {},
+        "t1": existing.get("t1", {}),
+        "t2": existing.get("t2", {}),
+        "t3": existing.get("t3", {}),
+        "runs": existing.get("runs", []),
     }
+    results["runs"].append(
+        {"tasks": args.tasks, "schemes": list(only_schemes) if only_schemes else "all"}
+    )
 
     tasks = [t.strip() for t in args.tasks.split(",")]
     t0 = time.time()
@@ -475,7 +493,10 @@ def main() -> None:
     # 每跑完一段就落盘，后面哪一段出错也不会把前面的结果一起丢掉
     if "t1" in tasks:
         print("== T1 粒径回归", flush=True)
-        run_t1(proc, out, results, args.quick).to_csv(out / "oof_predictions_t1.csv", index=False)
+        sfx = "_" + "-".join(only_schemes) if only_schemes else ""
+        run_t1(proc, out, results, args.quick, only_schemes).to_csv(
+            out / f"oof_predictions_t1{sfx}.csv", index=False
+        )
         flush_metrics()
     if "lc" in tasks:
         print("== 学习曲线", flush=True)
@@ -483,7 +504,10 @@ def main() -> None:
         flush_metrics()
     if "t3" in tasks:
         print("== T3 类别组合分类", flush=True)
-        run_t3(proc, results, args.quick).to_csv(out / "oof_predictions_t3.csv", index=False)
+        sfx3 = "_" + "-".join(only_schemes) if only_schemes else ""
+        run_t3(proc, results, args.quick, only_schemes).to_csv(
+            out / f"oof_predictions_t3{sfx3}.csv", index=False
+        )
         flush_metrics()
     if "t2" in tasks:
         print("== T2 脂质组成", flush=True)
