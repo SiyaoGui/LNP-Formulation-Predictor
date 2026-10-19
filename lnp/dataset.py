@@ -37,6 +37,7 @@ PROVENANCE_COLS = (
     "payload_type",
     "payload_smiles",
     "payload_mw",
+    "payload_scaffold",
     "is_probe",
     "paper_doi",
     "helper_lipid_name",

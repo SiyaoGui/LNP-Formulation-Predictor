@@ -9,6 +9,7 @@ from __future__ import annotations
 import pandas as pd
 from rdkit import Chem, RDLogger
 from rdkit.Chem import Descriptors
+from rdkit.Chem.Scaffolds import MurckoScaffold
 
 RDLogger.DisableLog("rdApp.*")
 
@@ -32,10 +33,21 @@ def _payload_mw(smiles: str | float) -> float | None:
     return None if mol is None else Descriptors.MolWt(mol)
 
 
+def _payload_scaffold(smiles: str | float) -> str | None:
+    """Murcko 骨架，给协议 S2 骨架划分用。无环分子返回空字符串，无结构返回 None。"""
+    if not isinstance(smiles, str) or not smiles.strip():
+        return None
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        return None
+    return MurckoScaffold.MurckoScaffoldSmiles(mol=mol, includeChirality=False)
+
+
 def annotate(df: pd.DataFrame) -> pd.DataFrame:
     """加上子集判断需要的派生列，不做过滤。"""
     out = df.copy()
     out["payload_mw"] = [_payload_mw(s) for s in out["payload_smiles"]]
+    out["payload_scaffold"] = [_payload_scaffold(s) for s in out["payload_smiles"]]
     out["is_probe"] = out["payload_type"].isin(PROBE_PAYLOADS)
     out["payload_is_large"] = out["payload_type"].isin(LARGE_PAYLOADS)
     out["payload_is_nondrug"] = out["payload_type"].isin(NON_DRUG_PAYLOADS)
