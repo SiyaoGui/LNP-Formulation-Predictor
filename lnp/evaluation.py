@@ -107,8 +107,14 @@ class FpBlock(BaseEstimator, TransformerMixin):
             self.keep_ = np.array([], dtype=int)
             return self
         score_fn = f_regression if self.task == "regression" else f_classif
+        y_arr = np.asarray(y)
         with np.errstate(all="ignore"):
-            scores, _ = score_fn(Xf[:, cand], y)
+            if y_arr.ndim == 2:
+                # 多输出（T2 的 2 维 ILR 坐标）：每个输出各算一次，取每个特征的最大分
+                per = [score_fn(Xf[:, cand], y_arr[:, j])[0] for j in range(y_arr.shape[1])]
+                scores = np.nanmax(np.vstack(per), axis=0)
+            else:
+                scores, _ = score_fn(Xf[:, cand], y_arr)
         scores = np.nan_to_num(scores, nan=-np.inf)
         order = np.argsort(scores)[::-1][: min(self.k, len(cand))]
         self.keep_ = cand[order]
