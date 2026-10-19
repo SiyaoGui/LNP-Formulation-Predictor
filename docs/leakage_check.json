@@ -1,0 +1,426 @@
+{
+  "config": "configs/smallmol_baseline.yaml",
+  "forbidden_substrings": [
+    "structure_type",
+    "process_notes",
+    "release_curve_file",
+    "source_row_id",
+    "formulation_id",
+    "paper_doi",
+    "payload_type",
+    "is_probe",
+    "measurement_instrument",
+    "pdi",
+    "zeta_potential",
+    "encapsulation_efficiency",
+    "formation_ok",
+    "source_dataset",
+    "was_ambiguous",
+    "was_renormalized",
+    "was_harmonized",
+    "was_unit_corrected",
+    "particle_size_nm"
+  ],
+  "tasks": {
+    "t1": {
+      "n_units": 73,
+      "n_features": 3133,
+      "forbidden_hits": [],
+      "forbidden_check": "passed",
+      "n_plain_features": 61,
+      "n_fingerprint_features": 3072,
+      "flagged_features": [
+        "has_peg_lipid",
+        "has_sterol_lipid",
+        "helper_balaban_j",
+        "helper_hbd",
+        "helper_is_natural_mixture",
+        "helper_lipid_pct",
+        "n_helper_components",
+        "n_lipid_classes",
+        "payload_aromatic_rings",
+        "payload_balaban_j",
+        "payload_fraction_csp3",
+        "payload_hba",
+        "payload_hbd",
+        "payload_heavy_atoms",
+        "payload_logp",
+        "payload_mol_mr",
+        "payload_mol_wt",
+        "payload_ring_count",
+        "payload_rot_bonds",
+        "payload_tpsa",
+        "peg_lipid_pct",
+        "prep_Thin lipid film hydration",
+        "prep_Thin lipid film hydration and agitation",
+        "prep_Thin lipid film hydration and extrusion",
+        "prep_microfluidics",
+        "prep_other",
+        "process_temp_c",
+        "process_temp_c_is_missing",
+        "sterol_lipid_pct"
+      ],
+      "top_mutual_info_plain": [
+        {
+          "feature": "payload_hba",
+          "mutual_info": 0.6514,
+          "spearman_abs": 0.1228,
+          "eta2_paper": 0.9648,
+          "structure_type_proxy_gain": 0.1233
+        },
+        {
+          "feature": "payload_heavy_atoms",
+          "mutual_info": 0.6321,
+          "spearman_abs": 0.1008,
+          "eta2_paper": 0.8612,
+          "structure_type_proxy_gain": 0.1096
+        },
+        {
+          "feature": "payload_mol_wt",
+          "mutual_info": 0.6032,
+          "spearman_abs": 0.1007,
+          "eta2_paper": 0.8702,
+          "structure_type_proxy_gain": 0.1096
+        },
+        {
+          "feature": "peg_lipid_pct",
+          "mutual_info": 0.5966,
+          "spearman_abs": 0.1165,
+          "eta2_paper": 0.8847,
+          "structure_type_proxy_gain": 0.0959
+        },
+        {
+          "feature": "payload_ring_count",
+          "mutual_info": 0.5379,
+          "spearman_abs": 0.073,
+          "eta2_paper": 0.9219,
+          "structure_type_proxy_gain": 0.0959
+        },
+        {
+          "feature": "payload_fraction_csp3",
+          "mutual_info": 0.5099,
+          "spearman_abs": 0.2709,
+          "eta2_paper": 0.9328,
+          "structure_type_proxy_gain": 0.1096
+        },
+        {
+          "feature": "payload_mol_mr",
+          "mutual_info": 0.5089,
+          "spearman_abs": 0.076,
+          "eta2_paper": 0.8088,
+          "structure_type_proxy_gain": 0.1233
+        },
+        {
+          "feature": "payload_tpsa",
+          "mutual_info": 0.4937,
+          "spearman_abs": 0.037,
+          "eta2_paper": 0.9524,
+          "structure_type_proxy_gain": 0.1233
+        },
+        {
+          "feature": "payload_logp",
+          "mutual_info": 0.4779,
+          "spearman_abs": 0.2704,
+          "eta2_paper": 0.8527,
+          "structure_type_proxy_gain": 0.0822
+        },
+        {
+          "feature": "payload_rot_bonds",
+          "mutual_info": 0.464,
+          "spearman_abs": 0.1526,
+          "eta2_paper": 0.8168,
+          "structure_type_proxy_gain": 0.0685
+        },
+        {
+          "feature": "payload_balaban_j",
+          "mutual_info": 0.4218,
+          "spearman_abs": 0.124,
+          "eta2_paper": 0.8838,
+          "structure_type_proxy_gain": 0.0411
+        },
+        {
+          "feature": "n_lipid_classes",
+          "mutual_info": 0.3987,
+          "spearman_abs": 0.0917,
+          "eta2_paper": 0.8335,
+          "structure_type_proxy_gain": 0.0137
+        }
+      ],
+      "top_single_feature_plain": [
+        {
+          "feature": "prep_Thin lipid film hydration and agitation",
+          "improvement": 0.2906,
+          "mae": 0.1762,
+          "mae_const": 0.2484,
+          "nan_share": 0.0
+        },
+        {
+          "feature": "payload_rot_bonds",
+          "improvement": 0.1371,
+          "mae": 0.2143,
+          "mae_const": 0.2484,
+          "nan_share": 0.0
+        },
+        {
+          "feature": "payload_aromatic_rings",
+          "improvement": 0.0707,
+          "mae": 0.2308,
+          "mae_const": 0.2484,
+          "nan_share": 0.0
+        },
+        {
+          "feature": "prep_other",
+          "improvement": 0.0393,
+          "mae": 0.2386,
+          "mae_const": 0.2484,
+          "nan_share": 0.0
+        },
+        {
+          "feature": "payload_mol_wt",
+          "improvement": 0.0194,
+          "mae": 0.2435,
+          "mae_const": 0.2484,
+          "nan_share": 0.0
+        },
+        {
+          "feature": "process_temp_c",
+          "improvement": 0.0106,
+          "mae": 0.2829,
+          "mae_const": 0.2859,
+          "nan_share": 0.219
+        },
+        {
+          "feature": "prep_Thin lipid film hydration",
+          "improvement": 0.0104,
+          "mae": 0.2458,
+          "mae_const": 0.2484,
+          "nan_share": 0.0
+        },
+        {
+          "feature": "payload_hbd",
+          "improvement": 0.0087,
+          "mae": 0.2462,
+          "mae_const": 0.2484,
+          "nan_share": 0.0
+        },
+        {
+          "feature": "prep_microfluidics",
+          "improvement": 0.0016,
+          "mae": 0.248,
+          "mae_const": 0.2484,
+          "nan_share": 0.0
+        },
+        {
+          "feature": "payload_fraction_csp3",
+          "improvement": 0.001,
+          "mae": 0.2481,
+          "mae_const": 0.2484,
+          "nan_share": 0.0
+        },
+        {
+          "feature": "helper_tpsa",
+          "improvement": -0.0019,
+          "mae": 0.3505,
+          "mae_const": 0.3498,
+          "nan_share": 0.466
+        },
+        {
+          "feature": "helper_hba",
+          "improvement": -0.0019,
+          "mae": 0.3505,
+          "mae_const": 0.3498,
+          "nan_share": 0.466
+        }
+      ],
+      "max_eta2_paper": 1.0,
+      "max_structure_type_proxy_gain": 0.1538,
+      "top_mutual_info_fingerprint": [
+        {
+          "feature": "payload_fp_1574",
+          "mutual_info": 0.5328
+        },
+        {
+          "feature": "payload_fp_658",
+          "mutual_info": 0.5328
+        },
+        {
+          "feature": "payload_fp_118",
+          "mutual_info": 0.5328
+        },
+        {
+          "feature": "payload_fp_169",
+          "mutual_info": 0.5328
+        },
+        {
+          "feature": "payload_fp_2038",
+          "mutual_info": 0.5328
+        },
+        {
+          "feature": "payload_fp_430",
+          "mutual_info": 0.5328
+        },
+        {
+          "feature": "payload_fp_283",
+          "mutual_info": 0.5328
+        },
+        {
+          "feature": "payload_fp_782",
+          "mutual_info": 0.5328
+        }
+      ],
+      "thresholds": {
+        "single_feature_improvement_flag": 0.15,
+        "proxy_flag": 0.6
+      }
+    },
+    "t3": {
+      "n_units": 60,
+      "n_features": 2060,
+      "forbidden_hits": [],
+      "forbidden_check": "passed",
+      "n_plain_features": 12,
+      "n_fingerprint_features": 2048,
+      "flagged_features": [
+        "payload_aromatic_rings",
+        "payload_balaban_j",
+        "payload_fraction_csp3",
+        "payload_hba",
+        "payload_hbd",
+        "payload_heavy_atoms",
+        "payload_logp",
+        "payload_mol_mr",
+        "payload_mol_wt",
+        "payload_ring_count",
+        "payload_rot_bonds",
+        "payload_tpsa"
+      ],
+      "top_mutual_info_plain": [
+        {
+          "feature": "payload_ring_count",
+          "mutual_info": 0.3038,
+          "spearman_abs": 0.3486,
+          "eta2_paper": 0.8596,
+          "structure_type_proxy_gain": 0.0833
+        },
+        {
+          "feature": "payload_logp",
+          "mutual_info": 0.2517,
+          "spearman_abs": 0.4538,
+          "eta2_paper": 0.615,
+          "structure_type_proxy_gain": 0.0333
+        },
+        {
+          "feature": "payload_rot_bonds",
+          "mutual_info": 0.1906,
+          "spearman_abs": 0.0986,
+          "eta2_paper": 0.7451,
+          "structure_type_proxy_gain": 0.0
+        },
+        {
+          "feature": "payload_hba",
+          "mutual_info": 0.1619,
+          "spearman_abs": 0.5827,
+          "eta2_paper": 0.833,
+          "structure_type_proxy_gain": 0.1
+        },
+        {
+          "feature": "payload_fraction_csp3",
+          "mutual_info": 0.152,
+          "spearman_abs": 0.0438,
+          "eta2_paper": 0.771,
+          "structure_type_proxy_gain": 0.1
+        },
+        {
+          "feature": "payload_hbd",
+          "mutual_info": 0.1502,
+          "spearman_abs": 0.4686,
+          "eta2_paper": 0.7699,
+          "structure_type_proxy_gain": 0.1
+        },
+        {
+          "feature": "payload_heavy_atoms",
+          "mutual_info": 0.1383,
+          "spearman_abs": 0.452,
+          "eta2_paper": 0.7309,
+          "structure_type_proxy_gain": 0.1167
+        },
+        {
+          "feature": "payload_tpsa",
+          "mutual_info": 0.1273,
+          "spearman_abs": 0.562,
+          "eta2_paper": 0.8596,
+          "structure_type_proxy_gain": 0.1167
+        },
+        {
+          "feature": "payload_mol_mr",
+          "mutual_info": 0.0598,
+          "spearman_abs": 0.3199,
+          "eta2_paper": 0.6507,
+          "structure_type_proxy_gain": 0.1167
+        },
+        {
+          "feature": "payload_mol_wt",
+          "mutual_info": 0.0541,
+          "spearman_abs": 0.3989,
+          "eta2_paper": 0.7263,
+          "structure_type_proxy_gain": 0.1167
+        },
+        {
+          "feature": "payload_balaban_j",
+          "mutual_info": 0.0002,
+          "spearman_abs": 0.2206,
+          "eta2_paper": 0.9106,
+          "structure_type_proxy_gain": 0.0833
+        },
+        {
+          "feature": "payload_aromatic_rings",
+          "mutual_info": 0.0,
+          "spearman_abs": 0.3687,
+          "eta2_paper": 0.8785,
+          "structure_type_proxy_gain": 0.0167
+        }
+      ],
+      "top_single_feature_plain": null,
+      "max_eta2_paper": 0.9106,
+      "max_structure_type_proxy_gain": 0.1167,
+      "top_mutual_info_fingerprint": [
+        {
+          "feature": "payload_fp_1019",
+          "mutual_info": 0.5666
+        },
+        {
+          "feature": "payload_fp_314",
+          "mutual_info": 0.551
+        },
+        {
+          "feature": "payload_fp_656",
+          "mutual_info": 0.5305
+        },
+        {
+          "feature": "payload_fp_1873",
+          "mutual_info": 0.4986
+        },
+        {
+          "feature": "payload_fp_352",
+          "mutual_info": 0.4291
+        },
+        {
+          "feature": "payload_fp_1380",
+          "mutual_info": 0.4093
+        },
+        {
+          "feature": "payload_fp_650",
+          "mutual_info": 0.3812
+        },
+        {
+          "feature": "payload_fp_1056",
+          "mutual_info": 0.3439
+        }
+      ],
+      "thresholds": {
+        "single_feature_improvement_flag": 0.15,
+        "proxy_flag": 0.6
+      }
+    }
+  }
+}
