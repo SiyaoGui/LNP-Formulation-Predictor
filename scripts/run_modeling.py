@@ -79,7 +79,7 @@ def paired_ci(oof_a: E.OofResult, oof_b: E.OofResult, metric_fn, key: str, seed:
     order_b = np.argsort(oof_b.index)
     ya, pa, g = oof_a.y_true[order_a], oof_a.y_pred[order_a], oof_a.groups[order_a]
     yb, pb = oof_b.y_true[order_b], oof_b.y_pred[order_b]
-    assert np.allclose(np.asarray(ya, float), np.asarray(yb, float)) or (ya == yb).all(), "配对样本不一致"
+    assert np.array_equal(np.asarray(ya), np.asarray(yb)), "配对样本不一致（两个模型的 out-of-fold 样本必须相同）"
 
     def stat(idx):
         return metric_fn(yb[idx], pb[idx])[key] - metric_fn(ya[idx], pa[idx])[key]
@@ -465,23 +465,32 @@ def main() -> None:
 
     tasks = [t.strip() for t in args.tasks.split(",")]
     t0 = time.time()
+
+    def flush_metrics():
+        results["total_runtime_seconds"] = round(time.time() - t0, 1)
+        (out / "metrics.json").write_text(
+            json.dumps(results, ensure_ascii=False, indent=2, default=str), encoding="utf-8"
+        )
+
+    # 每跑完一段就落盘，后面哪一段出错也不会把前面的结果一起丢掉
     if "t1" in tasks:
         print("== T1 粒径回归", flush=True)
         run_t1(proc, out, results, args.quick).to_csv(out / "oof_predictions_t1.csv", index=False)
+        flush_metrics()
     if "lc" in tasks:
         print("== 学习曲线", flush=True)
         run_learning_curve(proc, results, args.quick).to_csv(out / "learning_curve.csv", index=False)
+        flush_metrics()
     if "t3" in tasks:
         print("== T3 类别组合分类", flush=True)
         run_t3(proc, results, args.quick).to_csv(out / "oof_predictions_t3.csv", index=False)
+        flush_metrics()
     if "t2" in tasks:
         print("== T2 脂质组成", flush=True)
         run_t2(proc, results, args.quick).to_csv(out / "oof_predictions_t2.csv", index=False)
+        flush_metrics()
 
-    results["total_runtime_seconds"] = round(time.time() - t0, 1)
-    (out / "metrics.json").write_text(
-        json.dumps(results, ensure_ascii=False, indent=2, default=str), encoding="utf-8"
-    )
+    flush_metrics()
     shutil.copy(ROOT / args.config, out / "config_used.yaml")
     shutil.copy(proc / "feature_manifest.json", out / "feature_manifest.json")
     print(f"\n写出 {out}/metrics.json  用时 {results['total_runtime_seconds']}s")
