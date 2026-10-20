@@ -111,6 +111,7 @@ def fig_learning_curve(d: Path, figs: Path):
         ylabel="合并 out-of-fold MAE（log10 空间）",
         title="学习曲线：按化合物数增加训练数据，误差怎么变\n阴影是 5 个种子的最小到最大范围",
     )
+    ax.margins(x=0.12)  # 给右侧的直接标注留出空间，避免被裁掉
     leg = ax.legend(frameon=False, fontsize=9, loc="upper right")
     for t in leg.get_texts():
         t.set_color(INK_2)
@@ -152,7 +153,8 @@ def fig_model_comparison(d: Path, figs: Path):
         "S4": "S4 留一化合物",
     }
     fig, axes = plt.subplots(
-        1, len(schemes), figsize=(4.0 * len(schemes), 4.6), sharey=True, facecolor=SURFACE
+        1, len(schemes), figsize=(4.0 * len(schemes), 4.6), sharey=True, sharex=True,
+        facecolor=SURFACE,
     )
     axes = np.atleast_1d(axes)
     present = [k for k in order if k in t1[schemes[0]]]
@@ -199,10 +201,17 @@ def fig_model_comparison(d: Path, figs: Path):
 
 def _load_oof(d: Path, task: str) -> pd.DataFrame:
     """分段跑会产生多个带划分后缀的 oof 文件，这里合并。"""
-    files = sorted(d.glob(f"oof_predictions_{task}*.csv"))
-    if not files:
-        return pd.DataFrame()
-    return pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
+    # T1 的逐条预测只在 S1 下记录（其它划分只需要汇总指标），所以分段跑 S4 时
+    # 会留下一个空文件，这里跳过空文件而不是报错
+    frames = []
+    for f in sorted(d.glob(f"oof_predictions_{task}*.csv")):
+        if f.stat().st_size == 0:
+            continue
+        try:
+            frames.append(pd.read_csv(f))
+        except pd.errors.EmptyDataError:
+            continue
+    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
 
 
 def _best_model_oof(d: Path) -> tuple[pd.DataFrame, str]:
