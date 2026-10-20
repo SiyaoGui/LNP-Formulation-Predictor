@@ -2592,6 +2592,93 @@
     {
       "groups": "G3",
       "quick": false
+    },
+    {
+      "groups": "G1,G2,G3",
+      "quick": false
     }
-  ]
+  ],
+  "learning_curve": [
+    {
+      "approx_train_molecules": 32,
+      "model": "b0",
+      "mean": 18.375,
+      "std": 1.315,
+      "min": 17.317,
+      "max": 20.341
+    },
+    {
+      "approx_train_molecules": 32,
+      "model": "hgb",
+      "mean": 15.674,
+      "std": 1.359,
+      "min": 14.087,
+      "max": 17.438
+    },
+    {
+      "approx_train_molecules": 63,
+      "model": "b0",
+      "mean": 18.093,
+      "std": 0.816,
+      "min": 17.134,
+      "max": 19.237
+    },
+    {
+      "approx_train_molecules": 63,
+      "model": "hgb",
+      "mean": 14.231,
+      "std": 0.265,
+      "min": 13.897,
+      "max": 14.523
+    },
+    {
+      "approx_train_molecules": 95,
+      "model": "b0",
+      "mean": 18.426,
+      "std": 0.302,
+      "min": 18.074,
+      "max": 18.801
+    },
+    {
+      "approx_train_molecules": 95,
+      "model": "hgb",
+      "mean": 14.114,
+      "std": 0.462,
+      "min": 13.735,
+      "max": 14.889
+    },
+    {
+      "approx_train_molecules": 126,
+      "model": "b0",
+      "mean": 18.563,
+      "std": 0.195,
+      "min": 18.302,
+      "max": 18.791
+    },
+    {
+      "approx_train_molecules": 126,
+      "model": "hgb",
+      "mean": 14.612,
+      "std": 0.411,
+      "min": 14.225,
+      "max": 15.295
+    },
+    {
+      "approx_train_molecules": 158,
+      "model": "b0",
+      "mean": 18.397,
+      "std": 0.108,
+      "min": 18.241,
+      "max": 18.535
+    },
+    {
+      "approx_train_molecules": 158,
+      "model": "hgb",
+      "mean": 13.41,
+      "std": 0.673,
+      "min": 12.737,
+      "max": 14.359
+    }
+  ],
+  "learning_curve_note": "Added after G1/G2/G3 were run and seen; does not affect the pre-registered pass/fail criterion, which was already determined by G1 and G2."
 }
