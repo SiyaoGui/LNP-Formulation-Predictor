@@ -102,3 +102,30 @@ def payload_group_key(df: pd.DataFrame) -> pd.Series:
                 continue
         keys.append(f"TYPE:{ptype}")
     return pd.Series(keys, index=df.index, name="group_compound")
+
+
+def _first_component(smiles: str | float) -> str | None:
+    """多组分 SMILES 取第一个组分（分隔符见 features.MULTI_SMILES_SEP）。"""
+    if not isinstance(smiles, str) or not smiles.strip():
+        return None
+    first = smiles.split(" |&| ")[0].strip()
+    return first or None
+
+
+def structure_keys(smiles_series: pd.Series) -> pd.DataFrame:
+    """给任意一列 SMILES 算 InChIKey 和 Murcko 骨架，用作交叉验证的分组键。
+
+    包封率验证里分组键是可离子化脂质而不是 payload（协议 docs/ee-feasibility-protocol.md
+    第三节说明了为什么）。
+    """
+    iks, scafs = [], []
+    for s in smiles_series:
+        f = _first_component(s)
+        mol = Chem.MolFromSmiles(f) if f else None
+        if mol is None:
+            iks.append(None)
+            scafs.append(None)
+            continue
+        iks.append(Chem.MolToInchiKey(mol))
+        scafs.append(MurckoScaffold.MurckoScaffoldSmiles(mol=mol, includeChirality=False))
+    return pd.DataFrame({"inchikey": iks, "scaffold": scafs}, index=smiles_series.index)
