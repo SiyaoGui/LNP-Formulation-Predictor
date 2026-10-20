@@ -6680,7 +6680,103 @@
       "schemes": [
         "S4"
       ]
+    },
+    {
+      "tasks": "lc,t3,t2",
+      "schemes": "all"
     }
   ],
-  "total_runtime_seconds": 3998.9
+  "learning_curve": [
+    {
+      "fraction": 0.2,
+      "approx_train_compounds": 2,
+      "model": "b0",
+      "mean": 0.26874,
+      "std": 0.05679949823722036,
+      "min": 0.1916,
+      "max": 0.3449
+    },
+    {
+      "fraction": 0.2,
+      "approx_train_compounds": 2,
+      "model": "hgb",
+      "mean": 0.30862,
+      "std": 0.06031025617587775,
+      "min": 0.2611,
+      "max": 0.4061
+    },
+    {
+      "fraction": 0.4,
+      "approx_train_compounds": 5,
+      "model": "b0",
+      "mean": 0.24780000000000002,
+      "std": 0.009650647646660836,
+      "min": 0.2422,
+      "max": 0.265
+    },
+    {
+      "fraction": 0.4,
+      "approx_train_compounds": 5,
+      "model": "hgb",
+      "mean": 0.30145999999999995,
+      "std": 0.10314377344270471,
+      "min": 0.2417,
+      "max": 0.4846
+    },
+    {
+      "fraction": 0.6,
+      "approx_train_compounds": 7,
+      "model": "b0",
+      "mean": 0.2451,
+      "std": 0.008267405880927826,
+      "min": 0.238,
+      "max": 0.2588
+    },
+    {
+      "fraction": 0.6,
+      "approx_train_compounds": 7,
+      "model": "hgb",
+      "mean": 0.25872,
+      "std": 0.04722199699292694,
+      "min": 0.1826,
+      "max": 0.3007
+    },
+    {
+      "fraction": 0.8,
+      "approx_train_compounds": 10,
+      "model": "b0",
+      "mean": 0.25002,
+      "std": 0.0066020451376827185,
+      "min": 0.242,
+      "max": 0.2579
+    },
+    {
+      "fraction": 0.8,
+      "approx_train_compounds": 10,
+      "model": "hgb",
+      "mean": 0.22488000000000002,
+      "std": 0.06651208160928358,
+      "min": 0.1615,
+      "max": 0.3322
+    },
+    {
+      "fraction": 1.0,
+      "approx_train_compounds": 12,
+      "model": "b0",
+      "mean": 0.25318,
+      "std": 0.003319186647358059,
+      "min": 0.2483,
+      "max": 0.2571
+    },
+    {
+      "fraction": 1.0,
+      "approx_train_compounds": 12,
+      "model": "hgb",
+      "mean": 0.19219999999999998,
+      "std": 0.04635115964029379,
+      "min": 0.1599,
+      "max": 0.2722
+    }
+  ],
+  "total_runtime_seconds": 814.6
 }
