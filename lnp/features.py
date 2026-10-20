@@ -247,3 +247,27 @@ def process_block(df: pd.DataFrame, prep_method_min_count: int = PREP_METHOD_MIN
     prep_grouped = prep.map(lambda v: v if v in keep else "other")
     dummies = pd.get_dummies(prep_grouped, prefix="prep", dtype=float)
     return pd.concat([out, dummies], axis=1)
+
+
+def ionizable_block(df: pd.DataFrame, radius: int, n_bits: int) -> pd.DataFrame:
+    """包封率验证用的分子特征块：可离子化脂质的描述符 + 指纹。
+
+    与第一轮 payload 的 M-desc / M-fp 用同一组描述符和同样的多组分处理方式，
+    这样两轮的「分子特征」口径一致。
+    """
+    desc = descriptor_block(df["ionizable_lipid_smiles"], "ionizable")
+    fp = fingerprint_block(df["ionizable_lipid_smiles"], "ionizable", radius, n_bits)
+    extra = pd.DataFrame(index=df.index)
+    extra["n_ionizable_components"] = df["ionizable_lipid_name"].map(
+        lambda v: float(len(str(v).split("+"))) if pd.notna(v) else np.nan
+    )
+    return pd.concat([desc, fp, extra], axis=1)
+
+
+def payload_class_block(df: pd.DataFrame) -> pd.DataFrame:
+    """payload 大类 one-hot（mRNA / siRNA / DNA）。
+
+    这三类每类都有很多样本，不是论文代理变量，而且核酸类型确实影响包封，
+    是合法输入（协议第八节）。
+    """
+    return pd.get_dummies(df["payload_type"].fillna("unknown").astype(str), prefix="payload", dtype=float)
