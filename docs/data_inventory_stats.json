@@ -1,0 +1,850 @@
+{
+  "source_file": "merged_formulations_v2.csv",
+  "n_rows_total": 1934,
+  "rows_by_source": {
+    "LNP_Atlas": 1092,
+    "Luciani": 570,
+    "PMC_IVR": 272
+  },
+  "rows_by_payload_type": {
+    "mRNA": 678,
+    "empty": 623,
+    "siRNA": 178,
+    "DNA": 135,
+    "doxorubicin": 123,
+    "amphotericin B": 38,
+    "ASO": 36,
+    "bupivacaine": 22,
+    "rhodamine b": 16,
+    "carboxyfluorescein": 14,
+    "atenolol": 10,
+    "propranolol": 10,
+    "gold_nanoparticles": 6,
+    "BAY 87-2243": 6,
+    "sulforhodamine B": 6,
+    "vincristine sulfate": 4,
+    "calcein": 4,
+    "mRNA, siRNA": 3,
+    "protein": 3,
+    "budesonide": 3,
+    "fraxetin": 3,
+    "methotrexate": 2,
+    "hydrocortisone": 2,
+    "amoxicillin": 2,
+    "tetrodotoxin": 2,
+    "paclitaxel": 1,
+    "gemcitabine": 1,
+    "5-Fluorouracil carbonate": 1,
+    "Hydroxy-alpha-sanshool": 1,
+    "temoporfin": 1
+  },
+  "subset_sizes": {
+    "small_molecule": 272,
+    "large_molecule": 1033,
+    "empty_or_nondrug": 629,
+    "unassigned": 0
+  },
+  "small_molecule_sources": {
+    "PMC_IVR": 272
+  },
+  "large_molecule_sources": {
+    "LNP_Atlas": 1033
+  },
+  "n_unique_compounds": 22,
+  "n_unique_scaffolds": 21,
+  "smiles_parse_failures": 0,
+  "compounds": [
+    {
+      "payload_type": "doxorubicin",
+      "smiles": "COC1=CC=CC2=C1C(=O)C1=C(O)C3=C(C[C@](O)(C[C@@H]3O[C@H]3C[C@H](N)[C@H](O)[C@H](C)O3)C(=O)CO)C(O)=C1C2=O",
+      "n_records": 123,
+      "n_papers": 16,
+      "n_with_size": 109,
+      "n_with_pdi": 104,
+      "n_with_zeta": 85,
+      "n_with_full_composition": 77,
+      "smiles_parsed": true,
+      "mol_wt": 543.53,
+      "heavy_atoms": 39,
+      "logp": 0.0,
+      "tpsa": 206.07,
+      "hbd": 6,
+      "hba": 12,
+      "rot_bonds": 5,
+      "rings": 5,
+      "scaffold": "O=C1c2ccccc2C(=O)c2cc3c(cc21)CCCC3OC1CCCCO1"
+    },
+    {
+      "payload_type": "amphotericin B",
+      "smiles": "[H][C@]12C[C@@H](O[C@@H]3O[C@H](C)[C@@H](O)[C@H](N)[C@@H]3O)\\C=C\\C=C\\C=C\\C=C\\C=C\\C=C\\C=C\\[C@H](C)[C@@H](O)[C@@H](C)[C@H](C)OC(=O)C[C@H](O)C[C@H](O)CC[C@@H](O)[C@H](O)C[C@H](O)C[C@](O)(C[C@H](O)[C@H]1C(O)=O)O2",
+      "n_records": 38,
+      "n_papers": 4,
+      "n_with_size": 25,
+      "n_with_pdi": 24,
+      "n_with_zeta": 4,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 924.09,
+      "heavy_atoms": 65,
+      "logp": 0.71,
+      "tpsa": 319.61,
+      "hbd": 12,
+      "hba": 17,
+      "rot_bonds": 3,
+      "rings": 3,
+      "scaffold": "O=C1CCCCCCCCCCCC2CCCC(CC(OC3CCCCO3)C=CC=CC=CC=CC=CC=CC=CCCCCO1)O2"
+    },
+    {
+      "payload_type": "bupivacaine",
+      "smiles": "CCCCN1CCCCC1C(=O)NC1=C(C)C=CC=C1C",
+      "n_records": 22,
+      "n_papers": 2,
+      "n_with_size": 20,
+      "n_with_pdi": 0,
+      "n_with_zeta": 0,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 288.44,
+      "heavy_atoms": 21,
+      "logp": 3.9,
+      "tpsa": 32.34,
+      "hbd": 1,
+      "hba": 2,
+      "rot_bonds": 5,
+      "rings": 2,
+      "scaffold": "O=C(Nc1ccccc1)C1CCCCN1"
+    },
+    {
+      "payload_type": "rhodamine b",
+      "smiles": "[Cl-].CCN(CC)C1=CC2=C(C=C1)C(C1=CC=CC=C1C(O)=O)=C1C=CC(C=C1O2)=[N+](CC)CC",
+      "n_records": 16,
+      "n_papers": 1,
+      "n_with_size": 0,
+      "n_with_pdi": 0,
+      "n_with_zeta": 0,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 479.02,
+      "heavy_atoms": 34,
+      "logp": 2.57,
+      "tpsa": 56.69,
+      "hbd": 1,
+      "hba": 3,
+      "rot_bonds": 7,
+      "rings": 4,
+      "scaffold": "[N+]=c1ccc2c(-c3ccccc3)c3ccccc3oc-2c1"
+    },
+    {
+      "payload_type": "carboxyfluorescein",
+      "smiles": "OC(=O)C(C=C(C1C(O)=O)C(C(C=C2)C(O3)C=C2O)=C(C=CC2=O)C3=C2)=CC=1",
+      "n_records": 14,
+      "n_papers": 2,
+      "n_with_size": 14,
+      "n_with_pdi": 5,
+      "n_with_zeta": 14,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 378.34,
+      "heavy_atoms": 28,
+      "logp": 2.89,
+      "tpsa": 121.13,
+      "hbd": 3,
+      "hba": 5,
+      "rot_bonds": 3,
+      "rings": 4,
+      "scaffold": "O=C1C=CC2=C(c3ccccc3)C3C=CC=CC3OC2=C1"
+    },
+    {
+      "payload_type": "atenolol",
+      "smiles": "CC(C)NCC(O)COC1=CC=C(CC(N)=O)C=C1",
+      "n_records": 10,
+      "n_papers": 1,
+      "n_with_size": 10,
+      "n_with_pdi": 0,
+      "n_with_zeta": 0,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 266.34,
+      "heavy_atoms": 19,
+      "logp": 0.45,
+      "tpsa": 84.58,
+      "hbd": 3,
+      "hba": 4,
+      "rot_bonds": 8,
+      "rings": 1,
+      "scaffold": "c1ccccc1"
+    },
+    {
+      "payload_type": "propranolol",
+      "smiles": "CC(C)NCC(O)COC1=CC=CC2=C1C=CC=C2",
+      "n_records": 10,
+      "n_papers": 1,
+      "n_with_size": 10,
+      "n_with_pdi": 0,
+      "n_with_zeta": 0,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 259.35,
+      "heavy_atoms": 19,
+      "logp": 2.58,
+      "tpsa": 41.49,
+      "hbd": 2,
+      "hba": 3,
+      "rot_bonds": 6,
+      "rings": 2,
+      "scaffold": "c1ccc2ccccc2c1"
+    },
+    {
+      "payload_type": "BAY 87-2243",
+      "smiles": "CC1=CC(=NN1CC2=CC(=NC=C2)N3CCN(CC3)C4CC4)C5=NC(=NO5)C6=CC=C(C=C6)OC(F)(F)F",
+      "n_records": 6,
+      "n_papers": 1,
+      "n_with_size": 3,
+      "n_with_pdi": 3,
+      "n_with_zeta": 3,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 525.54,
+      "heavy_atoms": 38,
+      "logp": 4.53,
+      "tpsa": 85.34,
+      "hbd": 0,
+      "hba": 8,
+      "rot_bonds": 7,
+      "rings": 6,
+      "scaffold": "c1ccc(-c2noc(-c3ccn(Cc4ccnc(N5CCN(C6CC6)CC5)c4)n3)n2)cc1"
+    },
+    {
+      "payload_type": "sulforhodamine B",
+      "smiles": "CCN(CC)C1=CC2=C(C=C1)C(=C3C=CC(=[N+](CC)CC)C=C3O2)C4=C(C=C(C=C4)S(=O)(=O)O)S(=O)(=O)[O-]",
+      "n_records": 6,
+      "n_papers": 1,
+      "n_with_size": 3,
+      "n_with_pdi": 0,
+      "n_with_zeta": 0,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 558.68,
+      "heavy_atoms": 38,
+      "logp": 4.01,
+      "tpsa": 130.96,
+      "hbd": 1,
+      "hba": 7,
+      "rot_bonds": 8,
+      "rings": 4,
+      "scaffold": "[N+]=c1ccc2c(-c3ccccc3)c3ccccc3oc-2c1"
+    },
+    {
+      "payload_type": "calcein",
+      "smiles": "C1=CC=C2C(=C1)C(=O)OC23C4=C(C=C(C(=C4)CN(CC(=O)O)CC(=O)O)O)OC5=C3C=C(C(=C5)O)CN(CC(=O)O)CC(=O)O",
+      "n_records": 4,
+      "n_papers": 1,
+      "n_with_size": 4,
+      "n_with_pdi": 4,
+      "n_with_zeta": 4,
+      "n_with_full_composition": 3,
+      "smiles_parsed": true,
+      "mol_wt": 622.54,
+      "heavy_atoms": 45,
+      "logp": 1.61,
+      "tpsa": 231.67,
+      "hbd": 6,
+      "hba": 11,
+      "rot_bonds": 12,
+      "rings": 5,
+      "scaffold": "O=C1OC2(c3ccccc3Oc3ccccc32)c2ccccc21"
+    },
+    {
+      "payload_type": "vincristine sulfate",
+      "smiles": "CCC1(CC2CC(C3=C(CCN(C2)C1)C4=CC=CC=C4N3)(C5=C(C=C6C(=C5)C78CCN9C7C(C=CC9)(C(C(C8N6C=O)(C(=O)OC)O)OC(=O)C)CC)OC)C(=O)OC)O.OS(=O)(=O)O",
+      "n_records": 4,
+      "n_papers": 1,
+      "n_with_size": 4,
+      "n_with_pdi": 0,
+      "n_with_zeta": 4,
+      "n_with_full_composition": 2,
+      "smiles_parsed": true,
+      "mol_wt": 923.05,
+      "heavy_atoms": 65,
+      "logp": 2.86,
+      "tpsa": 245.77,
+      "hbd": 5,
+      "hba": 14,
+      "rot_bonds": 8,
+      "rings": 9,
+      "scaffold": "C1=CC2CCC3Nc4ccc(C5CC6CCCN(CCc7c5[nH]c5ccccc75)C6)cc4C34CCN(C1)C24"
+    },
+    {
+      "payload_type": "budesonide",
+      "smiles": "[H][C@@]12C[C@H]3OC(CCC)O[C@@]3(C(=O)CO)[C@@]1(C)C[C@H](O)[C@@]1([H])[C@@]2([H])CCC2=CC(=O)C=C[C@]12C",
+      "n_records": 3,
+      "n_papers": 1,
+      "n_with_size": 0,
+      "n_with_pdi": 0,
+      "n_with_zeta": 0,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 430.54,
+      "heavy_atoms": 31,
+      "logp": 2.72,
+      "tpsa": 93.06,
+      "hbd": 2,
+      "hba": 6,
+      "rot_bonds": 4,
+      "rings": 5,
+      "scaffold": "O=C1C=CC2C(=C1)CCC1C2CCC2C1CC1OCOC12"
+    },
+    {
+      "payload_type": "fraxetin",
+      "smiles": "COC1=C(C(=C2C(=C1)C=CC(=O)O2)O)O",
+      "n_records": 3,
+      "n_papers": 1,
+      "n_with_size": 3,
+      "n_with_pdi": 0,
+      "n_with_zeta": 0,
+      "n_with_full_composition": 3,
+      "smiles_parsed": true,
+      "mol_wt": 208.17,
+      "heavy_atoms": 15,
+      "logp": 1.21,
+      "tpsa": 79.9,
+      "hbd": 2,
+      "hba": 5,
+      "rot_bonds": 1,
+      "rings": 2,
+      "scaffold": "O=c1ccc2ccccc2o1"
+    },
+    {
+      "payload_type": "tetrodotoxin",
+      "smiles": "C(C1(C2C3C(N=C(NC34C(C1OC(C4O)(O2)O)O)N)O)O)O",
+      "n_records": 2,
+      "n_papers": 1,
+      "n_with_size": 2,
+      "n_with_pdi": 2,
+      "n_with_zeta": 2,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 319.27,
+      "heavy_atoms": 22,
+      "logp": -5.52,
+      "tpsa": 190.25,
+      "hbd": 8,
+      "hba": 11,
+      "rot_bonds": 1,
+      "rings": 5,
+      "scaffold": "C1=NCC2C3CC4CC2(CC(O4)O3)N1"
+    },
+    {
+      "payload_type": "hydrocortisone",
+      "smiles": "[H][C@@]12CC[C@](O)(C(=O)CO)[C@@]1(C)C[C@H](O)[C@@]1([H])[C@@]2([H])CCC2=CC(=O)CC[C@]12C",
+      "n_records": 2,
+      "n_papers": 1,
+      "n_with_size": 0,
+      "n_with_pdi": 0,
+      "n_with_zeta": 0,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 362.47,
+      "heavy_atoms": 26,
+      "logp": 1.78,
+      "tpsa": 94.83,
+      "hbd": 3,
+      "hba": 5,
+      "rot_bonds": 2,
+      "rings": 4,
+      "scaffold": "O=C1C=C2CCC3C4CCCC4CCC3C2CC1"
+    },
+    {
+      "payload_type": "amoxicillin",
+      "smiles": "CC1(C(N2C(S1)C(C2=O)NC(=O)C(C3=CC=C(C=C3)O)N)C(=O)O)C",
+      "n_records": 2,
+      "n_papers": 1,
+      "n_with_size": 2,
+      "n_with_pdi": 2,
+      "n_with_zeta": 2,
+      "n_with_full_composition": 1,
+      "smiles_parsed": true,
+      "mol_wt": 365.41,
+      "heavy_atoms": 25,
+      "logp": 0.02,
+      "tpsa": 132.96,
+      "hbd": 4,
+      "hba": 6,
+      "rot_bonds": 4,
+      "rings": 3,
+      "scaffold": "O=C(Cc1ccccc1)NC1C(=O)N2CCSC12"
+    },
+    {
+      "payload_type": "methotrexate",
+      "smiles": "CN(CC1=CN=C2N=C(N)N=C(N)C2=N1)C1=CC=C(C=C1)C(=O)N[C@@H](CCC(O)=O)C(O)=O",
+      "n_records": 2,
+      "n_papers": 1,
+      "n_with_size": 2,
+      "n_with_pdi": 2,
+      "n_with_zeta": 2,
+      "n_with_full_composition": 1,
+      "smiles_parsed": true,
+      "mol_wt": 454.45,
+      "heavy_atoms": 33,
+      "logp": 0.27,
+      "tpsa": 210.54,
+      "hbd": 5,
+      "hba": 10,
+      "rot_bonds": 9,
+      "rings": 3,
+      "scaffold": "c1ccc(NCc2cnc3ncncc3n2)cc1"
+    },
+    {
+      "payload_type": "temoporfin",
+      "smiles": "C1CC2=NC1=C(C3=CC=C(N3)C(=C4C=CC(=N4)C(=C5C=CC(=C2C6=CC(=CC=C6)O)N5)C7=CC(=CC=C7)O)C8=CC(=CC=C8)O)C9=CC(=CC=C9)O",
+      "n_records": 1,
+      "n_papers": 1,
+      "n_with_size": 1,
+      "n_with_pdi": 0,
+      "n_with_zeta": 0,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 680.76,
+      "heavy_atoms": 52,
+      "logp": 9.76,
+      "tpsa": 138.28,
+      "hbd": 6,
+      "hba": 6,
+      "rot_bonds": 4,
+      "rings": 9,
+      "scaffold": "C1=Cc2nc1c(-c1ccccc1)c1ccc([nH]1)c(-c1ccccc1)c1nc(c(-c3ccccc3)c3ccc([nH]3)c2-c2ccccc2)CC1"
+    },
+    {
+      "payload_type": "gemcitabine",
+      "smiles": "C1=CN(C(=O)N=C1N)[C@H]2C([C@@H]([C@H](O2)CO)O)(F)F",
+      "n_records": 1,
+      "n_papers": 1,
+      "n_with_size": 1,
+      "n_with_pdi": 1,
+      "n_with_zeta": 1,
+      "n_with_full_composition": 1,
+      "smiles_parsed": true,
+      "mol_wt": 263.2,
+      "heavy_atoms": 18,
+      "logp": -1.29,
+      "tpsa": 110.6,
+      "hbd": 3,
+      "hba": 6,
+      "rot_bonds": 2,
+      "rings": 2,
+      "scaffold": "O=c1ncccn1C1CCCO1"
+    },
+    {
+      "payload_type": "Hydroxy-alpha-sanshool",
+      "smiles": "CC=CC=CC=CCCC=CC(=O)NCC(C)(C)O",
+      "n_records": 1,
+      "n_papers": 1,
+      "n_with_size": 1,
+      "n_with_pdi": 1,
+      "n_with_zeta": 1,
+      "n_with_full_composition": 0,
+      "smiles_parsed": true,
+      "mol_wt": 263.38,
+      "heavy_atoms": 19,
+      "logp": 2.9,
+      "tpsa": 49.33,
+      "hbd": 2,
+      "hba": 2,
+      "rot_bonds": 8,
+      "rings": 0,
+      "scaffold": ""
+    },
+    {
+      "payload_type": "paclitaxel",
+      "smiles": "CC1=C2C(C(=O)C3(C(CC4C(C3C(C(C2(C)C)(CC1OC(=O)C(C(C5=CC=CC=C5)NC(=O)C6=CC=CC=C6)O)O)OC(=O)C7=CC=CC=C7)(CO4)OC(=O)C)O)C)OC(=O)C",
+      "n_records": 1,
+      "n_papers": 1,
+      "n_with_size": 1,
+      "n_with_pdi": 1,
+      "n_with_zeta": 1,
+      "n_with_full_composition": 1,
+      "smiles_parsed": true,
+      "mol_wt": 853.92,
+      "heavy_atoms": 62,
+      "logp": 3.74,
+      "tpsa": 221.29,
+      "hbd": 4,
+      "hba": 14,
+      "rot_bonds": 10,
+      "rings": 7,
+      "scaffold": "O=C(CC(NC(=O)c1ccccc1)c1ccccc1)OC1C=C2CC(=O)C3CCC4OCC4C3C(OC(=O)c3ccccc3)C(C2)C1"
+    },
+    {
+      "payload_type": "5-Fluorouracil carbonate",
+      "smiles": "O=C1C(F)=CN(COC(OCCCCCCCCCCCCCC)=O)C(N1)=O",
+      "n_records": 1,
+      "n_papers": 1,
+      "n_with_size": 1,
+      "n_with_pdi": 1,
+      "n_with_zeta": 1,
+      "n_with_full_composition": 1,
+      "smiles_parsed": true,
+      "mol_wt": 400.49,
+      "heavy_atoms": 28,
+      "logp": 4.49,
+      "tpsa": 90.39,
+      "hbd": 1,
+      "hba": 5,
+      "rot_bonds": 15,
+      "rings": 1,
+      "scaffold": "O=c1cc[nH]c(=O)[nH]1"
+    }
+  ],
+  "mw_thresholds": {
+    "500": {
+      "n_compounds": 14,
+      "n_records": 89,
+      "excluded_compounds": [
+        "BAY 87-2243",
+        "amphotericin B",
+        "calcein",
+        "doxorubicin",
+        "paclitaxel",
+        "sulforhodamine B",
+        "temoporfin",
+        "vincristine sulfate"
+      ]
+    },
+    "700": {
+      "n_compounds": 19,
+      "n_records": 229,
+      "excluded_compounds": [
+        "amphotericin B",
+        "paclitaxel",
+        "vincristine sulfate"
+      ]
+    },
+    "800": {
+      "n_compounds": 19,
+      "n_records": 229,
+      "excluded_compounds": [
+        "amphotericin B",
+        "paclitaxel",
+        "vincristine sulfate"
+      ]
+    },
+    "900": {
+      "n_compounds": 20,
+      "n_records": 230,
+      "excluded_compounds": [
+        "amphotericin B",
+        "vincristine sulfate"
+      ]
+    },
+    "1000": {
+      "n_compounds": 22,
+      "n_records": 272,
+      "excluded_compounds": []
+    },
+    "1200": {
+      "n_compounds": 22,
+      "n_records": 272,
+      "excluded_compounds": []
+    },
+    "1500": {
+      "n_compounds": 22,
+      "n_records": 272,
+      "excluded_compounds": []
+    }
+  },
+  "targets_small_molecule": {
+    "particle_size_nm": {
+      "n_nonnull": 216,
+      "pct_nonnull": 79.4,
+      "n_compounds_with_value": 19,
+      "n_papers_with_value": 31,
+      "min": 30.0,
+      "p25": 94.925,
+      "median": 127.2,
+      "p75": 168.3,
+      "max": 25500.0
+    },
+    "pdi": {
+      "n_nonnull": 150,
+      "pct_nonnull": 55.1,
+      "n_compounds_with_value": 12,
+      "n_papers_with_value": 22,
+      "min": 0.022,
+      "p25": 0.1,
+      "median": 0.135,
+      "p75": 0.167,
+      "max": 0.31
+    },
+    "zeta_potential_mv": {
+      "n_nonnull": 124,
+      "pct_nonnull": 45.6,
+      "n_compounds_with_value": 13,
+      "n_papers_with_value": 22,
+      "min": -53.8,
+      "p25": -15.4,
+      "median": -12.4,
+      "p75": -2.7,
+      "max": 35.32
+    },
+    "encapsulation_efficiency_pct": {
+      "n_nonnull": 0,
+      "pct_nonnull": 0.0,
+      "n_compounds_with_value": 0,
+      "n_papers_with_value": 0
+    },
+    "ionizable_lipid_pct": {
+      "n_nonnull": 0,
+      "pct_nonnull": 0.0,
+      "n_compounds_with_value": 0,
+      "n_papers_with_value": 0
+    },
+    "helper_lipid_pct": {
+      "n_nonnull": 270,
+      "pct_nonnull": 99.3,
+      "n_compounds_with_value": 22,
+      "n_papers_with_value": 33,
+      "min": 30.1,
+      "p25": 56.3,
+      "median": 73.7,
+      "p75": 96.0,
+      "max": 100.0
+    },
+    "sterol_lipid_pct": {
+      "n_nonnull": 178,
+      "pct_nonnull": 65.4,
+      "n_compounds_with_value": 17,
+      "n_papers_with_value": 27,
+      "min": 9.524,
+      "p25": 26.543,
+      "median": 38.0,
+      "p75": 39.0,
+      "max": 61.5
+    },
+    "peg_lipid_pct": {
+      "n_nonnull": 126,
+      "pct_nonnull": 46.3,
+      "n_compounds_with_value": 11,
+      "n_papers_with_value": 21,
+      "min": 1.0,
+      "p25": 4.0,
+      "median": 5.0,
+      "p75": 5.0,
+      "max": 10.0
+    }
+  },
+  "full_composition": {
+    "n_records": 90,
+    "n_compounds": 9,
+    "n_papers": 18,
+    "by_compound": {
+      "doxorubicin": 77,
+      "calcein": 3,
+      "fraxetin": 3,
+      "vincristine sulfate": 2,
+      "methotrexate": 1,
+      "amoxicillin": 1,
+      "paclitaxel": 1,
+      "gemcitabine": 1,
+      "5-Fluorouracil carbonate": 1
+    },
+    "sum_min": 100.0,
+    "sum_max": 100.0
+  },
+  "composition_presence_patterns": {
+    "111": 90,
+    "110": 88,
+    "100": 56,
+    "101": 36,
+    "000": 2
+  },
+  "dedup": {
+    "n_records": 272,
+    "n_unique_compound_plus_composition": 82,
+    "n_unique_plus_paper": 91,
+    "n_unique_plus_paper_and_conditions": 161,
+    "n_papers": 34
+  },
+  "process_features_small_molecule": {
+    "prep_method_std": {
+      "n_nonnull": 218,
+      "n_unique": 16,
+      "top": {
+        "Thin lipid film hydration and extrusion": 86,
+        "Thin lipid film hydration": 40,
+        "High pressure injection and TFF": 17,
+        "Thin lipid film hydration and sonication": 12,
+        "microfluidics": 10
+      }
+    },
+    "device_or_chip_std": {
+      "n_nonnull": 0,
+      "n_unique": 0,
+      "top": {}
+    },
+    "flow_ratio_imbalance": {
+      "n_nonnull": 0,
+      "n_unique": 0,
+      "top": {}
+    },
+    "total_flow_rate_ml_min_std": {
+      "n_nonnull": 0,
+      "n_unique": 0,
+      "top": {}
+    },
+    "process_temp_c_std": {
+      "n_nonnull": 158,
+      "n_unique": 12,
+      "top": {
+        "60.0": 84,
+        "37.0": 24,
+        "38.0": 12,
+        "25.0": 12,
+        "75.0": 7
+      }
+    },
+    "measurement_instrument_std": {
+      "n_nonnull": 251,
+      "n_unique": 11,
+      "top": {
+        "DLS (Nano-ZS)": 161,
+        "DLS (Submicro Particle Sizer)": 27,
+        "Laser diffraction": 22,
+        "DLS (3000HSa)": 20,
+        "DLS (Zetasizer pro)": 5
+      }
+    },
+    "structure_type": {
+      "n_nonnull": 272,
+      "n_unique": 6,
+      "top": {
+        "LUV": 109,
+        "SUV": 94,
+        "MLV": 47,
+        "None": 19,
+        "LMVV": 2,
+        "nan": 1
+      }
+    },
+    "media_ph": {
+      "n_nonnull": 272,
+      "n_unique": 10,
+      "top": {
+        "7.4": 156,
+        "nan": 53,
+        "6.0": 28,
+        "7.0": 19,
+        "6.6": 10,
+        "5.5": 2
+      }
+    },
+    "release_method": {
+      "n_nonnull": 272,
+      "n_unique": 8,
+      "top": {
+        "Dialysis": 112,
+        "self-quenching": 52,
+        "ModifiedUSP-4": 47,
+        "Dowex 50 cation exchange": 18,
+        "Sample and Separate": 16,
+        "VDC": 16
+      }
+    }
+  },
+  "leakage_check_structure_type_vs_size": {
+    "LMVV": {
+      "count": 2.0,
+      "median": 10550.0,
+      "min": 10550.0,
+      "max": 10550.0
+    },
+    "LUV": {
+      "count": 105.0,
+      "median": 141.2,
+      "min": 101.1,
+      "max": 266.0
+    },
+    "MLV": {
+      "count": 35.0,
+      "median": 25500.0,
+      "min": 100.0,
+      "max": 25500.0
+    },
+    "None": {
+      "count": 4.0,
+      "median": 166.65,
+      "min": 166.65,
+      "max": 187.0
+    },
+    "SUV": {
+      "count": 70.0,
+      "median": 87.0,
+      "min": 30.0,
+      "max": 120.0
+    }
+  },
+  "size_gt_1000nm_rows": 29,
+  "size_excl_multilamellar": {
+    "n": 179,
+    "median": 104.1,
+    "max": 266.0
+  },
+  "lipid_fields_small_molecule": {
+    "helper_lipid_name": {
+      "n_nonnull": 272,
+      "n_unique": 30,
+      "n_multi_component": 141,
+      "top": {
+        "HSPC": 74,
+        "HSPC+DSPG-Na+a-tocopherol": 38,
+        "DPPC+MSPC": 26,
+        "DEPC+DPPG+Tricaprylin": 20,
+        "asolectin": 16
+      }
+    },
+    "sterol_lipid_name": {
+      "n_nonnull": 180,
+      "n_unique": 1,
+      "n_multi_component": 0,
+      "top": {
+        "Cholesterol": 180
+      }
+    },
+    "peg_lipid_name": {
+      "n_nonnull": 126,
+      "n_unique": 4,
+      "n_multi_component": 0,
+      "top": {
+        "mPEG2000-DSPE-2k": 114,
+        "mPEG2000-DSPE-LMWP": 6,
+        "mPEG-DSPE-5K": 3,
+        "mPEG-DSPE-10K": 3
+      }
+    },
+    "ionizable_lipid_name": {
+      "n_nonnull": 0,
+      "n_unique": 0,
+      "n_multi_component": 0,
+      "top": {}
+    },
+    "helper_lipid_smiles": {
+      "n_nonnull": 98,
+      "pct": 36.0
+    },
+    "sterol_lipid_smiles": {
+      "n_nonnull": 180,
+      "pct": 66.2
+    },
+    "peg_lipid_smiles": {
+      "n_nonnull": 0,
+      "pct": 0.0
+    }
+  },
+  "release_curve_files_referenced": 272,
+  "release_curve_files_present_in_repo": 0,
+  "versions": {
+    "pandas": "3.0.5",
+    "numpy": "2.5.3",
+    "rdkit": "2026.09.1",
+    "python": "3.13.16"
+  }
+}
