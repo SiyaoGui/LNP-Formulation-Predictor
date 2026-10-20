@@ -1,0 +1,20 @@
+formulation,cargo,cargo_nt,property,value,sd,value_type,si_table_referenced,quote,ambiguity_flag,source_dataset,paper_doi,paper_year
+C12-200_20,fluc mRNA,1922,size_nm,120.8,10.4,point,S1,"C12-200_20/MMG (100%) LNPs loaded with fluc mRNA (1922 nt) were slightly larger (138.1 +/- 5.5 nm) than C12-200_20 LNPs (120.8 +/- 10.4 nm), P = 0.0004",,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200_20/MMG (100%),fluc mRNA,1922,size_nm,138.1,5.5,point,S1,same sentence as above,,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200_20,spike mRNA,4036,size_nm,125.0,1.5,point,S2,"the C12-200_20/MMG LNP size (115.0 +/- 11.0 nm) was not significantly different from the C12-200_20 LNP size (125.0 +/- 1.5 nm), P = 0.208",,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200_20/MMG,spike mRNA,4036,size_nm,115.0,11.0,point,S2,same sentence as above,paper writes 'C12-200_20/MMG' here without a percentage,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200/MMG (100%),spike mRNA,4036,size_nm,125.8,10.2,point,"S2, S4","comparing the same C12-200/MMG (100%) composition, the one loaded with spike mRNA displayed a size of 125.8 +/- 10.2 nm",conflicts with the 115.0 +/- 11.0 nm value above; the two sentences may refer to different weight-ratio variants,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200/MMG (100%),egfp mRNA,997,size_nm,141.5,14.3,point,S7,the one loaded with egfp mRNA (997 nt) displayed a size of 141.5 +/- 14.3 nm. No significant difference (P = 0.1460),,lokras2025_afm,10.1002/adfm.202505627,2025
+binary cholesterol + MMG-1 mixtures (25/50/75%),fluc mRNA,1922,size_nm_range_low,180,,range,S1,"The size of LNPs containing binary mixtures of cholesterol and MMG-1 were larger than seen for C12-200_20 and C12-200_20/MMG (100%) LNPs, and ranged from approx 180 to 215 nm",,lokras2025_afm,10.1002/adfm.202505627,2025
+binary cholesterol + MMG-1 mixtures (25/50/75%),fluc mRNA,1922,size_nm_range_high,215,,range,S1,same sentence as above,,lokras2025_afm,10.1002/adfm.202505627,2025
+all fluc-loaded C12-200 and C12-200_20/MMG,fluc mRNA,1922,size_nm_range_low,110,,range,S1,The average hydrodynamic diameters of fluc mRNA-loaded C12-200 and C12-200_20/MMG LNPs were within the range of 110-215 nm,,lokras2025_afm,10.1002/adfm.202505627,2025
+all fluc-loaded C12-200 and C12-200_20/MMG,fluc mRNA,1922,size_nm_range_high,215,,range,S1,same sentence as above,,lokras2025_afm,10.1002/adfm.202505627,2025
+all compositions,,,pdi_upper_bound,0.15,,bound,S1,"In general, the LNPs were relatively monodisperse with polydispersity index (PDI) values below 0.15",,lokras2025_afm,10.1002/adfm.202505627,2025
+all compositions,,,ee_pct_lower_bound,94,,bound,S1,The mRNA encapsulation efficiency for all LNP compositions was higher than 94%,,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200/Chol(0%)/MMG(0%),,,size_nm,330,,approximate,S1,"Formulations without MMG-1 and cholesterol were not colloidally stable in terms of size and PDI, as evidenced by an increase in size to approx 330 nm with a PDI of 0.21",,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200/Chol(0%)/MMG(0%),,,pdi,0.21,,point,S1,same sentence as above,,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200_20,fluc mRNA,1922,apparent_pka,7.22,,point,S2,"C12-200_20 mRNA-LNPs displayed an apparent pKa of 7.22, while the pKa of C12-200_20/MMG (100%) mRNA-LNPs was 7.14",,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200_20/MMG (100%),fluc mRNA,1922,apparent_pka,7.14,,point,S2,same sentence as above,,lokras2025_afm,10.1002/adfm.202505627,2025
+C12-200_10,fluc mRNA,1922,apparent_pka,6.96,,point,S2,a similar mRNA-LNP formulation based on C12-200_10 displayed a slightly lower pKa of 6.96,,lokras2025_afm,10.1002/adfm.202505627,2025
+SM-102,spike mRNA,4036,apparent_pka,6.67,,point,S2,"spike mRNA-loaded SM-102 and SM-102/MMG LNPs displayed apparent pKa values of 6.67 and 6.67, respectively",,lokras2025_afm,10.1002/adfm.202505627,2025
+SM-102/MMG (100%),spike mRNA,4036,apparent_pka,6.67,,point,S2,same sentence as above,,lokras2025_afm,10.1002/adfm.202505627,2025
