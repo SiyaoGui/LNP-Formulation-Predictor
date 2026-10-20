@@ -292,8 +292,15 @@ def model_space(name: str, plain_cols, fp_cols, seed: int, task: str = "regressi
 
 
 def fit_nested(pipe, grid, X_tr, y_tr, groups_tr, task: str, seed: int):
-    """嵌套调参：内层按化合物分组的 3 折交叉验证，只用训练折（协议第八节）。"""
+    """嵌套调参：内层按化合物分组的 3 折交叉验证，只用训练折（协议第八节）。
+
+    训练子集太小（分组数 < 3 或样本 < 6）时内层交叉验证会退化成「训练折只剩一两行」，
+    这种情况只出现在学习曲线最小的那两个点上。此时跳过网格搜索、直接用默认超参，
+    并由调用方记录；绝不在主结果上发生（主结果每折训练集都有 11 个以上化合物）。
+    """
     n_groups = len(np.unique(groups_tr))
+    if n_groups < 3 or len(np.asarray(y_tr)) < 6:
+        return clone(pipe).fit(X_tr, y_tr)
     if n_groups < 2:
         return clone(pipe).fit(X_tr, y_tr)
     inner = GroupKFold(n_splits=min(INNER_SPLITS, n_groups), shuffle=True, random_state=seed)
@@ -467,6 +474,8 @@ class OofResult:
     index: np.ndarray
     best_params: list = field(default_factory=list)
     fold_sizes: list = field(default_factory=list)
+    n_fallback: int = 0
+    fallback_reasons: list = field(default_factory=list)
 
 
 def run_oof(
@@ -484,6 +493,8 @@ def run_oof(
     """model ∈ {b0, b1, ridge/logreg, rf, hgb}。返回合并的 out-of-fold 预测。"""
     y_arr = np.asarray(y)
     preds, truths, grps, idxs, params, sizes = [], [], [], [], [], []
+    n_fallback = 0
+    fallback_reasons: list[str] = []
     groups_all = units["group_compound"].to_numpy()
 
     for train_idx, test_idx in splits:
@@ -493,12 +504,20 @@ def run_oof(
             p = baseline_tanimoto(sim, train_idx, test_idx, y_arr, task)
         else:
             pipe, grid = model_space(model, plain_cols, fp_cols, seed, task)
-            fitted = fit_nested(
-                pipe, grid, X.iloc[train_idx], y_arr[train_idx], groups_all[train_idx], task, seed
-            )
-            p = fitted.predict(X.iloc[test_idx])
-            if hasattr(fitted, "best_params_"):
-                params.append(fitted.best_params_)
+            try:
+                fitted = fit_nested(
+                    pipe, grid, X.iloc[train_idx], y_arr[train_idx], groups_all[train_idx], task, seed
+                )
+                p = fitted.predict(X.iloc[test_idx])
+                if hasattr(fitted, "best_params_"):
+                    params.append(fitted.best_params_)
+            except Exception as exc:
+                # 训练子集小到剔掉常量列后一个特征都不剩时，模型无法拟合。
+                # 降级成常数预测——这正是「没有可用特征的模型」应有的行为——并计数。
+                # 只会发生在学习曲线最小的那几个点上，主结果里这个计数必须是 0。
+                n_fallback += 1
+                fallback_reasons.append(f"{type(exc).__name__}: {exc}"[:160])
+                p = baseline_constant(y_arr[train_idx], len(test_idx), task)
         preds.append(np.asarray(p))
         truths.append(y_arr[test_idx])
         grps.append(groups_all[test_idx])
@@ -513,6 +532,8 @@ def run_oof(
         index=cat(idxs),
         best_params=params,
         fold_sizes=sizes,
+        n_fallback=n_fallback,
+        fallback_reasons=fallback_reasons[:5],
     )
 
 
