@@ -1,0 +1,66 @@
+# 大分子子集配置（副产品：验证流程换子集只需改 subset.name 一行）
+# 换成大分子子集只需要改 subset.name（任务第 9 节要求），流程代码不动。
+# 本文件里的每一项都对应 docs/evaluation-protocol.md 里写死的设定。
+
+data:
+  source_csv: merged_formulations_v2.csv
+  out_dir: data/processed_large
+
+subset:
+  name: large_molecule          # small_molecule | large_molecule | all
+  max_payload_mw: 900.0         # 用户 2026-10-19 确认；不设限的敏感性检验用 null
+  keep_probe_molecules: true    # 用户 2026-10-19 确认；is_probe 只做误差分析，不作特征
+
+features:
+  payload_fp:
+    radius: 2
+    n_bits: 2048
+  lipid_fp:
+    radius: 2
+    n_bits: 512                 # 沿用 M3 的分辨率；M4 测过 64 位与 512 位差异很小
+  prep_method_min_count: 5      # 低于此频次的制备方法归入 other，避免成为论文标识
+
+# 每个任务用哪些特征分块。T2/T3 的目标就是组成，所以不能用 F-comp。
+tasks:
+  t1:
+    target: log10(particle_size_nm)
+    blocks: [m_desc, m_fp, f_comp, f_lipid, p]
+  t2:
+    target: (helper_pct, sterol_pct, peg_pct) 经 ILR 变换
+    blocks: [m_desc, m_fp]
+    blocks_with_process: [m_desc, m_fp, p]
+  t3:
+    target: 脂质类别组合（4 类）
+    blocks: [m_desc, m_fp]
+    blocks_with_process: [m_desc, m_fp, p]
+
+# 协议第 7.2 节的禁止字段清单。build_features.py 会断言产出的特征矩阵里
+# 一个都不包含，断言失败就直接报错退出。
+forbidden_feature_substrings:
+  - structure_type
+  - process_notes
+  - release_curve_file
+  - source_row_id
+  - formulation_id
+  - paper_doi
+  - payload_type
+  - is_probe
+  - measurement_instrument
+  - pdi
+  - zeta_potential
+  - encapsulation_efficiency
+  - formation_ok
+  - source_dataset
+  - was_ambiguous
+  - was_renormalized
+  - was_harmonized
+  - was_unit_corrected
+  - particle_size_nm
+
+# 敏感性检验（协议里事先声明要跑的，不是事后加的）
+sensitivity:
+  include_measurement_instrument: true   # 单独跑一次「加入仪器型号」的对比
+  no_mw_limit: true                      # 单独跑一次不设 MW 上限
+  per_row_instead_of_dedup: true         # 单独跑一次按行而非按唯一配方
+
+seeds: [0, 1, 2, 3, 4]

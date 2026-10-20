@@ -1,0 +1,189 @@
+{
+  "config": "configs/largemol_baseline.yaml",
+  "config_resolved": {
+    "subset": {
+      "name": "large_molecule",
+      "max_payload_mw": 900.0,
+      "keep_probe_molecules": true
+    },
+    "features": {
+      "payload_fp": {
+        "radius": 2,
+        "n_bits": 2048
+      },
+      "lipid_fp": {
+        "radius": 2,
+        "n_bits": 512
+      },
+      "prep_method_min_count": 5
+    }
+  },
+  "dedup": true,
+  "source_csv": "merged_formulations_v2.csv",
+  "n_rows_source": 1934,
+  "n_rows_subset": 1033,
+  "versions": {
+    "python": "3.13.16",
+    "pandas": "3.0.5",
+    "numpy": "2.5.3",
+    "rdkit": "2026.09.1",
+    "scikit_learn": "1.9.1"
+  },
+  "tasks": {
+    "t1": {
+      "n_units": 322,
+      "n_compounds": 5,
+      "n_papers": 55,
+      "n_features": 3135,
+      "blocks": {
+        "m_desc": 12,
+        "m_fp": 2048,
+        "f_comp": 10,
+        "f_lipid": 1055,
+        "p": 10
+      },
+      "block_columns": {
+        "m_desc": [
+          "payload_mol_wt",
+          "payload_logp",
+          "payload_tpsa",
+          "payload_hbd",
+          "payload_hba",
+          "payload_rot_bonds",
+          "payload_ring_count",
+          "payload_aromatic_rings",
+          "payload_fraction_csp3",
+          "payload_heavy_atoms",
+          "payload_mol_mr",
+          "payload_balaban_j"
+        ],
+        "m_fp": [
+          "payload_fp_0",
+          "...",
+          "payload_fp_2047"
+        ],
+        "f_comp": [
+          "has_helper_lipid",
+          "helper_lipid_pct",
+          "helper_lipid_pct_is_missing",
+          "has_sterol_lipid",
+          "sterol_lipid_pct",
+          "sterol_lipid_pct_is_missing",
+          "has_peg_lipid",
+          "peg_lipid_pct",
+          "peg_lipid_pct_is_missing",
+          "n_lipid_classes"
+        ],
+        "f_lipid": [
+          "helper_mol_wt",
+          "...",
+          "peg_mw_da"
+        ],
+        "p": [
+          "process_temp_c",
+          "process_temp_c_is_missing",
+          "prep_Ethanol dilution",
+          "prep_Microfluidic",
+          "prep_Microfluidic mixing",
+          "prep_Pipette mixing",
+          "prep_Rapid hand mixing",
+          "prep_T-junction microfluidic mixing",
+          "prep_T-junction mixer",
+          "prep_other"
+        ]
+      },
+      "block_columns_non_fingerprint": {
+        "m_desc": [
+          "payload_mol_wt",
+          "payload_logp",
+          "payload_tpsa",
+          "payload_hbd",
+          "payload_hba",
+          "payload_rot_bonds",
+          "payload_ring_count",
+          "payload_aromatic_rings",
+          "payload_fraction_csp3",
+          "payload_heavy_atoms",
+          "payload_mol_mr",
+          "payload_balaban_j"
+        ],
+        "m_fp": [],
+        "f_comp": [
+          "has_helper_lipid",
+          "helper_lipid_pct",
+          "helper_lipid_pct_is_missing",
+          "has_sterol_lipid",
+          "sterol_lipid_pct",
+          "sterol_lipid_pct_is_missing",
+          "has_peg_lipid",
+          "peg_lipid_pct",
+          "peg_lipid_pct_is_missing",
+          "n_lipid_classes"
+        ],
+        "f_lipid": [
+          "helper_mol_wt",
+          "helper_logp",
+          "helper_tpsa",
+          "helper_hbd",
+          "helper_hba",
+          "helper_rot_bonds",
+          "helper_ring_count",
+          "helper_aromatic_rings",
+          "helper_fraction_csp3",
+          "helper_heavy_atoms",
+          "helper_mol_mr",
+          "helper_balaban_j",
+          "sterol_mol_wt",
+          "sterol_logp",
+          "sterol_tpsa",
+          "sterol_hbd",
+          "sterol_hba",
+          "sterol_rot_bonds",
+          "sterol_ring_count",
+          "sterol_aromatic_rings",
+          "sterol_fraction_csp3",
+          "sterol_heavy_atoms",
+          "sterol_mol_mr",
+          "sterol_balaban_j",
+          "n_helper_components",
+          "helper_is_natural_mixture",
+          "n_sterol_components",
+          "sterol_is_natural_mixture",
+          "n_peg_components",
+          "peg_is_natural_mixture",
+          "peg_mw_da"
+        ],
+        "p": [
+          "process_temp_c",
+          "process_temp_c_is_missing",
+          "prep_Ethanol dilution",
+          "prep_Microfluidic",
+          "prep_Microfluidic mixing",
+          "prep_Pipette mixing",
+          "prep_Rapid hand mixing",
+          "prep_T-junction microfluidic mixing",
+          "prep_T-junction mixer",
+          "prep_other"
+        ]
+      },
+      "overall_nan_share": 0.6672,
+      "nan_share_by_block": {
+        "m_desc": 1.0,
+        "m_fp": 1.0,
+        "f_comp": 0.0047,
+        "f_lipid": 0.0295,
+        "p": 0.0606
+      },
+      "forbidden_check": "passed",
+      "target_summary": {
+        "n": 322,
+        "log10_min": 1.273,
+        "log10_median": 1.9756,
+        "log10_max": 2.723,
+        "log10_sd": 0.2062,
+        "nm_min": 18.75,
+        "nm_max": 528.4
+      }
+    }
+  }
+}
