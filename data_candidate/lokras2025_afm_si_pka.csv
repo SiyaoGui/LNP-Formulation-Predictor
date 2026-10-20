@@ -1,0 +1,5 @@
+formulation_code,cargo,apparent_pka,si_source,maintext_value,conflict,source_dataset,paper_doi,paper_year
+C12-200_20,fluc,7.22,Figure S1 caption,7.22,,lokras2025_afm_si,10.1002/adfm.202505627,2025
+C12-200_20/MMG (100%),fluc,7.14,Figure S1 caption,7.14,,lokras2025_afm_si,10.1002/adfm.202505627,2025
+SM-102,spike,6.69,Figure S1 caption,6.67,"SI caption says 6.69, main text says 6.67 for the same formulation",lokras2025_afm_si,10.1002/adfm.202505627,2025
+SM-102/MMG (100%),spike,6.67,Figure S1 caption,6.67,,lokras2025_afm_si,10.1002/adfm.202505627,2025
