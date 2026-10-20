@@ -158,6 +158,9 @@ def run_t1(proc: Path, out: Path, results: dict, quick: bool, only_schemes=None)
                 },
                 "n_units": int(len(units)),
                 "fold_sizes_seed0": store[(scheme, label, seeds[0])].fold_sizes,
+                "n_folds_fallback_to_constant": {
+                    f"seed{s}": store[(scheme, label, s)].n_fallback for s in seeds
+                },
                 "best_params_seed0": [
                     {k: (v if not isinstance(v, (np.integer, np.floating)) else float(v)) for k, v in p.items()}
                     for p in store[(scheme, label, seeds[0])].best_params
@@ -219,6 +222,7 @@ def run_learning_curve(proc: Path, results: dict, quick: bool) -> pd.DataFrame:
             splits = E.make_splits(units, "S1", seed)
             for model in ("b0", "hgb"):
                 preds, truths, grps = [], [], []
+                n_fallback = 0
                 for tr, te in splits:
                     tr_groups = np.unique(groups[tr])
                     k = max(2, int(round(len(tr_groups) * frac)))
@@ -230,10 +234,15 @@ def run_learning_curve(proc: Path, results: dict, quick: bool) -> pd.DataFrame:
                         p = E.baseline_constant(y[tr_sub], len(te), "regression")
                     else:
                         pipe, grid = E.model_space("hgb", fs["full"]["plain"], fs["full"]["fp"], seed)
-                        fitted = E.fit_nested(
-                            pipe, grid, X.iloc[tr_sub], y[tr_sub], groups[tr_sub], "regression", seed
-                        )
-                        p = fitted.predict(X.iloc[te])
+                        try:
+                            fitted = E.fit_nested(
+                                pipe, grid, X.iloc[tr_sub], y[tr_sub], groups[tr_sub], "regression", seed
+                            )
+                            p = fitted.predict(X.iloc[te])
+                        except Exception:
+                            # 训练子集太小, 剔掉常量列后无可用特征 -> 降级成常数预测并计数
+                            n_fallback += 1
+                            p = E.baseline_constant(y[tr_sub], len(te), "regression")
                     preds.append(p)
                     truths.append(y[te])
                     grps.append(groups[te])
@@ -251,6 +260,7 @@ def run_learning_curve(proc: Path, results: dict, quick: bool) -> pd.DataFrame:
                         "mae_log": round(m["mae_log"], 4),
                         "r2_pooled": round(m["r2_pooled"], 4),
                         "n_test": len(yt),
+                        "n_folds_fallback_to_constant": n_fallback,
                     }
                 )
                 print(f"  LC frac={frac} seed{seed} {model:4s} MAE_log={m['mae_log']:.4f}", flush=True)
