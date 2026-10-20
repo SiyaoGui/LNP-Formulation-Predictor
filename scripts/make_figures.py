@@ -197,8 +197,16 @@ def fig_model_comparison(d: Path, figs: Path):
     save(fig, figs / "fig2_model_comparison.png")
 
 
+def _load_oof(d: Path, task: str) -> pd.DataFrame:
+    """分段跑会产生多个带划分后缀的 oof 文件，这里合并。"""
+    files = sorted(d.glob(f"oof_predictions_{task}*.csv"))
+    if not files:
+        return pd.DataFrame()
+    return pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
+
+
 def _best_model_oof(d: Path) -> tuple[pd.DataFrame, str]:
-    oof = pd.read_csv(d / "oof_predictions_t1.csv")
+    oof = _load_oof(d, "t1")
     m = json.loads((d / "metrics.json").read_text(encoding="utf-8"))
     s1 = m["t1"]["S1"]
     cand = {
@@ -211,7 +219,7 @@ def _best_model_oof(d: Path) -> tuple[pd.DataFrame, str]:
 
 
 def fig_pred_vs_obs(d: Path, figs: Path):
-    if not (d / "oof_predictions_t1.csv").exists():
+    if not list(d.glob("oof_predictions_t1*.csv")):
         return
     oof, best = _best_model_oof(d)
     g = oof.groupby("unit_index").agg(
@@ -246,7 +254,7 @@ def fig_pred_vs_obs(d: Path, figs: Path):
 
 
 def fig_error_by_compound(d: Path, figs: Path):
-    if not (d / "oof_predictions_t1.csv").exists():
+    if not list(d.glob("oof_predictions_t1*.csv")):
         return
     oof, best = _best_model_oof(d)
     oof["abs_err"] = (oof.y_true_log10 - oof.y_pred_log10).abs()
@@ -279,10 +287,9 @@ def fig_error_by_compound(d: Path, figs: Path):
 
 
 def fig_t3_confusion(d: Path, figs: Path):
-    f = d / "oof_predictions_t3.csv"
-    if not f.exists():
+    oof = _load_oof(d, "t3")
+    if oof.empty:
         return
-    oof = pd.read_csv(f)
     m = json.loads((d / "metrics.json").read_text(encoding="utf-8"))
     s1 = m.get("t3", {}).get("S1", {})
     cand = {
