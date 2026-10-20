@@ -96,11 +96,31 @@ def skill_score(mae_model: float, mae_base: float) -> float:
 
 
 def best_model_row(t1_scheme: dict) -> tuple[str, float] | tuple[None, None]:
-    cand = {
-        k: v["summary"]["mae_log"]["mean"]
-        for k, v in t1_scheme.items()
-        if k != "_vs_baselines" and k not in ("b0", "b1") and v.get("summary", {}).get("mae_log")
-    }
+    """挑最好的非基线模型，跳过退化成常数预测的那些。
+
+    大分子子集里 payload 没有结构，分子特征整块为空，B3（只有分子特征）会因为
+    无可用特征而降级成常数预测（`n_folds_fallback_to_constant` > 0），数值上正好
+    等于 B0。不排除的话它会被当成「最好的模型」，给出一个假的 skill score = 0。
+    """
+    b0 = (t1_scheme.get("b0", {}).get("summary", {}).get("mae_log") or {}).get("per_seed")
+    cand = {}
+    for k, v in t1_scheme.items():
+        if k == "_vs_baselines" or k in ("b0", "b1"):
+            continue
+        s = v.get("summary", {}).get("mae_log")
+        if not s:
+            continue
+        # 退化方式一：无可用特征, 拟合失败后降级成常数预测
+        if sum((v.get("n_folds_fallback_to_constant") or {}).values()) > 0:
+            continue
+        # 退化方式二：没有报错, 但每个种子的指标都和常数基线一模一样。
+        # 大分子侧的 Ridge 会这样：分子特征整块为空时, 填充器只剩下常量的缺失
+        # 指示列, Ridge 在常量特征上输出的就是训练集均值。
+        if b0 and s.get("per_seed") and len(b0) == len(s["per_seed"]) and all(
+            abs(a - c) < 1e-9 for a, c in zip(b0, s["per_seed"])
+        ):
+            continue
+        cand[k] = s["mean"]
     if not cand:
         return None, None
     k = min(cand, key=cand.get)
@@ -117,8 +137,20 @@ def compare(small: dict, large: dict) -> dict:
         model, mae = best_model_row(sch)
         b0 = sch.get("b0", {}).get("summary", {}).get("mae_log", {}).get("mean")
         b1 = sch.get("b1", {}).get("summary", {}).get("mae_log", {}).get("mean")
+        degenerate = [
+            k for k, v in sch.items()
+            if k not in ("_vs_baselines", "b0", "b1") and k not in (model,) and (
+                sum((v.get("n_folds_fallback_to_constant") or {}).values()) > 0
+                or (
+                    (sch.get("b0", {}).get("summary", {}).get("mae_log") or {}).get("per_seed")
+                    and (v.get("summary", {}).get("mae_log") or {}).get("per_seed")
+                    == (sch.get("b0", {}).get("summary", {}).get("mae_log") or {}).get("per_seed")
+                )
+            )
+        ]
         out["by_subset"][name] = {
             "best_model": model,
+            "models_excluded_as_degenerate": degenerate,
             "mae_log": mae,
             "mae_log_b0": b0,
             "mae_log_b1": b1,

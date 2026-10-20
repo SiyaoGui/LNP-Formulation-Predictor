@@ -1,0 +1,29 @@
+{
+  "primary_scheme": "S3",
+  "confound_note": "小分子子集 = PMC_IVR = 经典脂质体 = 无可离子化脂质；大分子子集 = LNP_Atlas = 现代 LNP = 有可离子化脂质。子集标签、数据来源、脂质体类型三者完全共线，所以两边的差异只能表述为「这两个数据集之间的差异」，不能归因为「小分子 vs 大分子」。",
+  "by_subset": {
+    "small_molecule": {
+      "best_model": "rf@full",
+      "models_excluded_as_degenerate": [],
+      "mae_log": 0.2262,
+      "mae_log_b0": 0.243,
+      "mae_log_b1": 0.2734,
+      "skill_vs_b0": 0.0691,
+      "skill_vs_b1": 0.1726,
+      "n_units": 73
+    },
+    "large_molecule": {
+      "best_model": "ridge@full",
+      "models_excluded_as_degenerate": [
+        "ridge@b3_molecule_only",
+        "hgb@b3_molecule_only"
+      ],
+      "mae_log": 0.168,
+      "mae_log_b0": 0.1584,
+      "mae_log_b1": 0.1557,
+      "skill_vs_b0": -0.0606,
+      "skill_vs_b1": -0.079,
+      "n_units": 322
+    }
+  }
+}
