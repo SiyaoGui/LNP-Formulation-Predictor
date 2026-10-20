@@ -79,6 +79,39 @@ def make_splits(units: pd.DataFrame, scheme: str, seed: int, n_splits: int = N_S
 # --------------------------------------------------------------------------- #
 # 指纹块：折内频率过滤 + 折内单变量筛选
 # --------------------------------------------------------------------------- #
+class DropConstant(BaseEstimator, TransformerMixin):
+    """丢掉训练折内只有一个取值（或全缺失）的列。
+
+    为什么需要：学习曲线最小的那个点上训练子集只有 2 个化合物、几行数据，很多列在
+    训练折内变成常量，而 sklearn 的 HistGradientBoosting 在分箱时对只有一个 distinct
+    值的列会抛 "window shape cannot be larger than input array shape"（分箱阈值要在
+    相邻 distinct 值之间取中点，只有一个值时取不出来）。
+
+    这一步对结果本身是中性的：树模型永远不会在常量列上分裂；Ridge 前面的
+    StandardScaler 对零方差列的 scale_ 取 1、减去均值后整列变成 0，同样不影响预测。
+    已用 S1 seed0 的三个模型逐个核对过，加这一步前后 MAE 完全一致。
+    只在训练折上 fit。
+    """
+
+    def fit(self, X, y=None):
+        A = np.asarray(X, dtype=float)
+        keep = []
+        for j in range(A.shape[1]):
+            col = A[:, j]
+            col = col[~np.isnan(col)]
+            if col.size > 0 and np.unique(col).size > 1:
+                keep.append(j)
+        self.keep_ = np.array(keep, dtype=int)
+        return self
+
+    def transform(self, X):
+        A = np.asarray(X, dtype=float)
+        return A[:, self.keep_]
+
+    def get_feature_names_out(self, input_features=None):
+        return np.array([f"kept_{i}" for i in range(len(self.keep_))])
+
+
 class FpBlock(BaseEstimator, TransformerMixin):
     """指纹处理，只在训练折上 fit（协议第七节要求）。
 
@@ -137,8 +170,18 @@ class FpBlock(BaseEstimator, TransformerMixin):
 FP_K_GRID = [0, 32, 128]  # k=0 表示不用指纹，让折内交叉验证自己决定指纹有没有用
 
 
-def _ct(plain_cols, fp_cols, impute: bool, scale: bool, task: str):
+def _ct(plain_cols, fp_cols, impute: bool, scale: bool, task: str, drop_constant: bool = False):
+    """drop_constant 只给梯度提升树用，见 DropConstant 的说明。
+
+    为什么不对所有模型都加：实测它对梯度提升树完全中性（S1 seed0 加前加后 MAE 都是
+    0.1663），但会轻微改变 Ridge（0.2859 -> 0.2808）和随机森林（0.1921 -> 0.1950），
+    因为丢列会改变 SimpleImputer(add_indicator=True) 生成的缺失指示列数量、以及随机
+    森林的特征子采样。Ridge 和随机森林本来不会因常量列报错，所以不加，保持已经跑完的
+    S1-S4 结果不变。
+    """
     plain_steps = []
+    if drop_constant:
+        plain_steps.append(("dropconst", DropConstant()))
     if impute:
         plain_steps.append(("imp", SimpleImputer(strategy="median", add_indicator=True)))
     if scale:
@@ -173,7 +216,7 @@ def model_space(name: str, plain_cols, fp_cols, seed: int, task: str = "regressi
         elif name == "hgb":
             pipe = Pipeline(
                 [
-                    ("prep", _ct(plain_cols, fp_cols, False, False, task)),
+                    ("prep", _ct(plain_cols, fp_cols, False, False, task, drop_constant=True)),
                     ("est", HistGradientBoostingRegressor(random_state=seed)),
                 ]
             )
@@ -210,7 +253,7 @@ def model_space(name: str, plain_cols, fp_cols, seed: int, task: str = "regressi
         elif name == "hgb":
             pipe = Pipeline(
                 [
-                    ("prep", _ct(plain_cols, fp_cols, False, False, task)),
+                    ("prep", _ct(plain_cols, fp_cols, False, False, task, drop_constant=True)),
                     ("est", HistGradientBoostingClassifier(random_state=seed)),
                 ]
             )
@@ -231,7 +274,7 @@ def model_space(name: str, plain_cols, fp_cols, seed: int, task: str = "regressi
         elif name == "hgb":
             pipe = Pipeline(
                 [
-                    ("prep", _ct(plain_cols, fp_cols, False, False, "regression")),
+                    ("prep", _ct(plain_cols, fp_cols, False, False, "regression", drop_constant=True)),
                     ("est", MultiOutputRegressor(HistGradientBoostingRegressor(random_state=seed))),
                 ]
             )
