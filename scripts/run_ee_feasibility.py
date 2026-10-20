@@ -137,12 +137,72 @@ def paired(a: E.OofResult, b: E.OofResult, seed: int) -> dict:
     return ci
 
 
+def learning_curve(units, X, sets, sim, out: Path, results: dict, seeds) -> pd.DataFrame:
+    """按训练集里的唯一分子数切的学习曲线（G1 划分）。
+
+    说明：这一段是在 G1/G2/G3 跑完、看到结果之后才加的，协议里没有事先写。
+    它不改变任何判定标准（判定只看协议第九节的三档，已由 G1/G2 的结果决定），
+    只是为数据规格提供「需要多少个分子」的依据。这一点在报告里也写明。
+    """
+    groups = units["group_compound"].to_numpy()
+    y = units["target"].to_numpy(float)
+    rows = []
+    for frac in (0.2, 0.4, 0.6, 0.8, 1.0):
+        for seed in seeds:
+            rng = np.random.default_rng(2000 + seed)
+            splits = E.make_splits(units, "S1", seed)
+            for model in ("b0", "hgb"):
+                preds, truths = [], []
+                for tr, te in splits:
+                    gs = np.unique(groups[tr])
+                    k = max(2, int(round(len(gs) * frac)))
+                    keep = set(rng.choice(gs, size=min(k, len(gs)), replace=False))
+                    sub = np.array([i for i in tr if groups[i] in keep])
+                    if len(sub) < 5:
+                        continue
+                    if model == "b0":
+                        p = E.baseline_constant(y[sub], len(te), "regression")
+                    else:
+                        pipe, grid = E.model_space("hgb", sets["full"]["plain"], sets["full"]["fp"], seed)
+                        try:
+                            fitted = E.fit_nested(pipe, grid, X.iloc[sub], y[sub], groups[sub], "regression", seed)
+                            p = fitted.predict(X.iloc[te])
+                        except Exception:
+                            p = E.baseline_constant(y[sub], len(te), "regression")
+                    preds.append(p)
+                    truths.append(y[te])
+                if not preds:
+                    continue
+                yt, yp = np.concatenate(truths), np.concatenate(preds)
+                m = pct_metrics(yt, yp)
+                rows.append({
+                    "fraction": frac,
+                    "approx_train_molecules": int(round(len(np.unique(groups)) * 0.8 * frac)),
+                    "seed": seed, "model": model,
+                    "mae_pp": round(m["mae_pp"], 3), "r2_pooled": round(m["r2_pooled"], 4),
+                })
+                print(f"  LC frac={frac} seed{seed} {model:4s} MAE={m['mae_pp']:.2f}pp", flush=True)
+    lc = pd.DataFrame(rows)
+    if not lc.empty:
+        lc.to_csv(out / "learning_curve.csv", index=False)
+        results["learning_curve"] = (
+            lc.groupby(["approx_train_molecules", "model"]).mae_pp
+            .agg(["mean", "std", "min", "max"]).round(3).reset_index().to_dict(orient="records")
+        )
+        results["learning_curve_note"] = (
+            "Added after G1/G2/G3 were run and seen; does not affect the pre-registered pass/fail "
+            "criterion, which was already determined by G1 and G2."
+        )
+    return lc
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="configs/smallmol_baseline.yaml")
     ap.add_argument("--out", default="modeling/2026-10-20_ee-feasibility")
     ap.add_argument("--groups", default="G1,G2,G3")
     ap.add_argument("--quick", action="store_true")
+    ap.add_argument("--learning-curve", action="store_true", help="只跑学习曲线（G1 划分）")
     args = ap.parse_args()
 
     cfg = yaml.safe_load((ROOT / args.config).read_text(encoding="utf-8"))
@@ -185,12 +245,20 @@ def main() -> None:
     }
     results["runs"].append({"groups": args.groups, "quick": args.quick})
 
+    seeds = (0,) if args.quick else E.SEEDS
+    if args.learning_curve:
+        learning_curve(units, X, sets, sim, out, results, seeds=(0,) if args.quick else E.SEEDS)
+        (out / "metrics.json").write_text(
+            json.dumps(results, ensure_ascii=False, indent=2, default=str), encoding="utf-8"
+        )
+        print(f"\n写出 {out}/metrics.json")
+        return
+
     combos = [("b0", None), ("b1", None), ("ridge", "full"), ("rf", "full"), ("hgb", "full")]
     combos += [
         ("ridge", "b2_formulation_only"), ("hgb", "b2_formulation_only"),
         ("ridge", "b3_molecule_only"), ("hgb", "b3_molecule_only"),
     ]
-    seeds = (0,) if args.quick else E.SEEDS
     keys = ["mae_pp", "rmse_pp", "r2_pooled", "spearman"]
     oof_rows = []
 
