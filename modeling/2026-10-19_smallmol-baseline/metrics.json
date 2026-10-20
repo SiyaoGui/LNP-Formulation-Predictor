@@ -6664,8 +6664,976 @@
       }
     }
   },
-  "t2": {},
-  "t3": {},
+  "t2": {
+    "S4": {
+      "b0": {
+        "summary": {
+          "aitchison_mean": {
+            "mean": 0.4457,
+            "sd": 0.0,
+            "min": 0.4457,
+            "max": 0.4457,
+            "per_seed": [
+              0.4457,
+              0.4457,
+              0.4457,
+              0.4457,
+              0.4457
+            ]
+          },
+          "mae_pp_overall": {
+            "mean": 5.7757,
+            "sd": 0.0,
+            "min": 5.7757,
+            "max": 5.7757,
+            "per_seed": [
+              5.7757,
+              5.7757,
+              5.7757,
+              5.7757,
+              5.7757
+            ]
+          },
+          "mae_pp_helper": {
+            "mean": 7.8939,
+            "sd": 0.0,
+            "min": 7.8939,
+            "max": 7.8939,
+            "per_seed": [
+              7.8939,
+              7.8939,
+              7.8939,
+              7.8939,
+              7.8939
+            ]
+          },
+          "mae_pp_sterol": {
+            "mean": 8.1242,
+            "sd": 0.0,
+            "min": 8.1242,
+            "max": 8.1242,
+            "per_seed": [
+              8.1242,
+              8.1242,
+              8.1242,
+              8.1242,
+              8.1242
+            ]
+          },
+          "mae_pp_peg": {
+            "mean": 1.309,
+            "sd": 0.0,
+            "min": 1.309,
+            "max": 1.309,
+            "per_seed": [
+              1.309,
+              1.309,
+              1.309,
+              1.309,
+              1.309
+            ]
+          }
+        }
+      },
+      "b1": {
+        "summary": {
+          "aitchison_mean": {
+            "mean": 1.0126,
+            "sd": 0.0,
+            "min": 1.0126,
+            "max": 1.0126,
+            "per_seed": [
+              1.0126,
+              1.0126,
+              1.0126,
+              1.0126,
+              1.0126
+            ]
+          },
+          "mae_pp_overall": {
+            "mean": 14.1052,
+            "sd": 0.0,
+            "min": 14.1052,
+            "max": 14.1052,
+            "per_seed": [
+              14.1052,
+              14.1052,
+              14.1052,
+              14.1052,
+              14.1052
+            ]
+          },
+          "mae_pp_helper": {
+            "mean": 20.2599,
+            "sd": 0.0,
+            "min": 20.2599,
+            "max": 20.2599,
+            "per_seed": [
+              20.2599,
+              20.2599,
+              20.2599,
+              20.2599,
+              20.2599
+            ]
+          },
+          "mae_pp_sterol": {
+            "mean": 18.8741,
+            "sd": 0.0,
+            "min": 18.8741,
+            "max": 18.8741,
+            "per_seed": [
+              18.8741,
+              18.8741,
+              18.8741,
+              18.8741,
+              18.8741
+            ]
+          },
+          "mae_pp_peg": {
+            "mean": 3.1816,
+            "sd": 0.0,
+            "min": 3.1816,
+            "max": 3.1816,
+            "per_seed": [
+              3.1816,
+              3.1816,
+              3.1816,
+              3.1816,
+              3.1816
+            ]
+          }
+        }
+      },
+      "ridge@b3_molecule_only": {
+        "summary": {
+          "aitchison_mean": {
+            "mean": 0.4826,
+            "sd": 0.0368,
+            "min": 0.4508,
+            "max": 0.5238,
+            "per_seed": [
+              0.5238,
+              0.5215,
+              0.4617,
+              0.4551,
+              0.4508
+            ]
+          },
+          "mae_pp_overall": {
+            "mean": 6.0576,
+            "sd": 0.2858,
+            "min": 5.789,
+            "max": 6.3693,
+            "per_seed": [
+              6.3693,
+              6.3469,
+              5.988,
+              5.789,
+              5.795
+            ]
+          },
+          "mae_pp_helper": {
+            "mean": 8.1245,
+            "sd": 0.1705,
+            "min": 7.928,
+            "max": 8.3063,
+            "per_seed": [
+              8.3063,
+              8.2388,
+              8.1902,
+              7.9594,
+              7.928
+            ]
+          },
+          "mae_pp_sterol": {
+            "mean": 8.4633,
+            "sd": 0.4381,
+            "min": 8.0241,
+            "max": 8.9321,
+            "per_seed": [
+              8.9156,
+              8.9321,
+              8.3536,
+              8.0241,
+              8.0914
+            ]
+          },
+          "mae_pp_peg": {
+            "mean": 1.5851,
+            "sd": 0.2681,
+            "min": 1.3657,
+            "max": 1.8861,
+            "per_seed": [
+              1.8861,
+              1.8697,
+              1.4204,
+              1.3835,
+              1.3657
+            ]
+          }
+        }
+      },
+      "hgb@b3_molecule_only": {
+        "summary": {
+          "aitchison_mean": {
+            "mean": 0.4457,
+            "sd": 0.0,
+            "min": 0.4457,
+            "max": 0.4457,
+            "per_seed": [
+              0.4457,
+              0.4457,
+              0.4457,
+              0.4457,
+              0.4457
+            ]
+          },
+          "mae_pp_overall": {
+            "mean": 5.7757,
+            "sd": 0.0,
+            "min": 5.7757,
+            "max": 5.7757,
+            "per_seed": [
+              5.7757,
+              5.7757,
+              5.7757,
+              5.7757,
+              5.7757
+            ]
+          },
+          "mae_pp_helper": {
+            "mean": 7.8939,
+            "sd": 0.0,
+            "min": 7.8939,
+            "max": 7.8939,
+            "per_seed": [
+              7.8939,
+              7.8939,
+              7.8939,
+              7.8939,
+              7.8939
+            ]
+          },
+          "mae_pp_sterol": {
+            "mean": 8.1242,
+            "sd": 0.0,
+            "min": 8.1242,
+            "max": 8.1242,
+            "per_seed": [
+              8.1242,
+              8.1242,
+              8.1242,
+              8.1242,
+              8.1242
+            ]
+          },
+          "mae_pp_peg": {
+            "mean": 1.309,
+            "sd": 0.0,
+            "min": 1.309,
+            "max": 1.309,
+            "per_seed": [
+              1.309,
+              1.309,
+              1.309,
+              1.309,
+              1.309
+            ]
+          }
+        }
+      }
+    }
+  },
+  "t3": {
+    "S1": {
+      "b0": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.1571,
+            "sd": 0.0401,
+            "min": 0.1106,
+            "max": 0.201,
+            "per_seed": [
+              0.201,
+              0.1678,
+              0.1198,
+              0.1863,
+              0.1106
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.1274,
+            "sd": 0.034,
+            "min": 0.0874,
+            "max": 0.1641,
+            "per_seed": [
+              0.1641,
+              0.1354,
+              0.0967,
+              0.1533,
+              0.0874
+            ]
+          },
+          "accuracy": {
+            "mean": 0.22,
+            "sd": 0.0594,
+            "min": 0.15,
+            "max": 0.2833,
+            "per_seed": [
+              0.2833,
+              0.2333,
+              0.1667,
+              0.2667,
+              0.15
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.1062,
+          "hi": 0.327
+        }
+      },
+      "b1": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.2382,
+            "sd": 0.0552,
+            "min": 0.1438,
+            "max": 0.2843,
+            "per_seed": [
+              0.2843,
+              0.1438,
+              0.2549,
+              0.268,
+              0.2402
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.1938,
+            "sd": 0.0313,
+            "min": 0.1474,
+            "max": 0.2255,
+            "per_seed": [
+              0.2255,
+              0.1474,
+              0.1949,
+              0.2187,
+              0.1824
+            ]
+          },
+          "accuracy": {
+            "mean": 0.23,
+            "sd": 0.0415,
+            "min": 0.1667,
+            "max": 0.2667,
+            "per_seed": [
+              0.2667,
+              0.1667,
+              0.2333,
+              0.2667,
+              0.2167
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.1647,
+          "hi": 0.4333
+        }
+      },
+      "logreg@b3_molecule_only": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.2728,
+            "sd": 0.0595,
+            "min": 0.1988,
+            "max": 0.3584,
+            "per_seed": [
+              0.3584,
+              0.2734,
+              0.1988,
+              0.2919,
+              0.2413
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.2307,
+            "sd": 0.0718,
+            "min": 0.1465,
+            "max": 0.3304,
+            "per_seed": [
+              0.3304,
+              0.2438,
+              0.1465,
+              0.2551,
+              0.1775
+            ]
+          },
+          "accuracy": {
+            "mean": 0.38,
+            "sd": 0.1391,
+            "min": 0.2167,
+            "max": 0.5333,
+            "per_seed": [
+              0.5333,
+              0.4333,
+              0.2167,
+              0.4667,
+              0.25
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.1266,
+          "hi": 0.3451
+        }
+      },
+      "rf@b3_molecule_only": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.258,
+            "sd": 0.0688,
+            "min": 0.1563,
+            "max": 0.3306,
+            "per_seed": [
+              0.3306,
+              0.2936,
+              0.2228,
+              0.2865,
+              0.1563
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.2108,
+            "sd": 0.0809,
+            "min": 0.0889,
+            "max": 0.2795,
+            "per_seed": [
+              0.2795,
+              0.2556,
+              0.1672,
+              0.263,
+              0.0889
+            ]
+          },
+          "accuracy": {
+            "mean": 0.3667,
+            "sd": 0.1424,
+            "min": 0.1833,
+            "max": 0.5167,
+            "per_seed": [
+              0.5167,
+              0.45,
+              0.25,
+              0.4333,
+              0.1833
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.1094,
+          "hi": 0.3578
+        }
+      },
+      "hgb@b3_molecule_only": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.2162,
+            "sd": 0.0774,
+            "min": 0.1509,
+            "max": 0.3077,
+            "per_seed": [
+              0.293,
+              0.1563,
+              0.1509,
+              0.3077,
+              0.1732
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.1639,
+            "sd": 0.0723,
+            "min": 0.0902,
+            "max": 0.2418,
+            "per_seed": [
+              0.2418,
+              0.0902,
+              0.1004,
+              0.2363,
+              0.1511
+            ]
+          },
+          "accuracy": {
+            "mean": 0.2367,
+            "sd": 0.0811,
+            "min": 0.1667,
+            "max": 0.3333,
+            "per_seed": [
+              0.3333,
+              0.1833,
+              0.1833,
+              0.3167,
+              0.1667
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.075,
+          "hi": 0.2697
+        }
+      },
+      "_vs_baselines": {
+        "logreg@b3_molecule_only_vs_b0": {
+          "delta_balanced_accuracy_per_seed": [
+            0.1574,
+            0.1057,
+            0.079,
+            0.1057,
+            0.1307
+          ],
+          "delta_mean": 0.1157,
+          "ci_headline": {
+            "lo": -0.1174,
+            "hi": 0.2144
+          },
+          "n_seeds_ci_excludes_zero": 1,
+          "sign_consistent_across_seeds": true,
+          "beats_baseline": false
+        },
+        "logreg@b3_molecule_only_vs_b1": {
+          "delta_balanced_accuracy_per_seed": [
+            0.0741,
+            0.1296,
+            -0.0561,
+            0.024,
+            0.0011
+          ],
+          "delta_mean": 0.0345,
+          "ci_headline": {
+            "lo": -0.1955,
+            "hi": 0.1449
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": false,
+          "beats_baseline": false
+        },
+        "rf@b3_molecule_only_vs_b0": {
+          "delta_balanced_accuracy_per_seed": [
+            0.1296,
+            0.1258,
+            0.1029,
+            0.1002,
+            0.0458
+          ],
+          "delta_mean": 0.1009,
+          "ci_headline": {
+            "lo": -0.1472,
+            "hi": 0.2179
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": true,
+          "beats_baseline": false
+        },
+        "rf@b3_molecule_only_vs_b1": {
+          "delta_balanced_accuracy_per_seed": [
+            0.0463,
+            0.1498,
+            -0.0321,
+            0.0185,
+            -0.0839
+          ],
+          "delta_mean": 0.0197,
+          "ci_headline": {
+            "lo": -0.2258,
+            "hi": 0.1333
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": false,
+          "beats_baseline": false
+        },
+        "hgb@b3_molecule_only_vs_b0": {
+          "delta_balanced_accuracy_per_seed": [
+            0.092,
+            -0.0114,
+            0.031,
+            0.1215,
+            0.0626
+          ],
+          "delta_mean": 0.0591,
+          "ci_headline": {
+            "lo": -0.1057,
+            "hi": 0.1431
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": false,
+          "beats_baseline": false
+        },
+        "hgb@b3_molecule_only_vs_b1": {
+          "delta_balanced_accuracy_per_seed": [
+            0.0087,
+            0.0125,
+            -0.104,
+            0.0398,
+            -0.067
+          ],
+          "delta_mean": -0.022,
+          "ci_headline": {
+            "lo": -0.1922,
+            "hi": 0.0867
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": false,
+          "beats_baseline": false
+        }
+      }
+    },
+    "S2": {
+      "b0": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.1527,
+            "sd": 0.0222,
+            "min": 0.1329,
+            "max": 0.1863,
+            "per_seed": [
+              0.1863,
+              0.1329,
+              0.1623,
+              0.1476,
+              0.1345
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.1259,
+            "sd": 0.0187,
+            "min": 0.1063,
+            "max": 0.1533,
+            "per_seed": [
+              0.1533,
+              0.1122,
+              0.1342,
+              0.1234,
+              0.1063
+            ]
+          },
+          "accuracy": {
+            "mean": 0.22,
+            "sd": 0.0321,
+            "min": 0.1833,
+            "max": 0.2667,
+            "per_seed": [
+              0.2667,
+              0.2,
+              0.2333,
+              0.2167,
+              0.1833
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.0998,
+          "hi": 0.2885
+        }
+      },
+      "b1": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.2917,
+            "sd": 0.013,
+            "min": 0.2734,
+            "max": 0.3045,
+            "per_seed": [
+              0.2936,
+              0.3045,
+              0.3028,
+              0.2734,
+              0.2843
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.2361,
+            "sd": 0.0127,
+            "min": 0.222,
+            "max": 0.253,
+            "per_seed": [
+              0.2421,
+              0.2386,
+              0.253,
+              0.222,
+              0.225
+            ]
+          },
+          "accuracy": {
+            "mean": 0.28,
+            "sd": 0.0139,
+            "min": 0.2667,
+            "max": 0.3,
+            "per_seed": [
+              0.2833,
+              0.2833,
+              0.3,
+              0.2667,
+              0.2667
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.1975,
+          "hi": 0.4712
+        }
+      },
+      "logreg@b3_molecule_only": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.2753,
+            "sd": 0.0403,
+            "min": 0.2048,
+            "max": 0.3066,
+            "per_seed": [
+              0.3066,
+              0.2865,
+              0.2919,
+              0.2048,
+              0.2865
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.2431,
+            "sd": 0.0334,
+            "min": 0.1875,
+            "max": 0.2736,
+            "per_seed": [
+              0.2736,
+              0.24,
+              0.2608,
+              0.1875,
+              0.2536
+            ]
+          },
+          "accuracy": {
+            "mean": 0.4233,
+            "sd": 0.1065,
+            "min": 0.2333,
+            "max": 0.4833,
+            "per_seed": [
+              0.4833,
+              0.4667,
+              0.4667,
+              0.2333,
+              0.4667
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.1221,
+          "hi": 0.355
+        }
+      },
+      "rf@b3_molecule_only": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.2722,
+            "sd": 0.0793,
+            "min": 0.2064,
+            "max": 0.3824,
+            "per_seed": [
+              0.3306,
+              0.2064,
+              0.219,
+              0.3824,
+              0.2228
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.2219,
+            "sd": 0.0919,
+            "min": 0.1376,
+            "max": 0.3543,
+            "per_seed": [
+              0.2795,
+              0.1805,
+              0.1376,
+              0.3543,
+              0.1578
+            ]
+          },
+          "accuracy": {
+            "mean": 0.3767,
+            "sd": 0.1521,
+            "min": 0.25,
+            "max": 0.5667,
+            "per_seed": [
+              0.5167,
+              0.25,
+              0.2667,
+              0.5667,
+              0.2833
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.15,
+          "hi": 0.375
+        }
+      },
+      "hgb@b3_molecule_only": {
+        "summary": {
+          "balanced_accuracy": {
+            "mean": 0.2137,
+            "sd": 0.0178,
+            "min": 0.1825,
+            "max": 0.2266,
+            "per_seed": [
+              0.2211,
+              0.2266,
+              0.2173,
+              0.1825,
+              0.2211
+            ]
+          },
+          "macro_f1": {
+            "mean": 0.1722,
+            "sd": 0.0111,
+            "min": 0.156,
+            "max": 0.1833,
+            "per_seed": [
+              0.1833,
+              0.1788,
+              0.1659,
+              0.156,
+              0.177
+            ]
+          },
+          "accuracy": {
+            "mean": 0.2467,
+            "sd": 0.0217,
+            "min": 0.2167,
+            "max": 0.2667,
+            "per_seed": [
+              0.2667,
+              0.2667,
+              0.25,
+              0.2167,
+              0.2333
+            ]
+          }
+        },
+        "balanced_accuracy_ci_headline": {
+          "lo": 0.137,
+          "hi": 0.3527
+        }
+      },
+      "_vs_baselines": {
+        "logreg@b3_molecule_only_vs_b0": {
+          "delta_balanced_accuracy_per_seed": [
+            0.1204,
+            0.1536,
+            0.1296,
+            0.0572,
+            0.152
+          ],
+          "delta_mean": 0.1226,
+          "ci_headline": {
+            "lo": -0.1179,
+            "hi": 0.2275
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": true,
+          "beats_baseline": false
+        },
+        "logreg@b3_molecule_only_vs_b1": {
+          "delta_balanced_accuracy_per_seed": [
+            0.0131,
+            -0.018,
+            -0.0109,
+            -0.0686,
+            0.0022
+          ],
+          "delta_mean": -0.0164,
+          "ci_headline": {
+            "lo": -0.2991,
+            "hi": 0.1036
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": false,
+          "beats_baseline": false
+        },
+        "rf@b3_molecule_only_vs_b0": {
+          "delta_balanced_accuracy_per_seed": [
+            0.1443,
+            0.0735,
+            0.0566,
+            0.2347,
+            0.0882
+          ],
+          "delta_mean": 0.1195,
+          "ci_headline": {
+            "lo": -0.0666,
+            "hi": 0.2334
+          },
+          "n_seeds_ci_excludes_zero": 1,
+          "sign_consistent_across_seeds": true,
+          "beats_baseline": false
+        },
+        "rf@b3_molecule_only_vs_b1": {
+          "delta_balanced_accuracy_per_seed": [
+            0.037,
+            -0.098,
+            -0.0839,
+            0.1089,
+            -0.0615
+          ],
+          "delta_mean": -0.0195,
+          "ci_headline": {
+            "lo": -0.2611,
+            "hi": 0.0873
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": false,
+          "beats_baseline": false
+        },
+        "hgb@b3_molecule_only_vs_b0": {
+          "delta_balanced_accuracy_per_seed": [
+            0.0349,
+            0.0937,
+            0.055,
+            0.0349,
+            0.0866
+          ],
+          "delta_mean": 0.061,
+          "ci_headline": {
+            "lo": -0.1308,
+            "hi": 0.127
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": true,
+          "beats_baseline": false
+        },
+        "hgb@b3_molecule_only_vs_b1": {
+          "delta_balanced_accuracy_per_seed": [
+            -0.0724,
+            -0.0779,
+            -0.0855,
+            -0.091,
+            -0.0632
+          ],
+          "delta_mean": -0.078,
+          "ci_headline": {
+            "lo": -0.2786,
+            "hi": 0.073
+          },
+          "n_seeds_ci_excludes_zero": 0,
+          "sign_consistent_across_seeds": true,
+          "beats_baseline": false
+        }
+      }
+    },
+    "class_counts": {
+      "helper_sterol_peg": 27,
+      "helper_sterol": 17,
+      "helper_only": 9,
+      "helper_peg": 7
+    }
+  },
   "runs": [
     {
       "tasks": "t1",
@@ -6684,99 +7652,14 @@
     {
       "tasks": "lc,t3,t2",
       "schemes": "all"
+    },
+    {
+      "tasks": "t2,t3",
+      "schemes": [
+        "S1",
+        "S2"
+      ]
     }
   ],
-  "learning_curve": [
-    {
-      "fraction": 0.2,
-      "approx_train_compounds": 2,
-      "model": "b0",
-      "mean": 0.26874,
-      "std": 0.05679949823722036,
-      "min": 0.1916,
-      "max": 0.3449
-    },
-    {
-      "fraction": 0.2,
-      "approx_train_compounds": 2,
-      "model": "hgb",
-      "mean": 0.30862,
-      "std": 0.06031025617587775,
-      "min": 0.2611,
-      "max": 0.4061
-    },
-    {
-      "fraction": 0.4,
-      "approx_train_compounds": 5,
-      "model": "b0",
-      "mean": 0.24780000000000002,
-      "std": 0.009650647646660836,
-      "min": 0.2422,
-      "max": 0.265
-    },
-    {
-      "fraction": 0.4,
-      "approx_train_compounds": 5,
-      "model": "hgb",
-      "mean": 0.30145999999999995,
-      "std": 0.10314377344270471,
-      "min": 0.2417,
-      "max": 0.4846
-    },
-    {
-      "fraction": 0.6,
-      "approx_train_compounds": 7,
-      "model": "b0",
-      "mean": 0.2451,
-      "std": 0.008267405880927826,
-      "min": 0.238,
-      "max": 0.2588
-    },
-    {
-      "fraction": 0.6,
-      "approx_train_compounds": 7,
-      "model": "hgb",
-      "mean": 0.25872,
-      "std": 0.04722199699292694,
-      "min": 0.1826,
-      "max": 0.3007
-    },
-    {
-      "fraction": 0.8,
-      "approx_train_compounds": 10,
-      "model": "b0",
-      "mean": 0.25002,
-      "std": 0.0066020451376827185,
-      "min": 0.242,
-      "max": 0.2579
-    },
-    {
-      "fraction": 0.8,
-      "approx_train_compounds": 10,
-      "model": "hgb",
-      "mean": 0.22488000000000002,
-      "std": 0.06651208160928358,
-      "min": 0.1615,
-      "max": 0.3322
-    },
-    {
-      "fraction": 1.0,
-      "approx_train_compounds": 12,
-      "model": "b0",
-      "mean": 0.25318,
-      "std": 0.003319186647358059,
-      "min": 0.2483,
-      "max": 0.2571
-    },
-    {
-      "fraction": 1.0,
-      "approx_train_compounds": 12,
-      "model": "hgb",
-      "mean": 0.19219999999999998,
-      "std": 0.04635115964029379,
-      "min": 0.1599,
-      "max": 0.2722
-    }
-  ],
-  "total_runtime_seconds": 814.6
+  "total_runtime_seconds": 3096.4
 }
