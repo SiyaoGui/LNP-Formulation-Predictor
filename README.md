@@ -64,11 +64,33 @@ AI驱动的脂质纳米粒(LNP)/脂质体配方预测项目。目标是根据所
 
 ---
 
-## 怎么重跑
+## 环境准备（每个新的云会话都要先跑一遍）
+
+**云会话的容器不预装这些依赖。** 容器是临时的，上一个会话装过的下一个会话里没有，所以每开一个新会话，动手前先跑：
 
 ```bash
 pip install scikit-learn rdkit pyarrow matplotlib tabulate
+```
 
+`rdkit` 是硬依赖，不装的话这几个脚本会直接 `ModuleNotFoundError`：
+
+| 脚本 | 用途 |
+|---|---|
+| `scripts/data_inventory.py` | 数据盘点 |
+| `scripts/build_features.py` | 特征工程（描述符 + Morgan 指纹） |
+| `scripts/report_compound_gain.py` | 外部数据集的唯一化合物增量报告 |
+
+容器里 `pypi.org` 和 `files.pythonhosted.org` 在网络策略的放通名单内，所以 pip 能直接装。但 `zenodo.org`、各出版商域名、PubMed、Europe PMC 都是拦住的，只有 `api.crossref.org` 通，外部原始数据文件要在容器外下载再提交进仓库（见 `data/raw/README.md`）。
+
+版本记录：`docs/data-inventory.md` 的数字是用 RDKit 2026.09.1 算的。后续会话用 pip 当前版本，唯一化合物数与骨架数已核对能对上（见 `docs/worklog/2026-10-27-抽取准备.md` 第三、四节）。若哪天对不上，以新脚本输出为准并在工作日志记录。
+
+---
+
+## 怎么重跑
+
+先按上面「环境准备」装好依赖，然后：
+
+```bash
 # 第一轮
 python3 scripts/build_features.py --config configs/smallmol_baseline.yaml
 python3 scripts/run_modeling.py   --config configs/smallmol_baseline.yaml --out modeling/<新日期>_<说明>
