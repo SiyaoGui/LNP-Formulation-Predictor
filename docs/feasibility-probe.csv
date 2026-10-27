@@ -89,3 +89,21 @@ doi,year,first_author,title_short,payload,is_small_molecule,block_class,evidence
 10.1021/acs.molpharmaceut.5b00704,2015,Porter,Tools for early prediction of drug loading in LBF,diverse drug set,yes,dataset,E1,排除,脂质基配方 LBF 非脂质双层纳米粒 命中 X13,2000+,no,超过 2000 次溶解度测量 药物脂质溶解度参考价值高
 10.1021/acs.molpharmaceut.4c00080,2024,Lange,Chemical descriptors solute lipid interactions,182 drugs,yes,dataset,E1,排除,中链甘油三酯溶解度 非纳米粒 命中 X13,182,no,182 个结构多样药物 化合物清单可借用
 10.1016/0378-5173(92)90015-t,1992,Betageri,Drug encapsulation release MLV and SUV,propranolol atenolol,yes,P,E1,排除,命中 X11 已在仓库 34 篇 DOI 中,已有,no,去重规则验证通过
+10.1016/j.ijpx.2026.100627,2026,Jaki,DoE dual centrifugation screening platform poorly soluble APIs,3 PROTACs,partial,both,E1,部分纳入,摘要明确 3 个 PROTAC x 多种脂质基质 DOPG 促进胆固醇抑制 D/L 5.5-6.0%,未知,yes,CC BY 4.0 全开放。PROTAC 多超 900Da 需核对。HPLC 同时定量全部脂质组分与载荷 方法学高价值
+10.3109/08982104.2011.584319,2012,Yang,High throughput screening temoporfin liposomal formulations,temoporfin,yes,L,E1,纳入,移液机器人 + DLS 板式读数 变脂质种类 浓度 乙醇水相比 载药比,未知,yes,temoporfin 已在仓库 1 条记录 本篇是配方库
+10.1016/j.ejps.2022.106267,2022,Wizgird,Docetaxel entrapment vesicle size zeta with liposome composition,docetaxel,yes,L,E1,纳入,摘要直接给多个 EE 数值 95% 41.5% 29.8% 92.0% 变 DOTAP DMPG DC-CHOL PEG 链长,20+,no,摘要已含定量数据 优先级高
+10.1002/cmdc.202400648,2024,Gleue,Dual centrifugation screening pH-responsive liposomes,cargo,partial,L,E1,待定,二元脂质组合按系统变化的比例筛选 但载荷身份不明,未知,yes,
+10.1021/acs.nanolett.6c01672,2026,Lee,High throughput screening drug induced perturbations model liposomes,bupivacaine HCl,yes,L,E1,纳入,摘要明确单日产出 786 个组成分辨的理化数据点 三元模型膜,786,yes,本轮单篇数据点最多 布比卡因已在仓库
+10.1038/s41598-020-62501-1,2020,Vakili-Ghartavol,Optimization of docetaxel loading conditions in liposomes,docetaxel,yes,L,E1,纳入,F1 F2 F3 三配方摩尔比明确 85/5/10 80/5/5/10 EE 34-67%,3-9,no,CC BY 4.0 Scientific Reports 全开放
+10.3390/molecules27227967,2022,Xu,Synthesis of paclitaxel derivatives for remote loading,19 PTX derivatives,yes,P,E1,待定,摘要明确筛选 19 个紫杉醇硼酸衍生物 但同一骨架 骨架多样性为 1,19,yes,衍生物序列类 违反 data-spec-ee 2.3 的骨架分散要求
+10.1016/j.jconrel.2010.02.029,2010,Zhigaltsev,Weak base docetaxel derivative loaded into lipid nanoparticles,docetaxel derivative,yes,P,E2,待定,单个衍生物 D/L 最高 0.4 mg/mg,未知,yes,100 引用 衍生物类奠基工作
+10.1016/j.ijpharm.2025.125688,2025,Li,Rational design of DXd derivatives for liposomal delivery,DXd derivatives,yes,P,E1,待定,一系列弱碱衍生物 变碱性基团与烷基链长度,未知,yes,衍生物序列类 单一骨架
+10.1016/j.mtnano.2024.100551,2025,Zhang,Iron ion driven remote loading galloylated cabazitaxel prodrugs,3 CTX prodrugs,yes,P,E1,待定,3 个没食子酰化卡巴他赛前药 Fe3+ 梯度 变桥连烷基链长度,3,yes,衍生物序列类 单一骨架
+10.1016/j.ijpharm.2020.119814,2020,Yang,Cabazitaxel derived remote loading liposomes,2 CTX derivatives,yes,P,E1,待定,2 个弱碱卡巴他赛衍生物 CN 与 CN2,2,yes,衍生物序列类
+10.1016/j.ecoenv.2019.04.036,2019,Lin,Liposome water partition coefficient predictive models,n/a,n/a,feature,E1,纳入,脂质体水分配系数 logKlip-w 的 QSPR 中性与离子型有机物,未知,yes,不是 EE 数据 是上游特征源 见工作日志第七节
+10.1016/j.chemosphere.2015.08.065,2016,Bittermann,Models predicting phospholipid membrane water partition charged compounds,n/a,n/a,feature,E1,纳入,摘要明确 36 阳离子 56 阴离子 2 二价 2 两性 + 207 中性 共约 303 个化合物的 Klipw,303,yes,实测分配系数 化合物数远超仓库 22 个 可作特征不可作目标
+10.1007/s11783-020-1316-z,2020,Li,QSPR storage lipid water distribution coefficient,n/a,n/a,feature,E1,纳入,摘要明确 305 个实测 logKlip-w 值,305,yes,同上 特征源
+10.1038/s41598-022-19452-6,2022,Khawar,Octanol water and Henry law constant predicting lipid water partition,n/a,n/a,feature,E1,纳入,logKlw n=305 logKpw n=131,436,no,CC BY Scientific Reports 全开放
+10.1016/j.ijpharm.2021.120392,2021,Fan,Automated high throughput oligonucleotide loaded LNP,ASO,no,L,E1,排除,载荷是反义寡核苷酸 命中 X1,96,no,96 孔板 3 小时全自动 方法学可参考
+10.1158/2326-6074.tumimm18-b66,2020,Audeh,High throughput synthesis screening tumor targeting liposomes,DNA barcode,no,L,E3,排除,会议摘要且原文注明未在会议展示 无可提取数据,1000+,no,声称合成 1000 个以上配方 但无全文
+10.1101/2020.05.11.087742,2020,Balouch,In-silico screening drug candidates thermoresponsive liposomes,fluorescent dyes,partial,P,E2,待定,同系荧光染料序列 + MD 模拟 预印本,未知,yes,bioRxiv 预印本 按协议需标 exclude_preprints 判定
