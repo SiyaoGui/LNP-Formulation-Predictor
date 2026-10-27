@@ -1,0 +1,91 @@
+doi,year,first_author,title_short,payload,is_small_molecule,block_class,evidence_level,verdict,reason,est_formulations,needs_fulltext,notes
+10.1016/j.jconrel.2011.11.029,2012,Cern,QSPR modeling of remote liposome loading,60 drugs,yes,P,E1,纳入,摘要明确 60 个药物 366 次载药实验,366,yes,本轮最大发现。需全文确认有多少来自同一实验室同一配方
+10.1016/j.jconrel.2009.05.036,2009,Zucker,Liposome drug loading efficiency working model,9 drugs,yes,P,E1,纳入,摘要明确 9 个药物 单一实验室 15 年数据库,未知,yes,Barenholz 实验室 单来源 条件最可能一致
+10.1016/j.jconrel.2013.10.029,2013,Cern,Computer-aided design of liposomal drugs,3 + 10 drugs,yes,P,E1,纳入,3 个实验验证 + 10 个文献分子,13,yes,Cern 2012 的续作
+10.1016/j.jconrel.2017.02.015,2017,Cern,Load and leak models Doxil fixed composition,screening,yes,P,E2,待定,配方固定为 Doxil 但主体是计算筛选,未知,yes,可能无新实测数据
+10.1016/j.ijpharm.2005.04.029,2005,Nii,EE of water-soluble and insoluble drugs MCV method,5-6 drugs x 3 lecithins,yes,P,E1,纳入,摘要点名 5FU 布洛芬 氟比洛芬 酮洛芬 阿米替林 并给 EE 区间,15-18,yes,318 引用 明确 logP 相关性
+10.1208/s12248-021-00651-4,2021,Levy,Liposome and lipodisk decision tree model compounds,curcumin cyclosporineA dexamethasone acyclovir,yes,P,E1,纳入,摘要点名 4 个分子 并变 D/L 比和 PEG 量,未知,yes,工业界系统性方法 高价值
+10.1021/acsomega.9b00825,2019,Gonzalez Gomez,Liposomal encapsulation of staphylococcal antibiotics,vancomycin teicoplanin rifampin,partial,P,E1,部分纳入,万古霉素 1449Da 替考拉宁 1879Da 超 900Da 上限,未知,yes,仅利福平 822Da 满足 MW 上限
+10.1016/j.ijpharm.2024.124641,2024,Pittiu,Microfluidics post-manufacturing dilution,quercetin resveratrol ascorbyl palmitate,yes,P,E1,纳入,3 个抗氧化剂 x 4 个流速比,12,yes,项目相关 槲皮素白藜芦醇为类黄酮邻近结构
+10.1016/0927-7765(94)01159-3,1995,Kulkarni,EE of steroids in MLV liposomes,4 steroids,yes,P,E1,纳入,摘要明确恒定 PL/chol 摩尔比 1/0.5 变 PL/drug,未知,yes,教科书式 P 类设计 但 MLV 多层囊泡
+10.3390/pharmaceutics13091457,2021,Kathuria,Proposome skin delivery depends on lipophilicity,ibuprofen tofacitinib rhodamineB lidocaine,yes,P,E1,纳入,4 个分子 EE 42.9-52.7% 粒径 128-148nm 与 logP 线性相关,4-8,yes,皮肤递送 与项目平台方向一致
+10.1039/c7fo00508c,2017,Huang,Encapsulation of flavonoids quercetin kaempferol luteolin,3 flavonoids,yes,P,E1,纳入,3 个类黄酮 同一脂质体膜,未知,yes,项目最相关 类黄酮
+10.1211/0022357044382,2004,Goniotaki,Encapsulation of naturally occurring flavonoids,4 flavonoids,yes,P,E1,纳入,摘要给 EE 95% 到 37.5% 及 flavonoid/lipid 摩尔比,未知,yes,蛋黄 PC 固定 4 个类黄酮 项目最相关
+10.1016/j.jbiosc.2022.06.009,2022,Izza,Polyphenols in nanostructured lipid carriers,resveratrol kaempferol quercetin,yes,P,E1,纳入,3 个多酚 同一 NLC,未知,yes,NLC 需标 carrier_subtype
+10.1016/j.molliq.2026.129530,2026,Kiss,Asolectin colloids quercetin and rutin,quercetin rutin,yes,P,E1,纳入,2 个类黄酮 x 3 种制备方法 x 多个载药比 给 EE% 和 DL%,12+,yes,项目相关 含微流控
+10.1016/j.ijpharm.2024.124367,2024,Miles,Small molecule liposomal bilayer interactions,felodipine naproxen,yes,P,E1,纳入,2 个分子 同一 HSPC 膜,2-4,yes,含 MD 模拟与 SAXS
+10.1021/acsomega.5c09893,2026,Roudny,Comparison of liposome formulation processes,carboxyfluorescein glucose,partial,P,E1,部分纳入,2 个溶质 x 5 条工艺路线 但葡萄糖非药物,10,yes,羧基荧光素已在仓库化合物表中
+10.29296/25419218-2026-02-06,2026,Dmitrieva,Formulation factors hydrophobic substance loading,6 compounds,yes,P,E1,待定,6 个俄罗斯原研化合物 MW 相关 r=0.969,未知,yes,俄文期刊 全文与 SMILES 可及性存疑
+10.1016/j.chemphyslip.2008.05.174,2008,Kepczynski,Physical structural factors drug-loading efficiency,2 porphyrins,yes,both,E1,纳入,2 个卟啉 x 4 种膜修饰剂 胆固醇油酸甲基油酸酯PEG脂质,8,yes,同时是 P 和 L
+10.1016/j.ijpharm.2020.120051,2020,Maritim,Glibenclamide liposome formulation parameters,glibenclamide,yes,L,E1,纳入,单分子 变链长 不饱和度 Tc 胆固醇量,未知,yes,198 引用 L 类标杆
+10.1016/j.ijpharm.2016.06.057,2016,Pereira,Docetaxel liposomes lipid composition effect,docetaxel,yes,L,E1,纳入,DOPC/DPPC/DSPC x PEG x lipid:drug 40:1 到 5:1,12+,yes,
+10.1016/j.ijpharm.2025.126112,2025,Dhakal,Berberine distribution in liposomes,berberine,yes,L,E1,纳入,DPPG 含量 0% 10% 30% 三档,3-6,yes,
+10.1016/j.ijpharm.2016.11.025,2017,Briuglia,Microfluidic phospholipid nanoparticles,1 hydrophilic + 1 lipophilic,yes,both,E1,纳入,DMPC/DSPC x lipid:chol 1:1 和 2:1 x 2 个化合物,8,yes,
+10.1007/s13346-015-0220-8,2015,Briuglia,Influence of cholesterol on liposome stability,atenolol quinine,yes,both,E1,纳入,DMPC/DPPC/DSPC x 胆固醇 100/80-20/70-30/60-40/50-50 共 15 组成 x 2 药,30,yes,694 引用 阿替洛尔已在仓库 但 DOI 不同
+10.1021/acs.molpharmaceut.3c01140,2024,Xie,Lipid composition camptothecin click loading,camptothecin,yes,L,E1,纳入,非 PEG 不饱和/非 PEG 饱和/PEG 饱和 三类,3-9,yes,重点在 PK
+10.3390/foods14152626,2025,Jovanovic,Wild thyme polyphenol liposomes sterols,thyme extract,no,L,E1,排除,载荷是提取物混合物 命中 X8,12,no,但 10/20/30 mol% 胆固醇与植物甾醇序列设计可参考
+10.1208/s12249-025-03226-0,2025,Tsichlis,Quercetin ceramide liposomes topical,quercetin,yes,L,E1,纳入,HSPC vs EPC x 神经酰胺 给 EE 63% 释放 保留率,4-8,yes,类黄酮 + 外用 项目双重相关
+10.1016/j.jddst.2019.101477,2020,Saraswat,Stealth liposomal quercetin optimization,quercetin,yes,L,E1,纳入,不同摩尔比 eggPC/chol/DSPE-PEG2000 给 EE 89% 粒径 110nm,未知,yes,类黄酮
+10.5958/0974-360x.2018.00012.4,2018,Saha,Liposomal quercetin 3x2 factorial,quercetin,yes,L,E1,纳入,摘要明确 9 个配方 变 drug:lipid 和 SPC:chol,9,yes,类黄酮 期刊影响力低
+10.1016/j.molliq.2020.113734,2020,Houacine,Liquid lipid impact trimyristin NLC resveratrol,resveratrol,yes,L,E1,纳入,Box-Behnken 4 因素 6 种液态脂质 给 PS PDI ZP EE DL,24+,yes,DoE + L 类 DL 范围 2.94-7.56%
+10.1016/j.fhfh.2021.100024,2021,Sakellari,SLN and NLC formulation design curcumin,curcumin,yes,L,E1,纳入,变固态脂质种类 液态脂质浓度 表面活性剂种类与浓度,未知,yes,SLN/NLC 需标 carrier_subtype
+10.3390/pharmaceutics13040437,2021,Mura,SLN vs NLC hydrochlorothiazide,hydrochlorothiazide,yes,L,E1,纳入,SLN 与 NLC 系列 x 不同表面活性剂组合,未知,yes,
+10.1016/s0378-5173(99)00426-3,2000,Jenning,Comparison of wax and glyceride SLN,retinol,yes,L,E1,纳入,蜡质 vs 甘油酯基质 比较包封,未知,yes,
+10.3390/nano9040489,2019,Shi,1-laurin-3-palmitin novel SLN matrix,thymol,yes,L,E1,纳入,1,3-LP vs GMS vs PPP 三种基质 载量 16/4/12%,3-9,yes,
+10.3390/foods12102045,2023,Yu,Curcumin SLN different lipids and emulsifiers,curcumin,yes,L,E1,纳入,MLCD/TP x 三种表面活性剂 EE 87.54-95.32%,6,yes,
+10.1016/j.foodchem.2022.133412,2022,Guo,SLN phytosterols glyceride acyl chain number,phytosterols,partial,L,E1,待定,GMS/GDS/GTS 三基质 但植物甾醇是混合物,3,yes,需确认是否单一化学实体
+10.1016/j.foodchem.2022.134465,2022,Shu,NLC lutein natural synthetic emulsifiers,lutein,yes,L,E1,纳入,三种乳化剂 EE 94.73/90.39/88.86%,3,yes,
+10.1016/j.bbamem.2006.05.028,2006,Fritze,Remote loading doxorubicin phosphate gradient,doxorubicin,yes,process,E1,纳入,摘要直接给 8 个 EE 数值 铵盐 100/98/95/77 钠盐 54/52/44/16,8,no,EPC/chol 7/3 固定 摘要已有定量数据
+10.1039/c8bm01175c,2018,Yang,Trapping agents irinotecan liposomes,irinotecan,yes,process,E1,纳入,三种捕获剂 AS SBE-b-CD SOS,3,yes,
+10.1016/j.ijpharm.2026.127079,2026,Natsaridis,Microfluidic active loading antibiotic liposomes,moxifloxacin doxorubicin,yes,L,E1,纳入,摘要说多个脂质组成 D/L 约 0.50 粒径 83-117nm,未知,yes,
+10.1016/j.ijpharm.2026.126728,2026,Hyden-Shepherd,Flow rate ratio doxorubicin liposomes,doxorubicin,yes,L,E1,纳入,DOPC vs DOPC:DOPA 75:25 x FRR 序列 EE 4.4% vs 75.5%,10+,yes,
+10.1016/j.colsurfb.2024.113926,2024,Akar,High throughput microfluidics PEGylated liposomes,Nile red,no,process,E1,排除,尼罗红是染料探针 非递送标的 但可标 is_probe,未知,yes,工艺参数系统研究 可作工艺层参考
+10.1007/s13346-025-01807-x,2025,Biscaia-Caleiras,Membrane fluidity predictive model of drug loading,doxorubicin daunorubicin,yes,both,E1,纳入,全因子 DoE 温度 胆固醇 表面张力 + 2 个药 logP 1.5 和 2.32,未知,yes,DoE + P 类小型
+10.1016/j.ejps.2018.04.028,2018,Habib,Resolution V fractional factorial weakly basic drugs,amisulpride,yes,L,E1,纳入,摘要明确 16 个试验组合 5 因素 给 PS ZP EE,16,yes,DoE 设计清晰 单分子
+10.1016/j.bbagen.2024.130705,2024,Setyawati,Box-Behnken cationic liposome lipid composition,DNA,no,L,E1,排除,载荷是 DNA 命中 X1,15,no,但 15 个配方 EE 48.19-95.72% 粒径 158.7-2064nm 设计可参考
+10.1007/s13346-026-02125-6,2026,Forrester,Revisiting lipid ratio OFAT vs DoE,mRNA,no,L,E1,排除,载荷是 mRNA 命中 X1,未知,no,LNP 摩尔比 DoE 方法学可参考
+10.15171/bi.2016.26,2016,Kiafar,Filgrastim liposomes factorial design,filgrastim protein,no,L,E1,排除,载荷是蛋白 命中 X2,未知,no,
+10.1016/j.jddst.2023.104571,2023,Verma,QbD tranexamic acid stratum corneum lipid liposomes,tranexamic acid,yes,L,E1,纳入,3 的 3 次方 Box-Behnken 变 lipid:chol 比 转速 超声次数,15,yes,角质层脂质 皮肤相关
+10.22159/ijap.2023v15i3.47455,2023,Chandwani,Box-Behnken salicylic acid liposomal gel,salicylic acid,yes,L,E1,纳入,三因素三水平 磷脂 胆固醇 药量 给 PS PDI ZP EE,15,yes,皮肤相关
+10.22270/jddt.v16i1.7508,2026,Vishwakarma,Box-Behnken emtricitabine liposomes,emtricitabine,yes,L,E1,纳入,摘要明确 15 个配方 大豆卵磷脂/胆固醇/棕榈酸,15,yes,原文自报模型不显著 F=1.00 p=0.4289
+10.1016/j.ijpharm.2021.120277,2021,Khatib,Spray drying ciprofloxacin nanocrystals liposomes,ciprofloxacin,yes,process,E1,纳入,Box-Behnken 保护剂类型与量 温度 气流 EE 30-95%,未知,yes,
+10.1080/08982104.2021.1903034,2021,Kurmi,TPGS stealth liposome doxorubicin Box-Behnken,doxorubicin,yes,L,E1,纳入,Taguchi + BBD 给 PS PDI ZP EE,未知,yes,
+10.1016/j.jddst.2024.105810,2024,Kashikar,Box-Behnken camostat mesylate nanoliposomes,camostat mesylate,yes,L,E1,纳入,三因素三水平 DPPC 与胆固醇浓度 给 EE 和 DL,15,yes,
+10.1016/j.ejps.2017.03.007,2017,Toyota,DoE process optimization FK506 liposomes,FK506 tacrolimus,yes,process,E1,纳入,Box-Behnken 水化温度 冻融循环 水化体积,15,yes,
+10.3390/molecules26051429,2021,Sabir,QbD n-propyl gallate hyaluronic acid liposomes,n-propyl gallate,yes,L,E1,纳入,Box-Behnken 组成与工艺变量 EE 90%,15,yes,
+10.1080/03639045.2022.2070198,2021,Soni,DoE brimonidine cationic liposomes,brimonidine tartrate,yes,L,E1,纳入,三因素三水平 脂质 胆固醇 药量 给 PS PDI ZP EE CDR,15,yes,
+10.1016/s0378-5173(00)00338-0,2000,Stensrud,Primaquine liposomes pH gradient experimental design,primaquine,yes,L,E1,纳入,分数因子筛选 + Box-Behnken 脂质类型 胆固醇 电荷 缓冲 D/L,20+,yes,EE 大于 95% 区域明确
+10.5681/bi.2013.016,2013,Ghanbarzadeh,RSM sirolimus liposomes thin film hydration,sirolimus,yes,L,E1,纳入,3 的 2 次方 因子 DPPC/Chol 和 DOPE/DPPC 摩尔比,9,yes,
+10.7324/japs.2015.50704,2015,Sailor,Berberine liposome 3x2 full factorial,berberine,yes,L,E1,纳入,摘要明确 9 个配方 drug:lipid 和 SPC:CHOL,9,yes,
+10.1080/03639045.2021.1989454,2021,Alavi,Risperidone multivesicular liposomes factorial,risperidone,yes,L,E1,纳入,2 的 3 次方 全因子 lipid:drug triolein:PL chol:PL 摩尔比,8,yes,多囊泡 8um 非纳米
+10.1016/j.ijpharm.2011.07.012,2011,Xu,QbD liposomes hydrophilic API tenofovir,tenofovir,yes,L,E1,纳入,8 个高风险因素 链长 脂质浓度 对 EE 和粒径,未知,yes,161 引用
+10.1016/j.ijpharm.2021.120335,2021,Lu,QbD bupivacaine multivesicular liposome,bupivacaine,yes,L,E1,纳入,配方与工艺参数对 CQA,未知,yes,布比卡因已在仓库 但 DOI 不同
+10.1016/j.jsps.2017.01.007,2017,Porfire,QbD lyophilized simvastatin liposomes,simvastatin,yes,L,E1,纳入,5 个风险因素 PEG 比例 胆固醇浓度 冻干保护剂比 挤出次数 冷冻条件,未知,yes,含挤出次数 可填 extrusion_passes
+10.1016/j.ejps.2016.08.057,2017,Patel,QbD proliposome lopinavir,lopinavir,yes,L,E1,纳入,面心中心复合设计 lipid:drug 比和载体量,未知,yes,
+10.2147/dddt.s129008,2017,Tefas,QbD doxorubicin curcumin co-loaded liposomes,doxorubicin + curcumin,no,L,E1,排除,双载荷 命中 X8,未知,no,2 的 6-2 次方 因子设计 6 参数 设计可参考
+10.1016/j.jddst.2025.107750,2026,Yugatama,Box-Behnken gentamicin curcumin microfluidic,gentamicin + curcumin,no,L,E1,排除,双载荷 命中 X8,15,no,
+10.3390/pharmaceutics14091798,2022,Nemeth,QbD zeta potential charge imparting additives,none,no,L,E1,排除,疑似空载体 命中 X3 需全文确认,未知,yes,440 引用 PC:chol:SA/DCP 摩尔比优化
+10.1021/acsami.2c06627,2022,Rebollo,Microfluidic liposomes DoE and machine learning,none,no,L,E2,待定,DOPC/chol/DSPE-PEG2000 不同摩尔比 但只报 size 和 PDI 疑似空载,未知,yes,123 引用 DoE + ANN
+10.1016/j.ajps.2023.100811,2023,Han,Predicting liposome formulations ML and MD,dataset,n/a,dataset,E1,纳入,ML 预测 size PDI zeta encapsulation 并给分子性质阈值,未知,yes,现有 ML 工作 既是数据源也是先行工作
+10.1039/d5nr01741f,2025,Khodadadi,XGBoost random forest genetic algorithm liposomal EE,dataset,n/a,dataset,E1,纳入,摘要明确 500 个数据点 cargo 和 carrier 因素对 EE,500,yes,与 LipidLens 目标最接近的已有工作 最高优先级
+10.1016/j.dib.2026.112667,2026,Lavagna,Smart Microfluidics curated liposome dataset,dataset,n/a,dataset,E1,纳入,摘要明确 304 个微流控脂质体配方 + 12 个湿实验验证 跨两个实验室,316,no,已公开在 Zenodo 10.5281/zenodo.17867478 可直接下载
+10.1016/j.ijpx.2025.100393,2025,Yanes,Making in vitro release and formulation data AI-ready,dataset,n/a,dataset,E1,纳入,开放脂质体库 含配方参数 IVR 条件 数字化释放曲线,未知,no,正好补仓库缺失的 272 条释放曲线
+10.1208/s12249-023-02547-2,2023,Shahiwala,ML design of niosomes PRISMA curated,dataset,n/a,dataset,E1,纳入,摘要明确 PRISMA 筛选得 114 个 niosome 配方 11 个输入参数,114,yes,niosome 非脂质体 需标 carrier_subtype
+10.1038/s41597-025-05520-9,2025,Goren,PLGA nanoparticle formulation dataset small molecules,dataset,yes,dataset,E1,排除,PLGA 聚合物载体 命中 X13,433,no,但含 65 个小分子 是现有 22 个的 3 倍 化合物清单可借用
+10.1038/s41597-025-06456-w,2025,Song,LNP Atlas dataset nucleic acid delivery,nucleic acid,no,dataset,E1,排除,核酸载荷 命中 X1,未知,no,含 SMILES 和摩尔比 需核对是否即仓库现有 LNP_Atlas 来源
+10.1038/s41467-026-68818-1,2026,Collins,Lipid Nanoparticle Database LNPDB,nucleic acid,no,dataset,E1,排除,核酸载荷 命中 X1,19528,no,lnpdb.molcube.com 规模最大 含 CHARMM 力场文件
+10.1016/j.ijpharm.2026.127405,2026,Adzavon,Storage stability LNP curated benchmark,nucleic acid,no,dataset,E1,排除,核酸载荷 命中 X1,613,no,方法学上极重要 独立复现了分组 CV 下的失败 见报告
+10.1016/j.ijpharm.2023.123414,2023,Hoseini,ML curcumin liposome entrapment efficiency,curcumin,yes,process,E1,纳入,两个固定组成 HSPC:DPPG:Chol:DSPE 55:5:35:5 和 55:40:5 变工艺,未知,yes,
+10.1038/s41598-023-43689-4,2023,Hoseini,Ensemble ML liposome size and PDI,none,no,process,E1,排除,疑似空载 只报 size 和 PDI,未知,yes,171 引用 同上两个固定组成
+10.1016/j.ijpharm.2025.126362,2025,Buttitta,ML microfluidic clinically inspired liposomes,Doxil Marqibo compositions,yes,process,E1,纳入,摘要明确超过 300 个实验条件 含开源仿真工具,300+,yes,
+10.1002/adfm.202514387,2025,Moore,MicrofluidicML nanomedicine formulation,curcumin or empty,partial,dataset,E1,部分纳入,约 200 个配方 超过 550 次测量 脂质体 LNP PLGA 空载或载姜黄素,200,yes,
+10.3897/pharmacia.73.e200497,2026,Olamat,Data-driven prediction of polydispersity microfluidic,none,no,process,E2,待定,306 个配方 但载荷不明,306,yes,
+10.1007/s10544-023-00671-1,2023,Di Francesco,ML instructed microfluidic curcumin liposomes,curcumin,yes,process,E1,纳入,超过 200 个脂质体配置 变流速 脂质浓度 有机水相体积比,200,yes,
+10.1016/j.dib.2026.112926,2026,Abrori,Synthetic PLGA and liposome nanocarrier dataset,synthetic,no,dataset,E1,排除,合成模拟数据 非实测 命中 X12,6000,no,必须排除 防止误用为真实数据
+10.1016/j.ejpb.2016.07.019,2016,Hathout,Modelling drug loading in SLN docking and GP ML,literature drugs,yes,dataset,E1,纳入,文献汇集药物 对接到三棕榈酸甘油酯基质 GP 预测载量,未知,yes,SLN 载量的文献衍生数据集
+10.3389/fchem.2026.1794154,2026,Sumayli,Causal discovery formulation parameters EE niosome,dataset,yes,dataset,E1,纳入,摘要明确 116 个文献样本 仅薄膜水化法,116,yes,niosome 因果发现 条件已被限定为单一工艺
+10.1016/j.csbj.2024.01.012,2024,Puzyn,nano-QSPR zeta potential liposome formulations,none,no,L,E2,待定,12 个脂质体组成 DOPE DC-Chol DOTAP EPC 载荷不明,12,yes,
+10.1039/d6nr00249h,2026,Jarzynska,Multicomponent nano-QSPR liposome stability,none,no,L,E2,待定,18 种脂质类型 定义摩尔分数 载荷不明,未知,yes,
+10.1021/acs.molpharmaceut.5b00704,2015,Porter,Tools for early prediction of drug loading in LBF,diverse drug set,yes,dataset,E1,排除,脂质基配方 LBF 非脂质双层纳米粒 命中 X13,2000+,no,超过 2000 次溶解度测量 药物脂质溶解度参考价值高
+10.1021/acs.molpharmaceut.4c00080,2024,Lange,Chemical descriptors solute lipid interactions,182 drugs,yes,dataset,E1,排除,中链甘油三酯溶解度 非纳米粒 命中 X13,182,no,182 个结构多样药物 化合物清单可借用
+10.1016/0378-5173(92)90015-t,1992,Betageri,Drug encapsulation release MLV and SUV,propranolol atenolol,yes,P,E1,排除,命中 X11 已在仓库 34 篇 DOI 中,已有,no,去重规则验证通过
