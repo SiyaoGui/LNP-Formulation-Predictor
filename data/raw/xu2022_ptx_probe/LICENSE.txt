@@ -1,0 +1,21 @@
+This directory contains material from:
+
+  Xu, Xiangwei; Liu, Yanhua; Shao, Shanshan; Li, Jinbo; Xu, Zhaochu; Yin, Yueling; Zhao, Linxiang; Wang, Yongjun; Liu, Dan.
+  Xu 2022: 用于脂质体远程载药的紫杉醇衍生物合成.
+  Molecules 27(22), 7967, 2022.
+  DOI: 10.3390/molecules27227967
+
+Licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0).
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, provide a link to the
+licence, and indicate if changes were made.
+
+Changes made in this repository are recorded in README.md of this directory.
+
+The licensors make no warranties and disclaim liability to the fullest
+extent permitted by law.

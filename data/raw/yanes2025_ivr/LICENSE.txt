@@ -1,0 +1,21 @@
+This directory contains material from:
+
+  Yanes, Daniel; Mead, Heather; Mann, James; Röding, Magnus; Paraskevopoulou, Vasiliki; Alexander, Cameron; Parhizkar, Maryam; Twycross, Jamie; Zelzer, Mischa.
+  Yanes 2025: 把体外释放与配方数据做成 AI-ready.
+  International Journal of Pharmaceutics: X 10, 100393, 2025.
+  DOI: 10.1016/j.ijpx.2025.100393
+
+Licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0).
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, provide a link to the
+licence, and indicate if changes were made.
+
+Changes made in this repository are recorded in README.md of this directory.
+
+The licensors make no warranties and disclaim liability to the fullest
+extent permitted by law.
