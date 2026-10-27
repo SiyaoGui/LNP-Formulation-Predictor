@@ -1,0 +1,21 @@
+This directory contains material from:
+
+  Jaki, Miriam; Köll-Weber, Monika; Lembeck, Jan; Wittmann, Maximilian; Süss, Regine.
+  Jaki 2026: DoE 双离心驱动的难溶 API 脂质体包载筛选平台.
+  International Journal of Pharmaceutics: X 12, 100627, 2026.
+  DOI: 10.1016/j.ijpx.2026.100627
+
+Licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0).
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, provide a link to the
+licence, and indicate if changes were made.
+
+Changes made in this repository are recorded in README.md of this directory.
+
+The licensors make no warranties and disclaim liability to the fullest
+extent permitted by law.
