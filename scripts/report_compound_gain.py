@@ -44,6 +44,10 @@ FORMULATION_TABLES = {
 PROPERTY_TABLES = {
     "Khawar 2022": ROOT / "data" / "processed" / "partition_coefficients.csv",
 }
+# C 类：对现有记录的增补表。不增加记录也不增加化合物，只给已有记录补字段
+ENRICHMENT_TABLES = {
+    "Yanes 2025": ROOT / "data" / "processed" / "yanes2025_enrichment.csv",
+}
 # 探针集：单独报，不计入训练集的任何统计
 PROBE_TABLES = {
     "Xu 2022": ROOT / "data" / "processed" / "probe_xu2022.csv",
@@ -265,6 +269,43 @@ def main() -> int:
         print(f"  授权                    {r['licence']}")
     if not any_b:
         print("\n（尚无已抽取的分子属性表）")
+
+    # C 类
+    print()
+    print("=" * 72)
+    print("C 类：增补表（给已有记录补字段，不增加记录也不增加化合物）")
+    print("=" * 72)
+    stats["enrichment_tables"] = {}
+    for name, path in ENRICHMENT_TABLES.items():
+        if not path.is_file():
+            stats["enrichment_tables"][name] = {"status": "尚未抽取", "path": str(path.relative_to(ROOT))}
+            print(f"\n{name}  [尚未抽取]  {path.relative_to(ROOT)}")
+            continue
+        df = pd.read_csv(path, low_memory=False)
+        linked = int(df["linked_to_repo"].sum()) if "linked_to_repo" in df.columns else None
+        newcols = [c for c in df.columns
+                   if c not in ("row_id", "source_doi", "source_license", "source_attribution",
+                                "source_location", "linked_to_repo", "name_matches_repo")
+                   and not c.startswith(("repo_", "yanes_"))]
+        r = {
+            "status": "已抽取",
+            "path": str(path.relative_to(ROOT)),
+            "records": int(len(df)),
+            "linked_to_repo_records": linked,
+            "new_unique_compounds": 0,
+            "new_formulation_records": 0,
+            "added_columns": newcols,
+            "licence": sorted(set(df["source_license"].dropna())) if "source_license" in df.columns else None,
+        }
+        stats["enrichment_tables"][name] = r
+        print(f"\n{name}  [已抽取]  {r['path']}")
+        print(f"  记录数                  {r['records']}")
+        if linked is not None:
+            print(f"  连上仓库现有记录的      {linked}")
+        print(f"  新增唯一化合物          0")
+        print(f"  新增配方记录            0")
+        print(f"  给现有记录补的字段      {len(newcols)} 列")
+        print(f"  授权                    {r['licence']}")
 
     # 探针集
     print()
