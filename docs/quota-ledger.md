@@ -112,3 +112,36 @@ E 只有 8 行且全是顺带捞到的，F 只有 1 行，这两个方向尚未�
 
 工作流覆盖（累计 145 行）：A 41、B 95、C 51、D 32、E 13、F 1。
 优先级：P0 50、P1 63、P2 32。
+
+---
+
+## 第 4 批（2026-10-28）工作流 D 报告标准化
+
+| # | 查询词 | 工作流 | 命中 | 新增 | 重复 | 累计调用 |
+|---|---|---|---|---|---|---|
+| 17 | minimum information reporting standard checklist nanomaterial characterization nanomedicine MIRIBEL | D | 20 | 14 | 1 | 17 |
+| 18 | missing parameters incomplete reporting nanoparticle literature data not comparable meta-analysis heterogeneity | D | 20 | 9 | 3 | 18 |
+| 19 | FAIR data standards electronic lab notebook automated instrument metadata capture laboratory | D | 20 | 13 | 0 | 19 |
+
+第 4 批小结：调用 3 次，主表新增 36 行（累计 181 行，无重复 DOI）。
+批内新增率 60%，D 方向一次打透，不需要第二批。
+D1 到 D5 五条子问题全部有答案，且第 19 次检索（设备端采集）新增率 100%，
+说明这个角度此前完全没碰过，而它正是硬件方向最需要的证据。
+
+**D 的额度从 45 次压到 3 次。** 理由：七环论证链已经完整闭合（见
+docs/reporting-standards.md 最后一节），每一环都有具体文献和数字，
+继续检索只会增加同类证据而不改变结论。剩余转给 E 和 G。
+
+### 累计额度使用
+
+| 工作流 | 原定 | 已用 | 余量处置 |
+|---|---|---|---|
+| A 验证证据 | 80 | 6 | 六条子问题有答案，A4 成本周期文献无答案 |
+| B 机理与特征 | 70 | 6 | 六条子问题全部有定量答案 |
+| C 开放数据集 | 70 | 3 | 方法学原因压缩，转 E 和 G |
+| D 报告标准化 | 45 | 3 | 论证链闭合，转 E 和 G |
+| E 部位特异性膜 | 70 | 0 | 下一批开始，可动用 A/C/D 转入的余量 |
+| F 同行与商业情报 | 35 | 0 | 未开始 |
+| G 北欧验证合作方 | 45 | 0 | 未开始 |
+| 机动储备 | 60 | 1 | 黄酮专项 |
+| **合计** | **475** | **19** | |
