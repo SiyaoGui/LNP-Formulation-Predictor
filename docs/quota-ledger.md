@@ -165,3 +165,66 @@ E 的后续检索在该决策做出之前暂停，不继续消耗额度，
 因为"按哪个问题表述建模"直接决定后续该检索什么。
 
 工作流覆盖（累计 222 行）：A 42、B 102、C 53、D 68、E 54、F 3。
+
+---
+
+## 第 6 批（2026-10-28）工作流 F 同行商业情报 与 G 北欧验证合作方
+
+| # | 查询词 | 工作流 | 命中 | 新增 | 重复 | 累计调用 |
+|---|---|---|---|---|---|---|
+| 23 | Mana.bio AI-driven lipid nanoparticle formulation company machine learning platform publication | F | 20 | 9 | 8 | 23 |
+| 24 | Denmark Sweden Norway Finland liposome lipid nanoparticle formulation microfluidic research group characterization | G | 20 | 5 | 3 | 24 |
+| 25 | Technical University of Denmark DTU liposome nanomedicine drug delivery characterization methodology validation | G | 20 | 6 | 2 | 25 |
+| 26 | liposome lipid nanoparticle formulation characterization microfluidic（country=dk,se,no,fi；year_min=2022） | G | 20 | 0 | 0 | 26 |
+| 27 | small angle X-ray neutron scattering lipid nanoparticle structure Lund Chalmers Copenhagen Aarhus | G | 20 | 4 | 2 | 27 |
+| 28 | interlaboratory validation round robin liposome characterization method reference material metrology institute | A;G;D | 20 | 6 | 3 | 28 |
+
+第 6 批小结：调用 6 次，主表新增 25 行，去重后累计 **246 行**（有 1 条与第 2 批重复，已合并）。
+第 26 次检索**新增 0**，这是本次清查唯一一次零新增，原因见下。
+
+### 第三次额度分配调整：G 从 45 次压到 3 次
+
+**原因是工具的结构性限制：Consensus 不提供作者单位字段，也无法按机构检索。**
+
+两次失败的尝试已记入 `docs/validation-partners.md`：
+1. **第 26 次检索用 country=dk,se,no,fi 过滤器，新增 0 行。**
+   返回的全是真正有地理属性的研究类型（芬兰血浆脂质组 GWAS、瑞典 PFAS 纵向队列、
+   挪威干眼症泪液囊泡、瑞典矿洞生物膜），配方学论文被过滤掉了。
+   原因：该过滤器过滤的是"country of study"（流行病学意义上的研究所在国），
+   对配方学论文这个属性不存在或被错误填充。
+2. **第 24、25 次把机构名写进查询词**，但 Consensus 做的是对论文内容的语义匹配，
+   机构名不在被匹配内容里，所以只起了噪声作用。
+
+替代方案（零 Consensus 额度）已写进 `docs/next-actions.md`：
+用 OpenAlex API（免费，有 institutions 端点，可按 country_code 过滤）写脚本。
+
+### 本次清查三次调整分配的共同原因
+
+| 调整 | 工作流 | 原定 | 实用 | 原因 |
+|---|---|---|---|---|
+| 第一次 | C 开放数据集 | 70 | 3 | Consensus 不索引数据仓储条目，只索引论文 |
+| 第二次 | D 报告标准化 | 45 | 3 | 七环论证链已闭合，继续检索只增同类证据 |
+| 第三次 | G 北欧合作方 | 45 | 3 | Consensus 无作者单位字段，无法按机构检索 |
+| 附带 | F 专利格局 | 35 的一部分 | 0 | **Consensus 完全不覆盖专利** |
+
+**三次调整里有三次源于同一个认识：Consensus 是论文语义检索工具，
+不是机构检索工具、不是仓储索引、也不覆盖专利。**
+这是本次清查最重要的方法学教训，决定了剩余额度不该投向哪里。
+
+### 累计额度使用（截至第 6 批）
+
+| 工作流 | 原定 | 已用 | 状态 |
+|---|---|---|---|
+| A 验证证据 | 80 | 6 | 六条子问题有答案；第 6 批又补上 CRM 与三实验室验证两条重要修正 |
+| B 机理与特征 | 70 | 6 | 六条子问题全部有定量答案 |
+| C 开放数据集 | 70 | 3 | 工具原因压缩 |
+| D 报告标准化 | 45 | 3 | 论证链闭合 |
+| E 部位特异性膜 | 70 | 3 | **因触发决策条件而暂停**，待方向确认 |
+| F 同行与商业情报 | 35 | 1 | 学术格局已清；专利无法用本工具查 |
+| G 北欧验证合作方 | 45 | 3 | 工具原因压缩 |
+| 机动储备 | 60 | 3 | 黄酮专项 1 次、实验室间验证与参考物质 2 次 |
+| **合计** | **475** | **28** | |
+
+主表 246 行（去重后，无重复 DOI），已按优先级加工作流加年份排序。
+工作流覆盖：A 51、B 110、C 53、D 80、E 55、F 13、G 11。
+优先级：P0 92、P1 100、P2 54。需全文 36 篇，其中 P0 级需全文 14 篇。
