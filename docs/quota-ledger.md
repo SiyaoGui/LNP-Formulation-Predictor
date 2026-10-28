@@ -145,3 +145,23 @@ docs/reporting-standards.md 最后一节），每一环都有具体文献和数�
 | G 北欧验证合作方 | 45 | 0 | 未开始 |
 | 机动储备 | 60 | 1 | 黄酮专项 |
 | **合计** | **475** | **19** | |
+
+---
+
+## 第 5 批（2026-10-28）工作流 E 部位特异性膜
+
+| # | 查询词 | 工作流 | 命中 | 新增 | 重复 | 累计调用 |
+|---|---|---|---|---|---|---|
+| 20 | selective organ targeting SORT lipid nanoparticle mechanism liver lung spleen tissue tropism | E | 20 | 17 | 1 | 20 |
+| 21 | blood brain barrier lipid nanoparticle targeting formulation composition in vivo biodistribution | E | 20 | 8 | 0 | 21 |
+| 22 | cell membrane lipid composition organ specific lipidomics quantitative mapping to liposome formulation design | E | 20 | 16 | 1 | 22 |
+
+第 5 批小结：调用 3 次，主表新增 41 行（累计 222 行，无重复 DOI）。
+批内新增率 68%，E 方向此前基本没碰过。
+
+**本批触发了任务描述第九节第 1 条（结果直接推翻项目的某个基本假设），
+已在 docs/membrane-specific.md 开头和末节写明，并在聊天里提出决策问题。**
+E 的后续检索在该决策做出之前暂停，不继续消耗额度，
+因为"按哪个问题表述建模"直接决定后续该检索什么。
+
+工作流覆盖（累计 222 行）：A 42、B 102、C 53、D 68、E 54、F 3。
