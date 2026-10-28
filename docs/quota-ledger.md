@@ -228,3 +228,72 @@ E 的后续检索在该决策做出之前暂停，不继续消耗额度，
 主表 246 行（去重后，无重复 DOI），已按优先级加工作流加年份排序。
 工作流覆盖：A 51、B 110、C 53、D 80、E 55、F 13、G 11。
 优先级：P0 92、P1 100、P2 54。需全文 36 篇，其中 P0 级需全文 14 篇。
+
+---
+
+## 第 7 批（2026-10-28）脑递送专项（新工作流 H）
+
+**方向更正**：用户确认首发管线是血脑屏障脑递送、载荷为小分子，毛囊与皮肤线基本放弃。
+本批按用户给的六条必查问题执行，新建工作流代号 **H（脑递送专项）**，
+主表 `workflows` 列与排序键同步扩展为 A 到 H。
+
+| # | 查询词 | 工作流 | 命中 | 新增 | 重复 | 累计调用 |
+|---|---|---|---|---|---|---|
+| 29 | apolipoprotein E adsorption LDL receptor mediated transcytosis brain delivery nanoparticle quantitative mechanism | H;B | 20 | 17 | 0 | 29 |
+| 30 | small molecule drug liposome solid lipid nanoparticle brain concentration brain to plasma ratio quantitative outcome | H | 20 | 14 | 0 | 30 |
+| 31 | in vitro blood brain barrier model transwell co-culture microfluidic chip correlation with in vivo permeability predictive validity | H;A | 20 | 12 | 0 | 31 |
+| 32 | brain to plasma ratio Kp,uu microdialysis unbound drug interlaboratory variability reproducibility measurement | H;A | 20 | 14 | 0 | 32 |
+| 33 | machine learning prediction blood brain barrier permeability dataset curated compounds logBB | H;B | 20 | 4 | 0 | 33 |
+| 34 | protein corona composition lipid nanoparticle brain endothelial targeting proteomics dataset organ specific | H;B | 19 | 12 | 2 | 34 |
+| 35 | machine learning prediction of nanoparticle brain delivery efficiency dataset of formulations | H;C | 20 | 12 | 5 | 35 |
+| 36 | effect of PEG density and particle size on liposome brain uptake quantitative formulation parameters | H;B | 19 | 14 | 2 | 36 |
+| 37 | interlaboratory variability and reproducibility of brain-to-plasma ratio measurement nanoparticle brain concentration | A;H | 20 | 12 | 8 | 37 |
+| | **本批合计** | | **178** | **111** | **17** | **37** |
+
+本批新增率 62%，重复率 9.6%。
+
+### 第 33 次检索的新增数偏低（4/20），原因不是重复
+
+命中的 20 篇全部是**小分子本身的血脑屏障渗透性 QSAR 模型**（logBB、B3DB 类数据集、
+各种分类器比较），与配方学无关：它们预测的是分子能不能过屏障，
+不是配方参数如何改变过屏障的量。本项目要的是后者。
+因此只选入 4 篇方法学上可借用的，其余不计入主表。
+这一条不构成饱和信号，而是**查询词把方向带偏了**：
+`blood brain barrier permeability` 这个短语在文献里几乎被小分子 QSAR 垄断，
+要查配方学必须带上载体词（liposome、lipid nanoparticle、SLN、formulation）。
+
+### 第四次额度分配调整：新增工作流 H，并确认 E 的处置
+
+| 工作流 | 原定 | 现状 | 说明 |
+|---|---|---|---|
+| H 脑递送专项 | 新增，约 200 | 已用 9 | 按六条必查问题执行 |
+| E 部位特异性膜 | 70 | 停在 3 | 器官倾向性问题并入 H 与 A；膜脂质组到配方（原选项 D）仍否决，配对数据为零 |
+| 淋巴靶向 | 曾列为候选 | 0 | 用户决定跳过，与脑递送无关 |
+
+### 本批未能回答的问题（工具能力所限）
+
+**问题一（PC-DB 的脑或 CNS 记录数、小分子载荷数）在 Consensus 内无解。**
+PC-DB 摘要只给总计数（83 项研究、817 配方、2497 蛋白、脂质基 14.8%），
+没有器官或载荷拆分。这与第 3 批 C 工作流撞的是同一道墙：
+Consensus 索引论文，不索引数据仓储条目或库内字段。
+已转为零额度任务：直接下载 PC-DB 数据表统计。
+
+### 累计额度使用（截至第 7 批）
+
+| 工作流 | 原定 | 已用 | 状态 |
+|---|---|---|---|
+| A 验证证据 | 80 | 8 | 第 7 批又补上 VAMAS 五十实验室与 NTA 双仪器两条关键测量不确定度证据 |
+| B 机理与特征 | 70 | 6 | 六条子问题全部有定量答案 |
+| C 开放数据集 | 70 | 3 | 工具原因压缩 |
+| D 报告标准化 | 45 | 3 | 论证链闭合 |
+| E 部位特异性膜 | 70 | 3 | 方向更正后并入 H |
+| F 同行与商业情报 | 35 | 1 | 学术格局已清；专利无法用本工具查 |
+| G 北欧验证合作方 | 45 | 3 | 工具原因压缩，待按论文优先策略重做约 120 次 |
+| **H 脑递送专项（新）** | **约 200** | **9** | 六条问题已有五条有答案，问题一需直接访问数据库 |
+| 机动储备 | 60 | 3 | |
+| **合计** | **475** | **37** | |
+
+主表 357 行（去重后，无重复 DOI），按优先级加工作流加年份排序。
+工作流覆盖：A 91、B 164、C 73、D 80、E 55、F 13、G 11、H 105。
+优先级：P0 133、P1 152、P2 72。需全文 102 篇，其中 P0 级 36 篇。
+来源类型：同行评议 354、预印本 3。
