@@ -41,3 +41,28 @@ sign-up / upgrade / usage 消息字段在本会话的返回中始终为空。因
 第 1 批小结：调用 6 次，主表新增 54 行，批内新增率 45%（54/120 去重后）。
 重复率低，说明 A 方向还没饱和，但三条子问题（A3 实验室间重复性、A6 批间变异、
 A5 失败案例）已各自拿到可用的具体数值，继续检索的边际价值主要在 A2 盲测设计与 A4 成本周期。
+
+---
+
+## 第 2 批（2026-10-28）工作流 B 机理与特征
+
+| # | 查询词 | 工作流 | 命中 | 新增 | 重复 | 累计调用 |
+|---|---|---|---|---|---|---|
+| 7 | partition coefficient lipid bilayer water drug encapsulation efficiency quantitative relationship liposome | B | 20 | 11 | 4 | 7 |
+| 8 | octanol-water logP poor predictor liposome membrane partitioning deviation | B | 20 | 12 | 2 | 8 |
+| 9 | molecular descriptors correlated with drug loading nanoparticle QSPR polar surface area hydrogen bonding pKa | B | 20 | 7 | 1 | 9 |
+| 10 | ionizable lipid nanoparticle core small molecule drug loading mechanism versus phospholipid bilayer | B | 20 | 9 | 0 | 10 |
+| 11 | molecular dynamics simulation coarse-grained prediction drug encapsulation lipid nanoparticle location bilayer | B | 20 | 11 | 2 | 11 |
+| 12 | lipid nanoparticle internal structure amorphous core drug solubility in lipid excipient loading capacity | B | 20 | 6 | 3 | 12 |
+
+第 2 批小结：调用 6 次，主表新增 56 行（累计 110 行，无重复 DOI）。
+批内新增率约 47%，与第 1 批持平，B 方向未饱和。
+B2 到 B6 六条子问题全部拿到可引用的定量答案，B1 的几篇关键研究需全文补数值。
+
+工作流覆盖（累计）：A 36、B 81、C 18、D 28、E 8、F 1。
+优先级分布：P0 39、P1 50、P2 21。需全文 16 篇。
+
+**额度分配调整提示**：B 的检索顺带把 C（公开数据集）和 D（报告标准化）各带起了十几行候选，
+其中 Hoffmann 2020 的 630 条 MD 轨迹数据集（Scientific Data，15120 次模拟）
+是 C 工作流目前最高价值的单一发现。C 的实际检索可以少于原定 70 次。
+E 只有 8 行且全是顺带捞到的，F 只有 1 行，这两个方向尚未真正开始。
