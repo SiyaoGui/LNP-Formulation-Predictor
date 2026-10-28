@@ -30,7 +30,11 @@
 > 由 `python3 scripts/record_raw_checksums.py` 自动生成并写入本节，不要手填。
 
 <!-- CHECKSUMS:BEGIN -->
-（尚无文件）
+| 文件 | 大小（字节） | SHA-256 |
+|---|---|---|
+| `1-s2.0-S2590156725000787-mmc1.docx` | 135,884 | `014ede2f588acd3dbd28b3d8007a1fe6482e7065b27030aaa2e6e99a69d1a887` |
+| `nanomed_IVR_data-main.zip` | 4,395,115 | `73632455ac272066131ff86c264ef2e46b1bda7f53cb1b390cf26c92d7dd95cb` |
+| `补充数据.txt` | 478 | `17984cb9d7e5ac1c3b92fe1cc219b047f482cbf4aafbb5f4341d0944e7f82a92` |
 <!-- CHECKSUMS:END -->
 
 ## 做过哪些修改

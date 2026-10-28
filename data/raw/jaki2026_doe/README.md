@@ -30,7 +30,11 @@
 > 由 `python3 scripts/record_raw_checksums.py` 自动生成并写入本节，不要手填。
 
 <!-- CHECKSUMS:BEGIN -->
-（尚无文件）
+| 文件 | 大小（字节） | SHA-256 |
+|---|---|---|
+| `1-s2.0-S2590156726001477-main.pdf` | 11,440,827 | `eb88e7b1c275418f5bf2f429c442ef69b22d2b371cdae649338296a50e99ffd7` |
+| `1-s2.0-S2590156726001477-mmc1.docx` | 4,058,883 | `175423b92c3f878e68f1e37e31769df13a668b4d9fdc8cb48dc3cd632580dc63` |
+| `linked-discoveries-42598203-50rows-2026-10-28.csv` | 93,843 | `a69d78c2fb52c3ed7bab810dedba9415a879433a3ee942d07dfdc996f6c8dde6` |
 <!-- CHECKSUMS:END -->
 
 ## 做过哪些修改

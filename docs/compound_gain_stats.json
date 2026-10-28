@@ -20,8 +20,34 @@
   },
   "property_tables": {
     "Khawar 2022": {
-      "status": "尚未抽取",
-      "path": "data/processed/partition_coefficients.csv"
+      "status": "已抽取",
+      "path": "data/processed/partition_coefficients.csv",
+      "records": 490,
+      "records_experimental": 490,
+      "unique_compounds": 423,
+      "by_coefficient_type": {
+        "logKlipw": {
+          "records": 36,
+          "unique_compounds": 36
+        },
+        "logKlw": {
+          "records": 305,
+          "unique_compounds": 304
+        },
+        "logKpw": {
+          "records": 131,
+          "unique_compounds": 126
+        },
+        "logKtw": {
+          "records": 18,
+          "unique_compounds": 18
+        }
+      },
+      "connectable_to_baseline": 1,
+      "not_connectable": 422,
+      "licence": [
+        "CC-BY-4.0"
+      ]
     }
   },
   "probe_tables": {

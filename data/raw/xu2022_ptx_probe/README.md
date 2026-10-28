@@ -29,7 +29,10 @@
 > 由 `python3 scripts/record_raw_checksums.py` 自动生成并写入本节，不要手填。
 
 <!-- CHECKSUMS:BEGIN -->
-（尚无文件）
+| 文件 | 大小（字节） | SHA-256 |
+|---|---|---|
+| `molecules-27-07967-s001.zip` | 7,725,364 | `416d7f46ca2e19d060b9d6601bed970df1e06fde586e89335d052fe3497772a2` |
+| `molecules-27-07967.pdf` | 3,735,568 | `87e6c5ea935a57540d5e421ddda94f3ebc52455f0b558989b6e91c607717e48c` |
 <!-- CHECKSUMS:END -->
 
 ## 做过哪些修改

@@ -1,8 +1,57 @@
 {
   "sources": {
-    "jaki2026_doe": [],
-    "khawar2022_klipw": [],
-    "xu2022_ptx_probe": [],
-    "yanes2025_ivr": []
+    "jaki2026_doe": [
+      {
+        "path": "1-s2.0-S2590156726001477-main.pdf",
+        "sha256": "eb88e7b1c275418f5bf2f429c442ef69b22d2b371cdae649338296a50e99ffd7",
+        "bytes": 11440827
+      },
+      {
+        "path": "1-s2.0-S2590156726001477-mmc1.docx",
+        "sha256": "175423b92c3f878e68f1e37e31769df13a668b4d9fdc8cb48dc3cd632580dc63",
+        "bytes": 4058883
+      },
+      {
+        "path": "linked-discoveries-42598203-50rows-2026-10-28.csv",
+        "sha256": "a69d78c2fb52c3ed7bab810dedba9415a879433a3ee942d07dfdc996f6c8dde6",
+        "bytes": 93843
+      }
+    ],
+    "khawar2022_klipw": [
+      {
+        "path": "41598_2022_19452_MOESM1_ESM.docx",
+        "sha256": "792025a44bb99ecc8d6eca63540db8f21ea889d427271357d1607bc5406d9073",
+        "bytes": 997404
+      }
+    ],
+    "xu2022_ptx_probe": [
+      {
+        "path": "molecules-27-07967-s001.zip",
+        "sha256": "416d7f46ca2e19d060b9d6601bed970df1e06fde586e89335d052fe3497772a2",
+        "bytes": 7725364
+      },
+      {
+        "path": "molecules-27-07967.pdf",
+        "sha256": "87e6c5ea935a57540d5e421ddda94f3ebc52455f0b558989b6e91c607717e48c",
+        "bytes": 3735568
+      }
+    ],
+    "yanes2025_ivr": [
+      {
+        "path": "1-s2.0-S2590156725000787-mmc1.docx",
+        "sha256": "014ede2f588acd3dbd28b3d8007a1fe6482e7065b27030aaa2e6e99a69d1a887",
+        "bytes": 135884
+      },
+      {
+        "path": "nanomed_IVR_data-main.zip",
+        "sha256": "73632455ac272066131ff86c264ef2e46b1bda7f53cb1b390cf26c92d7dd95cb",
+        "bytes": 4395115
+      },
+      {
+        "path": "补充数据.txt",
+        "sha256": "17984cb9d7e5ac1c3b92fe1cc219b047f482cbf4aafbb5f4341d0944e7f82a92",
+        "bytes": 478
+      }
+    ]
   }
 }
