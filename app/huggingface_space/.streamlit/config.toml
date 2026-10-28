@@ -1,0 +1,13 @@
+[theme]
+base = "light"
+primaryColor = "#3A5442"
+backgroundColor = "#FBFAF6"
+secondaryBackgroundColor = "#E9EFE7"
+textColor = "#1B211E"
+font = "Archivo:https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+headingFont = "Archivo:https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+linkColor = "#2F6283"
+borderColor = "#D2D6D1"
+
+[client]
+toolbarMode = "minimal"
