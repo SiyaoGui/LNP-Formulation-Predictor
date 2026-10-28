@@ -1,0 +1,22 @@
+{
+  "schema": "lipidlens.run.v1",
+  "recipe": {
+    "lipids": [{"name": "SM-102", "smiles": "...", "mol_pct": 50}],
+    "total_lipid_mM": 12.5,
+    "payload": {"type": "polyA", "conc_ug_ml": 100},
+    "np_ratio": 6,
+    "aqueous_ph": 4.0
+  },
+  "process": {"tfr_ml_min": 12.0, "frr_aq_org": 3.0, "temp_c": 25},
+  "device": {"device_id": "...", "chip_id": "...", "chip_runs": 17, "calibration_id": "..."},
+  "prediction": {
+    "model_version": "...",
+    "in_domain": true,
+    "size_nm": {"mean": 0.0, "sd": 0.0},
+    "pdi": {"mean": 0.0, "sd": 0.0},
+    "ee_pct": {"mean": 0.0, "sd": 0.0}
+  },
+  "sensor": {"i90": 0.0, "i_fwd": 0.0, "turbidity": 0.0, "g2_fit": {}, "fluor_free": null, "fluor_total": null},
+  "online_estimate": {"size_nm": 0.0, "pdi_proxy": 0.0, "ee_pct_atline": null},
+  "offline_truth": {"z_ave_nm": null, "pdi": null, "ee_pct": null, "instrument": null}
+}

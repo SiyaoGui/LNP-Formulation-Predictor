@@ -18,7 +18,7 @@ Encapsulation efficiency is a different case. There the molecular features carry
 
 In all three rounds the advantage over the baseline fell to about zero once whole papers were held out. Labs use different assays, N/P ratios, buffers and payloads, and the same lipid can differ by 20 percentage points between two papers. The rounds grew from 73 to 370 units and this did not change, so more literature data will not fix it.
 
-The next step is to measure encapsulation ourselves under one fixed protocol. The specification is in `docs/data-spec-ee.md`.
+The next step is to measure encapsulation ourselves under one fixed protocol. The specification is in `docs/data-spec-ee.md`. Longer term, the data should come from our own instrument: a measuring and control module for microfluidic mixers that records every run in one format. The plan is in `hardware/README.md`; none of it has been built yet.
 
 None of these numbers should be read as model accuracy. No model has yet beaten the nearest-neighbour baseline, which copies the value of the most similar molecule in the training set. An early version of this project reported R² = 0.43 from a random row split that put records from the same paper in both training and test sets; with grouped splits the same data gives about zero.
 
@@ -33,6 +33,7 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 | `data/processed/`, `data/processed_large/` | Analysis units and feature matrices |
 | `modeling/` | One folder per run, never edited afterwards; `modeling/INDEX.md` lists them |
 | `docs/` | Frozen protocols, results, data specification, glossary and work logs |
+| `hardware/` | Plan for the measuring and control module: levels L0 to L4, architecture, control loop, prototype stages and the run record format |
 | `app/` | The Streamlit demo and the Hugging Face Space bundle for the earlier particle-size model |
 | `archive/2026-09_first-model/` | Code, data, results and notes from the first model, built in September 2026 |
 
