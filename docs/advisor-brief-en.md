@@ -2,7 +2,6 @@
 
 2026-10-20
 
-> Repo copy of the shared doc at https://claude.ai/code/artifact/a2219a1f-4902-45d7-8dce-375dde9ea290
 > Full technical report: `modeling/2026-10-19_smallmol-baseline/README.md` (Chinese).
 
 On the small-molecule data we have, no model beat the simplest possible baseline — always predicting the average particle size. The point estimate looked good (24% lower error), but the uncertainty is five times larger than the effect. Three pre-registered diagnostics agree on why: the drug's molecular properties carry essentially no information about the outcome in this dataset, and almost all of the usable signal comes from the manufacturing process. The useful finding is quantitative: the learning curve is still falling steeply at our data limit, so adding compounds should help, and we estimate 40–100 unique compounds are needed versus the 15 we have.
