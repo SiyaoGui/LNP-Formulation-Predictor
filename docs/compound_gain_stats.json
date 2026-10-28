@@ -60,5 +60,34 @@
     "unique_compounds_before": 22,
     "unique_compounds_after": 22,
     "net_gain": 0
+  },
+  "enrichment_tables": {
+    "Yanes 2025": {
+      "status": "已抽取",
+      "path": "data/processed/yanes2025_enrichment.csv",
+      "records": 271,
+      "linked_to_repo_records": 271,
+      "new_unique_compounds": 0,
+      "new_formulation_records": 0,
+      "added_columns": [
+        "API_name",
+        "drug_loading",
+        "media_volume_mL",
+        "media_temp_oC",
+        "media_components",
+        "quality_units",
+        "quality_plot_resolution",
+        "quality_are_measurement_timepoint_number_sufficient?_>_5",
+        "quality_does_the_shape_resemble_a_profile?",
+        "quality_are_sufficient_numbers_of_repeats_used_and_average_presented?",
+        "quality_nan",
+        "source_row_id",
+        "release_curve_file",
+        "ivr_id_from_curve"
+      ],
+      "licence": [
+        "CC-BY-4.0"
+      ]
+    }
   }
 }
