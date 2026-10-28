@@ -10,6 +10,11 @@
 
 ## 关键限制：Consensus 无法按机构或国家找课题组
 
+> **本限制已在第 9 批被绕开，不必再读本节即可直接看下面的「单位已核实的候选名单」。**
+> 解法是改用 PubMed E-utilities，它的 `[ad]` 字段直接检索作者单位。
+> 本节保留，因为它记录了为什么 G 工作流不该继续花 Consensus 额度。
+
+
 这一节必须先读。
 
 **Consensus 的返回字段只有：标题、作者名、年份、期刊、引用数、DOI、摘要、链接。
@@ -118,75 +123,124 @@ EDQM 的 mRNA 疫苗工作组、以及 CEN、ISO、ASTM、VAMAS 并列。
 
 ---
 
-## 从检索中出现的、设备能力匹配但单位未核实的作者线索
+## 单位已核实的候选名单（PubMed 检索，零 Consensus 额度）
 
-**使用说明：以下全部是从论文内容推断的"能力匹配"，不是已核实的北欧归属。
-作者名按 Consensus 返回原样抄录，一个单位都没有核实。
-不要直接拿这个名单去联系，必须先用 OpenAlex 或 Scopus 核实单位。**
+### 方法：绕开 Consensus 的单位字段缺失
 
-列入标准：论文展示的能力组合同时包含
-（一）微流控 LNP 或脂质体制备，（二）多技术交叉表征，（三）2022 年以后发表。
+Consensus 不返回作者单位，`country` 过滤器指的是流行病学意义上的研究所在国，
+所以 G 工作流用 Consensus 做不了（见上面的关键限制）。
+本批改用 **PubMed E-utilities**，它的 `[ad]` 字段直接检索作者单位，
+并在返回的 XML 里给出每位作者的完整单位字符串与（若论文公开了的）通信邮箱。
 
-| 第一作者（原样抄录） | 论文 | 展示的设备与能力 | 与我的需求的匹配点 |
+**OpenAlex 走不通**：本环境的网络策略拒绝 `api.openalex.org`（CONNECT 返回 403）。
+PubMed E-utilities 与 Crossref API 可达，所以改用 PubMed。
+如果以后需要 OpenAlex，需要在云环境设置里把该域名加进允许列表。
+
+检索式（2021 到 2026 年，单位含丹麦、瑞典、挪威、芬兰之一）：
+
+| 代号 | 主题 | PubMed 命中 | 已取回解析 |
 |---|---|---|---|
-| J. Gilbert | 10.1016/j.jcis.2023.12.165（2024，61 引） | **在微流控芯片内做原位小角 X 射线散射**，再对后续透析过程取样；终配方用 SAXS、SANS、DLS、cryo-TEM 四法表征 | 能力组合几乎完全覆盖我的需求，且"原位"能力说明他们能做工艺过程监测而不只是终产品检测 |
-| Hans Bolinsson | 10.1016/j.ijpharm.2024.124940（2024，15 引） | **AF4 在同步辐射线站上在线耦合 SAXS**，加多角光散射、双波长 UV、dRI；离线用 cryo-TEM、DLS、LC-CAD | 能做粒径分辨的组成分析；该文一条结论是**各脂质组分的摩尔分数与原始配方高度吻合**，这正是配方质量核验所需 |
-| Mattias Sjöberg | 10.1073/pnas.2426601122（2025，PNAS，10 引） | 表面敏感荧光加无标记散射显微，**单颗粒分辨**，配微流控做折射率不同介质间的液体交换 | 能量化单颗粒的粒径、折射率、载荷含量；还能测早期内体条件（pH 7.4 降到 6.0）下对支撑脂双层的融合性 |
-| Lucrezia Caselli | 10.1016/j.cis.2024.103156（2024，70 引，综述） | SAXS 与 SANS 在脂质纳米粒上的方法学综述，含时间分辨 TR-SAXS/TR-SANS，以及**在大科学装置上新实现的 SAXS/SANS 与互补在线技术的联用** | 作者对该方法学有系统掌握；文中提到的"同步多方法研究"能力是高端表征的前沿 |
-| Nicolò Paracini | 10.1021/acsami.2c18956（2023，16 引） | 纳米颗粒支撑脂双层阵列，**掠入射 X 射线与中子散射、中子反射**，配荧光显微与石英晶体微天平 | 做的是模型膜而不是 LNP，但中子反射能力稀缺，若将来要做膜模型相关工作这是对口的 |
-| Dileep Urimi | 10.1021/acs.molpharmaceut.1c00648（2022，36 引） | 脂质纳米胶囊的 SAXS 加 SANS，配 DLS、Zeta、cryo-TEM；定量给出核半径（未载药 20.0 ± 0.9 nm，载药 20.2 ± 0.6 nm）与壳厚变化约 1 nm | 展示了**载药前后结构变化的定量分辨能力**，精度到 1 nm 量级 |
+| A | 脂质纳米粒、脂质体、SLN、NLC 加配方或包封或载药或微流控 | 315 | 315 |
+| B | 血脑屏障加模型或体外或 Transwell 或芯片或类器官或 iPSC | 419 | 400 |
+| C | 动态光散射、zeta、粒径、AF4、小角散射、冷冻电镜、参考物质，加纳米粒或脂质体 | 429 | 400 |
+| D | 纳米粒或脂质体加脑或 CNS 加递送或靶向或转运 | 104 | 104 |
+| E | 认证参考物质、溯源、实验室间比对、方法验证，加纳米粒或粒径或 zeta（2016 年起） | 47 | 47 |
+| F | 非结合脑浓度、Kp,uu、微透析、脑切片、脑渗透（2018 年起） | 212 | 212 |
 
-**我对这个名单的诚实评价：它的用途是"候选池"，不是"名单"。**
-任务描述要求"输出一张按匹配度排序的名单"，
-但在无法核实单位的前提下，按匹配度排序会给出一种虚假的确定感。
-所以我按**能力匹配**排序并全部标注单位未核实，
-把核实这一步明确留给下一步的 OpenAlex 脚本任务。
+共解析 1478 条记录、3351 个北欧单位作者条目。
 
----
+### 机构层面：同时具备配方与脑或 BBB 能力的北欧机构
 
-## 做方法学与验证研究的课题组（任务描述第 4 条要求单独标出）
+按论文数排序，均为**单位已核实**（PubMed 单位字段）。
 
-任务描述说这类最可能接受合作，这个判断是对的。
-从本次清查看，最符合"做方法学与验证研究"这个画像的是：
+| 机构 | A 配方 | B BBB 模型 | C 表征 | D 脑递送 | 判断 |
+|---|---|---|---|---|---|
+| University of Copenhagen, DK | 52 | 65 | 58 | 11 | 四项全高，最大的综合体量 |
+| Karolinska Institutet, SE | 33 | 62 | 29 | 13 | 配方与 BBB 都强 |
+| Uppsala University, SE | 20 | 66 | 41 | 14 | **脑暴露终点的发源地**，见下 |
+| University of Gothenburg, SE | 37 | 29 | 13 | 3 | 配方强，脑递送弱 |
+| University of Helsinki, FI | 33 | 26 | 27 | 9 | 配方与微流控强 |
+| Technical University of Denmark (DTU), DK | 26 | 11 | 36 | 12 | **表征与微流控最强**，BBB 偏弱 |
+| Aarhus University, DK | 17 | 33 | 24 | 7 | 均衡 |
+| University of Southern Denmark, DK | 25 | 13 | 14 | 5 | 配方强 |
+| Lund University, SE | 12 | 21 | 34 | 2 | **AF4 与小角散射能力所在** |
+| University of Eastern Finland, FI | 11 | 24 | 8 | 6 | BBB 强 |
+| University of Oslo, NO | 7 | 24 | 10 | 6 | BBB 强 |
+| UiT The Arctic University of Norway, NO | 21 | 1 | 8 | 3 | **脂质体配方筛选能力强**，无 BBB |
+| KTH Royal Institute of Technology, SE | 6 | 14 | 30 | 2 | 芯片与表征 |
+| Aalborg University, DK | 2 | 11 | 4 | 4 | 小而准，见下 |
+| SINTEF, NO | 5 | 2 | 9 | 3 | 第 6 批那条线索现已被单位字段证实 |
+| RISE Research Institutes of Sweden, SE | 3 | 0 | 6 | 0 | 瑞典国家研究院，受托表征候选 |
+| VTT Technical Research Centre of Finland, FI | 4 | 0 | 1 | 0 | 芬兰国家研究中心 |
 
-**第一梯队（已实际完成跨实验室验证工作）**
-1. **JRC 体系（Parot 等）**：Parot 2020 做了三实验室 MD-AF4 验证并建立接受准则；
-   Parot 2024 用"同一技术在不同实验室测重复性"的方式评估了四类 LNP-RNA 分析协议。
-   **这是本次清查里唯一有证据证明做过脂质体跨实验室方法验证的团队。**
-2. **CRM 开发体系（Jakubek 等）**：开发并认证了三个 LNP 与脂质体 CRM，
-   给出了完整的不确定度分解（脂质体与阴离子 LNP 的 Z-avr 不确定度 <1.3%）。
+### 个人层面：同时具备两项能力的课题组（最佳匹配）
 
-**第二梯队（做正交技术比对与参考物质方法学）**
-3. **Vogel 等**：Vogel 2021（DOI 10.1002/jev2.12052，96 引）
-   用六种正交技术（MADLS、AF4-MALS、CLS、NTA、TRPS、nFCM）
-   按复杂度递增的步骤比对颗粒浓度测量，**并用脂质体作为验证样品**。
-4. **Minelli 等**：Minelli 2026，多模态表征教程，主张计量学指导的多模态方法。
-5. **Giordani 等**：Giordani 2023（DOI 10.1016/j.jpba.2023.115751，103 引）
-   梳理了脂质体上市审批所需的表征方法与标准化协议，
-   并提出一个有用的区分：**大量泛用性指南文件（Type 1）已存在，
-   但缺少稳健且标准化的方法文件（Type 2）**。这个 Type 1 对 Type 2 的区分
-   可以直接用在申请材料里（同时服务 D 工作流）。
+个人层面同时跨配方与脑两类检索的作者共 **33 位**。下表是其中一作或末位作者篇数最多、
+且能力与本项目直接对口的几位。**邮箱均取自论文自己公开的通信单位字符串。**
 
-**全部未核实单位与联系方式。**
+| 课题组负责人 | 单位（论文所列） | 邮箱 | 具体能力 | 匹配度 | 代表论文 |
+|---|---|---|---|---|---|
+| **Margareta Hammarlund-Udenaes / Irena Loryan** | Uppsala University, SE | mhu@farmbio.uu.se；Irena.loryan@farmaci.uu.se | **脑暴露终点的方法学源头**：Kp,uu,brain 概念、脑切片法、脑微透析、大动物（猪）脑微透析 | **最高** | 本项目脑证据的两块基石就出自该组：甲氨蝶呤 GSH-PEG 脂质体的 Kp,uu 系列（10.1016/j.ejpb.2019.04.004）与苯海拉明包封后 Kp,uu 从 3.0 降到 1.5（10.1021/acs.molpharmaceut.8b00611）；另有 10.1080/17425247.2025.2462767 的 CNS 递送评估综述 |
+| **Anna Herland** | Karolinska Institutet / KTH, SE（邮箱为 KTH） | aherland@kth.se | **一人同时跨四类检索（A、B、C、D）**：脂质纳米粒加人源 BBB 芯片加星形胶质细胞三维培养 | **最高** | 10.1186/s12987-022-00315-1（TAT 修饰脂质纳米粒在人 BBB 与微胶质细胞培养上的双重效应）；10.1016/j.biomaterials.2025.123739（芯片上仿生屏障模型） |
+| **Torben Moos / Maj Schneider Thomsen** | Aalborg University, DK | tmoos@hst.aau.dk | 转铁蛋白受体靶向纳米粒加血脑屏障体内外模型加跨物种体外 BBB 比较 | **高** | 10.3390/pharmaceutics14102237（TfR 靶向纳米粒的 BBB 转运）；10.1371/journal.pone.0236770（跨物种体外 BBB） |
+| **Nataša Škalko-Basnet** | UiT The Arctic University of Norway, NO | natasa.skalko-basnet@uit.no | **脂质体配方筛选**，一作或末位作者 15 篇；并有多酚类脂质体与胶质瘤细胞上的 pH 响应脂质体工作 | **高（配方侧）** | 10.1016/j.ejps.2022.106267（系统改组成同时测包封、粒径、zeta、稳定性，正是我们要的数据结构）；10.3389/fddev.2026.1839747（多酚脂质体）；10.3390/pharmaceutics14061125 已在本仓库主表中 |
+| **Yi Sun** | Technical University of Denmark (DTU), DK | suyi@dtu.dk | **可放大微流控配方平台**（探索级到工业级）加脑靶向纳米粒 | **高** | 10.1021/acs.nanolett.3c05057；10.1016/j.jconrel.2022.10.037 |
+| **Krzysztof Kucharz** | University of Copenhagen, DK | kucharz@sund.ku.dk | 活体双光子看血脑屏障转运；定位出纳米粒转胞吞进脑的关键部位是**毛细血管后小静脉** | **高（机理与影像）** | 10.1038/s41467-021-24323-1；10.1007/s11095-022-03266-2 |
+| **Anan Yaghmur** | University of Copenhagen, DK | anan.yaghmur@sund.ku.dk | 微流控合成加**原位 SAXS/WAXS/SANS 在线结构分析** | 高（表征与硬件方向） | 10.3390/molecules27144602 |
+| **Hélder A. Santos** | University of Helsinki, FI（邮箱同时含 umcg.nl，**当前主单位需核实**） | helder.santos@helsinki.fi | 微流控 LNP 与 SLN 制备，体量大 | 中到高 | 10.1016/j.actbio.2020.12.024（微流控法制备 PEG 化 SLN） |
+| **Nikos S. Hatzakis** | University of Copenhagen, DK | 未公开 | **单颗粒水平**的脂质体表征 | 中（表征） | 10.1021/acsami.5c16748 |
 
----
+### 方法学与表征能力单独标出（任务描述第 4 条要求）
 
-## 建议的下一步（零 Consensus 额度）
+| 课题组负责人 | 单位 | 邮箱 | 能力 | 代表论文 |
+|---|---|---|---|---|
+| **Lars Nilsson** | Lund University, SE | 未公开 | **在线 AF4 联小角 X 射线散射解析 LNP 结构与亚群**。AF4 是第 6 批查到的唯一经三实验室验证的脂质体表征方法 | 10.1016/j.ijpharm.2024.124940 |
+| **Andrew J. Urquhart** | Technical University of Denmark (DTU), DK | anur@dtu.dk | **包封率定量方法学**：替换 RiboGreen 法中的 Triton X-100 | 10.1016/j.ejpb.2024.114571 |
+| **Katrin Loeschner** | DTU National Food Institute, DK | kals@food.dtu.dk | **本次扫描里唯一有实际认证参考物质评价工作的组**（单颗粒电感耦合等离子体质谱加 CRM 评价）。注意对象是食品中的元素而不是脂质纳米粒 | 10.1016/j.talanta.2026.129727 |
+| **Sami Svanbäck / Emma Hokkala** | University of Helsinki, FI | emma.hokkala@helsinki.fi | **不依赖化学分析的热力学溶解度测定**。溶解度是包封率的上游变量 | 10.1016/j.ijpharm.2024.123890 |
+| **Thomas L. Andresen** | Technical University of Denmark (DTU), DK | tlan@dtu.dk | 脂质体与胶束配方，跨 A、B、C 三类 | 10.1093/jimmun/vkaf043 |
+| **Sebastian Kuehr** | Norwegian Institute for Water Research (NIVA), NO | sek@niva.no | 纳米粒提取与表征条件的方法验证 | 10.1016/j.chemosphere.2024.143460 |
+| 机构级受托表征 | SINTEF（NO）、RISE（SE）、VTT（FI） | 需官网查 | 三家北欧国家级研究院，均在 C 类检索中出现，适合作为受托表征方 | 见机构表 |
 
-1. **写一个 OpenAlex 脚本**，按 `institutions.country_code` 过滤
-   丹麦、瑞典、挪威、芬兰，交叉 LNP 与脂质体相关概念，限定 2022 年后，
-   输出机构、作者、论文清单。OpenAlex 免费且有完整的机构字段，
-   这件事完全可以自动化。已列入 `docs/next-actions.md`。
-2. **用这个脚本核实上面"能力匹配"表里的六位作者的单位。**
-3. **直接去 SINTEF 官网查其纳米药物或药物递送相关的服务页面与联系人。**
-4. **查 PHOENIX 与 SAFE-n-MEDTECH 两个开放创新试验台的服务目录与申请入口。**
-   这两个是欧盟计划，服务入口通常公开。
-5. **向任何候选方询价时，问清三件事**（前两件来自本批发现）：
-   - **是否使用认证参考物质（如 ALIPO-1、ALNP-1、LNP-2）做日常校准？**
-     这是一个能同时筛选质量水平和问出不确定度水平的好问题。
-   - 包封率用哪种分离方法，用哪个定义口径？
-     （依据：方法偏差可达 24 到 61 个百分点，见 `docs/validation-evidence.md`）
-   - 成本与周期。**这一项文献里完全没有答案**（见 A4），只能靠询价获得。
+### 关于认证参考物质使用情况：全部 未核实
+
+PubMed 的元数据**不含正文方法部分**，所以无法从本次扫描判断上述任何一组
+是否用认证参考物质校准粒度仪。这一条只能靠询价问出来，
+问法见下面的询价模板第一组。
+
+**唯一的间接线索**：Loeschner 组有公开发表的 CRM 评价工作，
+说明该组具备计量意识与 CRM 使用经验；其余各组均无证据。
+不能因为没查到就说对方不用 CRM。
+
+### 推荐的接洽顺序与理由
+
+1. **先接洽 Uppsala（Hammarlund-Udenaes / Loryan 组）**。
+   理由不是体量，而是**本项目脑递送证据里最关键的两个定量结果就是该组做的**，
+   并且我们在 `docs/brain-delivery-evidence.md` 里标出了一处需要澄清的 5 倍差异
+   （同组 2017 年报 PEG-EYPC 脂质体甲氨蝶呤 Kp,uu 为 0.28 到 0.32，2019 年报 1.5）。
+   这给了一个**具体、有专业含量、对方有动机回答**的接洽理由，比泛泛询价强得多。
+2. **再接洽 Aalborg（Moos / Thomsen 组）与 KTH-Karolinska（Herland 组）**，
+   这两组是个人层面同时具备配方与 BBB 两项能力的最佳匹配。
+3. **配方侧单独接洽 UiT（Škalko-Basnet 组）**，
+   因为该组已有「系统改脂质体组成同时测四个响应」的现成工作流，
+   与我们需要的数据结构完全一致，而且做过多酚类载荷。
+4. **表征与方法学侧接洽 Lund（Nilsson 组）与 DTU（Urquhart 组）**，
+   前者是 AF4 能力，后者是包封率定量方法学。
+5. **计量侧只在需要 CRM 锚定主档时接洽 DTU National Food Institute（Loeschner 组）**。
+
+### 本节的已知限制
+
+1. **单位以论文所列为准，当前单位可能已变**。已发现两例不一致：
+   Herland 的论文单位为 Karolinska 而邮箱为 KTH；
+   Santos 的邮箱同时出现 helsinki.fi 与 umcg.nl（荷兰 Groningen）。
+   接洽前应核对对方机构主页。
+2. **邮箱取自论文公开的通信单位字符串**，可能已失效。
+3. **一作或末位作者篇数是课题组负责人的粗代理**，不等于通信作者。
+   PubMed 的 XML 不单独标注通信作者，只在单位字符串里带邮箱。
+4. **论文数不等于能力匹配度**。机构表里的数字只说明该机构在该主题上有产出，
+   不说明他们愿意或能够承接外部验证委托。
+5. **本次只覆盖 2021 年起（E 类 2016 年起、F 类 2018 年起）的 PubMed 收录文献**，
+   未收录于 PubMed 的工程类期刊（如部分化工与材料期刊）会被漏掉。
 
 ---
 
@@ -247,11 +301,17 @@ EDQM 的 mRNA 疫苗工作组、以及 CEN、ISO、ASTM、VAMAS 并列。
 
 ## 文献里没有答案的问题
 
-1. **任何一位作者的单位，Consensus 都不提供。** 这是工具的结构性限制，不是检索不力。
-2. **验证实验的报价与周期**，本次清查全程零命中，只能询价。
-3. **SINTEF Industry 内部是否有 LNP 能力**，未核实。
-4. **北欧是否有专做 LNP 方法学验证的团队**，用现有工具无法判定。
-   不能因为没查到就说没有。
+1. ~~任何一位作者的单位，Consensus 都不提供。~~ **已解决**：
+   改用 PubMed E-utilities，单位字段直接可检索，第 9 批已产出单位已核实的名单。
+2. **验证实验的报价与周期**，本次清查全程零命中，只能询价。这一条仍然成立。
+3. ~~SINTEF Industry 内部是否有 LNP 能力，未核实。~~ **部分解决**：
+   PubMed 单位字段显示 SINTEF 在配方类检索中有 5 篇、表征类 9 篇、脑递送类 3 篇，
+   说明确有相关产出；但是否承接外部委托仍需直接问。
+4. ~~北欧是否有专做 LNP 方法学验证的团队，用现有工具无法判定。~~ **已解决**：
+   找到四个方法学与表征方向明确的组（AF4 与小角散射、包封率定量、
+   认证参考物质评价、热力学溶解度测定），见上面的方法学能力表。
+5. **各组是否用认证参考物质校准粒度仪，全部未核实。**
+   PubMed 元数据不含正文方法部分，这一条只能靠询价问出来。
 
 ---
 
@@ -264,3 +324,9 @@ EDQM 的 mRNA 疫苗工作组、以及 CEN、ISO、ASTM、VAMAS 并列。
   依据见 `docs/validation-evidence.md` 新增的「为什么验收标准必须分两档」章节。
   同时新增两项能力问题（是否同时具备 LNP 制备与血脑屏障模型、模型是静态还是微流控），
   因为首发管线已更正为血脑屏障脑递送。
+- 2026-10-28：第 9 批用 PubMed E-utilities 替代 Consensus 完成 G 工作流，
+  零 Consensus 额度。解析 1478 条记录、3351 个北欧单位作者条目，
+  产出机构层面 17 家与个人层面 9 位（另有方法学方向 6 位）的单位已核实名单。
+  最高匹配是 Uppsala 的 Hammarlund-Udenaes 与 Loryan 组，
+  理由是本项目脑递送证据里最关键的两个定量结果就出自该组。
+  `api.openalex.org` 被本环境网络策略拒绝（CONNECT 403），故未使用 OpenAlex。
