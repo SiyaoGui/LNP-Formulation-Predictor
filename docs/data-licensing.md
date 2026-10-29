@@ -37,6 +37,7 @@ CC BY 4.0 允许商业使用与改编，条件是署名、保留授权声明、�
 | 改编 | 允许，需标明已修改 |
 | 内容 | logKlw n=305，logKpw n=131 |
 | 用途 | **分子属性，不是配方记录。** 单独建表，见 `docs/schema-partition-coefficients.md` |
+| 抽取状态 | **已完成**（2026-10-28）。490 条，产物 `data/processed/partition_coefficients.csv`，报告 `docs/worklog/2026-10-28-抽取1-khawar.md` |
 | `data/raw/` 目录 | `data/raw/khawar2022_klipw/` |
 
 ### 2.2 Yanes 2025（脂质体体外释放与配方开放库）
@@ -52,9 +53,10 @@ CC BY 4.0 允许商业使用与改编，条件是署名、保留授权声明、�
 | 商用 | 允许 |
 | 内容 | 配方参数 + 体外释放（IVR）测试条件 + 数字化释放曲线 |
 | 用途 | 按仓库现有 schema 抽成配方数据 |
+| 抽取状态 | **已完成**（2026-10-28）。已验证它就是仓库现有 PMC_IVR 的来源，所以产物是增补表 `data/processed/yanes2025_enrichment.csv`（271 条）而非新配方表，报告 `docs/worklog/2026-10-28-抽取2-yanes.md` |
 | `data/raw/` 目录 | `data/raw/yanes2025_ivr/` |
 
-### 2.3 Jaki 2026（DoE 双离心筛选，3 个 PROTAC）
+### 2.3 Jaki 2026（DoE 双离心筛选，单载荷 ACBI2）
 
 | 项 | 值 |
 |---|---|
@@ -65,8 +67,10 @@ CC BY 4.0 允许商业使用与改编，条件是署名、保留授权声明、�
 | 出版方 | Elsevier BV |
 | 授权 | **CC BY 4.0**（`http://creativecommons.org/licenses/by/4.0/`，vor） |
 | 商用 | 允许 |
-| 内容 | DoE 配方矩阵，3 个 PROTAC，多种脂质基质，含 D/L 比 |
+| 内容 | DoE 配方矩阵 40 个 run + 5 个确认实验，6 个因子，5 个响应。**单载荷 ACBI2** |
 | 用途 | 按仓库现有 schema 抽成配方数据 |
+| 抽取状态 | **已完成**（2026-10-29）。45 条，产物 `data/processed/formulations_jaki2026.csv`，报告 `docs/worklog/2026-10-29-抽取3-jaki.md` |
+| **更正** | 收集时按摘要 "across three distinct PROTACs" 记为 3 个 PROTAC，这是错的。ACBI1/ACBI3 只出现在 HPLC 方法验证文字里，无配方数据。唯一载荷是 ACBI2，本文是纯 L 类 |
 | **注意** | PROTAC 分子量通常超过 900 Da 上限。按协议 N1，超限记录仍提取但标 `mw_over_default_cap = TRUE`，默认不进主数据集 |
 | `data/raw/` 目录 | `data/raw/jaki2026_doe/` |
 
@@ -81,8 +85,10 @@ CC BY 4.0 允许商业使用与改编，条件是署名、保留授权声明、�
 | 出版方 | MDPI AG |
 | 授权 | **CC BY 4.0**（`https://creativecommons.org/licenses/by/4.0/`，vor） |
 | 商用 | 允许 |
-| 内容 | 19 个紫杉醇硼酸衍生物，同一脂质体配方下筛选 |
-| 用途 | **外部探针集，不进训练集。** 19 个分子共享单一 Murcko 骨架，正是 `docs/data-spec-ee.md` 2.3 节警告的「在一个骨架附近密集采样」。用途是检验「同骨架内的小修饰能否被模型分辨」 |
+| 内容 | 19 个紫杉醇硼酸衍生物（**只有细胞毒性数据**）。配方筛选部分是**单载荷 compound 4d 变配方** |
+| 用途 | **外部探针集，不进训练集。** |
+| 抽取状态 | **已完成**（2026-10-29）。20 条配方 + 5 条化合物，产物 `data/processed/probe_xu2022.csv` 与 `probe_xu2022_compounds.csv`，报告 `docs/worklog/2026-10-29-抽取4-xu-探针.md` |
+| **更正** | 原定用途（检验同骨架内小修饰的分辨力）**落空**。19 个化合物只有细胞毒性，没有逐个包封率；只有 5 个试过载入，4 个失败且仅有定性描述，有定量 EE 的只有 4d。且表 1 的 Y/Z 取代基是图片，全篇不提供 SMILES。本文是 L 类不是 P 类 |
 | `data/raw/` 目录 | `data/raw/xu2022_ptx_probe/` |
 
 ---
@@ -172,3 +178,4 @@ data/raw/
 | 日期 | 变更 | 依据 |
 |---|---|---|
 | 2026-10-27 | 建立本文件。4 个 CC BY 4.0 数据集标为可用（其中 Xu 2022 限定为外部探针集），5 个标为挂起 | Crossref `license` 字段（见第一节）；用户 2026-10-27 的授权口径决定 |
+| 2026-10-29 | 4 个 CC BY 4.0 数据集全部抽取完成，各节补「抽取状态」行。Jaki 2026 与 Xu 2022 的「内容」描述按全文核对结果更正（两者都不是 P 类，都是单载荷变配方）。5 个挂起数据集状态不变，未抽取、未进仓库 | 全文核对；`docs/worklog/` 下 2026-10-28 与 2026-10-29 的四份抽取报告 |
