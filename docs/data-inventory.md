@@ -18,7 +18,7 @@
 | 三源合并 | `merge_schema.py` → `merged_formulations_v2.csv` | 可重跑 |
 | 特征工程 | `featurize_m3.py` → `feature_matrix_v2.parquet`（1934 × 2624） | 可重跑，已含 payload 的 RDKit 描述符 + 512 位 Morgan 指纹 |
 | 建模 | `train_m4.py` → `m4_model.joblib` | target 是 `particle_size_nm`（log10），模型 HistGradientBoostingRegressor |
-| 部署 | `HF_upload/`（Hugging Face Spaces）、`M5_streamlit_app/` | 线上版输入配方、输出粒径和 PDI |
+| 部署 | `app/huggingface_space/`（Hugging Face Spaces）、`app/streamlit_demo/` | 线上版输入配方、输出粒径和 PDI |
 | 诊断实验 | `m4b_stratification_test.py`、`verify_*_m6.py`、`ablate_*_m6.py`、`shap_analysis_m6.py` | 已跑完，结果在同名 csv |
 
 ### 1.2 已有结果（照原始结果文件抄录，没有重算）

@@ -3,7 +3,7 @@
 # 本文件里的每一项都对应 docs/evaluation-protocol.md 里写死的设定。
 
 data:
-  source_csv: merged_formulations_v2.csv
+  source_csv: data/raw/merged_formulations_v2.csv
   out_dir: data/processed
 
 subset:
