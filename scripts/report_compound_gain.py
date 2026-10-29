@@ -338,21 +338,49 @@ def main() -> int:
         col = "payload_inchikey" if "payload_inchikey" in df.columns else "inchikey"
         keys = key_set(df[col]) if col in df.columns else set()
         scafs = key_set(df["scaffold"]) if "scaffold" in df.columns else set()
+        named = (
+            sorted(set(df["payload_type"].dropna().astype(str).str.strip()) - {""})
+            if "payload_type" in df.columns else []
+        )
+        n_quant = (
+            int(df["encapsulation_efficiency_pct"].notna().sum())
+            if "encapsulation_efficiency_pct" in df.columns else None
+        )
+        n_fail = (
+            int((df["formation_ok"] == False).sum())  # noqa: E712
+            if "formation_ok" in df.columns else None
+        )
         r = {
             "status": "已抽取",
             "path": str(path.relative_to(ROOT)),
             "records": int(len(df)),
+            "named_payloads": named,
             "unique_compounds": len(keys),
             "unique_scaffolds": len(scafs) or None,
+            "records_with_quantitative_ee": n_quant,
+            "records_failed_to_form": n_fail,
         }
         stats["probe_tables"][name] = r
         print(f"\n{name}  [已抽取]  {r['path']}")
         print(f"  记录数                  {r['records']}")
-        print(f"  唯一化合物              {r['unique_compounds']}")
+        print(f"  载荷（按名字）          {len(named)}  {named}")
+        print(f"  唯一化合物（按结构）    {r['unique_compounds']}")
+        if n_quant is not None:
+            print(f"  其中有定量 EE 的        {n_quant}")
+        if n_fail:
+            print(f"  载药失败的记录          {n_fail}  （定性失败，不是缺测）")
         if r["unique_scaffolds"]:
             print(f"  唯一骨架                {r['unique_scaffolds']}")
-            if r["unique_scaffolds"] == 1:
-                print("  注意：骨架数为 1，符合预期（衍生物序列），只能检验同骨架内分辨力")
+        # 探针集的用途是检验「同骨架内的小修饰能否被模型分辨」。这要求
+        # 多个化合物 + 各自的结构。两个条件都不满足时必须说清楚，否则这张表
+        # 会被当成能用的探针集
+        if r["unique_compounds"] <= 1:
+            print()
+            print("  **这个探针集不能用于原定用途。** 原定用途是检验同骨架内的小修饰")
+            print("  能否被模型分辨，这需要多个化合物、每个都有结构和定量 EE。实际：")
+            print(f"    有结构（SMILES）的化合物   {r['unique_compounds']}")
+            print(f"    有定量 EE 的化合物         {len([n for n in named if 'uncertain' not in n])}")
+            print("  所以它只能当作「单载荷下变配方」的区组用，和 Jaki 2026 同类。")
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
