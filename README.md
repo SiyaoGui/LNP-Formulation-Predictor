@@ -27,17 +27,36 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 | Path | Contents |
 |---|---|
 | `lnp/` | Shared modules: subset definitions, features, dataset building, evaluation |
-| `scripts/` | Entry points, one per step, each can be rerun on its own |
+| `scripts/` | Modelling entry points, one per step, plus the PubMed and dataset-repository scans used in the literature review |
 | `configs/` | Run configurations; switching between the small- and large-molecule subsets is a one-line change |
 | `data/raw/` | Source tables: the merged three-source table (1,934 rows), the LNP Atlas export and lipid SMILES |
 | `data/processed/`, `data/processed_large/` | Analysis units and feature matrices |
 | `modeling/` | One folder per run, never edited afterwards; `modeling/INDEX.md` lists them |
-| `docs/` | Frozen protocols, results, data specification, glossary and work logs |
+| `docs/` | Frozen protocols, results, data specification, glossary, the literature review (below) and work logs |
 | `hardware/` | Plan for the measuring and control module: levels L0 to L4, architecture, control loop, prototype stages and the run record format |
-| `app/` | The Streamlit demo and the Hugging Face Space bundle for the earlier particle-size model |
+| `app/` | The Hugging Face Space (project page plus the earlier particle-size model as a demo) and a standalone Streamlit demo |
 | `archive/2026-09_first-model/` | Code, data, results and notes from the first model, built in September 2026 |
 
 For a first read: `docs/algorithm-results-en.md` summarises the three rounds in English, `docs/data-spec-ee.md` describes the planned experiment and `docs/glossary.md` explains the baselines and splits. The handoff notes and per-round reports are in Chinese.
+
+## Literature review (October 2026)
+
+A structured search of the published literature, run on 28 October 2026, collected 469 candidate papers (`docs/master-candidates.csv`). The files are in Chinese.
+
+| File | Question it answers |
+|---|---|
+| `docs/consensus-sweep-summary.md` | Overall numbers and conclusions; start here |
+| `docs/next-actions.md` | Next steps, each tied to the finding that supports it |
+| `docs/brain-delivery-evidence.md` | Evidence for the first application, brain delivery across the blood-brain barrier |
+| `docs/organ-tropism-evidence.md` | Published cases where changing the formulation measurably changed organ distribution |
+| `docs/validation-evidence.md` | What independent validation and success criteria look like in the literature |
+| `docs/heterogeneity-ceiling.md` | How far encapsulation of one molecule varies between studies |
+| `docs/feature-mechanism.md` | Which molecular features should predict small-molecule encapsulation |
+| `docs/open-datasets.md` | Open formulation datasets and their licences |
+| `docs/reporting-standards.md` | Reporting standards, and why inconsistent reporting limits models |
+| `docs/competitive-landscape.md` | Published work by other groups and companies |
+| `docs/fulltext-acquisition-list.md` | The 152 papers that need full text, with licence status |
+| `docs/membrane-specific.md` | Earlier membrane-specific search; its conclusions are superseded |
 
 ## Reproducing the results
 
