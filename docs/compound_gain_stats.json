@@ -9,13 +9,23 @@
     "source_papers": 34
   },
   "formulation_tables": {
-    "Yanes 2025": {
-      "status": "尚未抽取",
-      "path": "data/processed/formulations_yanes2025.csv"
-    },
     "Jaki 2026": {
-      "status": "尚未抽取",
-      "path": "data/processed/formulations_jaki2026.csv"
+      "status": "已抽取",
+      "path": "data/processed/formulations_jaki2026.csv",
+      "records": 45,
+      "unique_compounds": 0,
+      "named_payloads": [
+        "ACBI2"
+      ],
+      "named_payloads_without_structure": [
+        "ACBI2"
+      ],
+      "unique_compounds_within_mw_cap": 0,
+      "overlap_with_baseline": 0,
+      "new_compounds": 0,
+      "licence": [
+        "CC-BY-4.0"
+      ]
     }
   },
   "property_tables": {

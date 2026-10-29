@@ -36,8 +36,9 @@ NON_DRUG_PAYLOADS = {"empty", "gold_nanoparticles"}
 MW_CAP = 900.0
 
 # A 类：配方表。抽取脚本的产物，列名按 docs/literature-protocol.md 第三节
+# Yanes 2025 不在这里：已验证它就是仓库 PMC_IVR 的来源，抽出来是 C 类增补表，
+# 不是新的配方表（见 scripts/extract_yanes2025.py 的证明）
 FORMULATION_TABLES = {
-    "Yanes 2025": ROOT / "data" / "processed" / "formulations_yanes2025.csv",
     "Jaki 2026": ROOT / "data" / "processed" / "formulations_jaki2026.csv",
 }
 # B 类：分子属性表。列名按 docs/schema-partition-coefficients.md
@@ -111,11 +112,23 @@ def describe_formulation_table(name, path, base_keys):
     in_cap = None
     if "mw_over_default_cap" in df.columns:
         in_cap = len(key_set(df.loc[df["mw_over_default_cap"] != True, col]))  # noqa: E712
+    # 唯一化合物按 InChIKey 数，没有 SMILES 的载荷算 0 个。但「0 个」会被误读成
+    # 「这篇没有载荷」。所以同时报按名字数的载荷数，以及其中缺结构的个数
+    named = (
+        sorted(set(df["payload_type"].dropna().astype(str).str.strip()) - {""})
+        if "payload_type" in df.columns else []
+    )
+    no_struct = [
+        n for n in named
+        if not key_set(df.loc[df["payload_type"].astype(str).str.strip() == n, col])
+    ]
     return {
         "status": "已抽取",
         "path": str(path.relative_to(ROOT)),
         "records": int(len(df)),
         "unique_compounds": len(keys),
+        "named_payloads": named,
+        "named_payloads_without_structure": no_struct,
         "unique_compounds_within_mw_cap": in_cap,
         "overlap_with_baseline": len(keys & base_keys),
         "new_compounds": len(keys - base_keys),
@@ -223,7 +236,11 @@ def main() -> int:
         any_a = True
         gained |= keys
         print(f"  记录数                  {r['records']}")
-        print(f"  唯一化合物              {r['unique_compounds']}")
+        print(f"  载荷（按名字）          {len(r['named_payloads'])}  {r['named_payloads']}")
+        print(f"  唯一化合物（按结构）    {r['unique_compounds']}")
+        if r["named_payloads_without_structure"]:
+            print(f"    其中无 SMILES 的      {r['named_payloads_without_structure']}")
+            print(f"    -> 这些载荷无法参与按化合物分组的建模，不计入下面的合并数")
         if r["unique_compounds_within_mw_cap"] is not None:
             print(f"  唯一化合物（MW 上限内） {r['unique_compounds_within_mw_cap']}")
         print(f"  与基线重叠              {r['overlap_with_baseline']}")
