@@ -62,8 +62,17 @@
   },
   "probe_tables": {
     "Xu 2022": {
-      "status": "尚未抽取",
-      "path": "data/processed/probe_xu2022.csv"
+      "status": "已抽取",
+      "path": "data/processed/probe_xu2022.csv",
+      "records": 20,
+      "named_payloads": [
+        "compound_4d",
+        "uncertain_one_of_4a_4d_13a_17a_17c"
+      ],
+      "unique_compounds": 0,
+      "unique_scaffolds": null,
+      "records_with_quantitative_ee": 12,
+      "records_failed_to_form": 7
     }
   },
   "combined": {
