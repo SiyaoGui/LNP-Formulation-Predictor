@@ -1,104 +1,68 @@
 # LNP Formulation Predictor
 
-AI驱动的脂质纳米粒(LNP)/脂质体配方预测项目。目标是根据所载药物的分子性质预测配方与性能。
+Code, data and results for predicting how lipid nanoparticle and liposome formulations behave from the molecules in them. This is the modelling work behind LipidLens.
 
-> **先读这两份**：`docs/handoff.md`（交接文档，结论和下一步）和 `docs/glossary.md`（术语表）。
-> 给导师或评审看：`docs/algorithm-results-en.md`（英文版三轮结果汇总）。
+## Where things stand (22 October 2026)
 
----
+We ran three modelling rounds on published formulation data. For each round the evaluation protocol was written down and committed before any model was trained, so the pass criteria could not be picked after seeing the results.
 
-## 当前状态（2026-10-22，这是最新的结论，取代了下方「历史」一节里的旧说法）
-
-**现有的粒径预测模型在严格评估下不成立。** 这一轮用在跑模型之前就冻结的评估协议做了三轮建模，结论如下：
-
-| 轮次 | 数据 | 目标 | 结论 |
+| Round | Data | Target | Result |
 |---|---|---|---|
-| 第一轮 | 73 个配方 / 15 个小分子药 / 26 篇论文 | 粒径 | **不成功**，没有任何模型打败「永远预测平均值」的常数基线 |
-| 第二轮 | 370 个单元 / 197 个可离子化脂质 / 37 篇论文 | 包封率 | **可学**（5/5 种子打败常数基线），但信号只在论文内部成立 |
-| 第三轮 | 322 个单元 / 5 类 payload / 55 篇论文 | 粒径（大分子） | 所有模型都比常数基线更差 |
+| 1 | 73 formulations, 15 small-molecule drugs, 26 papers | Particle size | No model beat a constant baseline that always predicts the mean |
+| 2 | 370 units, 197 ionisable lipids, 37 papers | Encapsulation efficiency | The best model beat the constant baseline in 5 of 5 seeds, until whole papers were held out |
+| 3 | 322 units, 5 payload classes, 55 papers | Particle size, large molecules | Every model did worse than the constant baseline |
 
-三条核心结论：
+Particle size depends mostly on how the particles are made. Removing every molecular feature barely changed the error (0.192 to 0.198), and a model given only molecular features did worse than the baseline (0.257 against 0.253). One paper in the data made atenolol and propranolol with the same lipids: agitation gave about 800 nm, sonication about 30 nm.
 
-1. **粒径主要由制备工艺决定，不是由药物分子决定。** 删掉全部分子特征性能几乎不变（0.192 → 0.198），只用分子特征还不如常数基线（0.257 vs 0.253）。数据里 atenolol 和 propranolol 同配方不同工艺，粒径差 25 倍。
-2. **换成包封率后，四条诊断全部反转**，分子成为主导信号。机制上说得通：包封率取决于分子的亲脂性、电荷、氢键能力。
-3. **真正的瓶颈是跨实验室不可比，不是样本量。** 三轮、两个目标变量、样本量从 73 到 370，按论文分组后优势每次都归零。
+Encapsulation efficiency is a different case. There the molecular features carry most of the signal, which fits the chemistry, since encapsulation depends on lipophilicity, charge and hydrogen bonding.
 
-**下一步**：自己在一套固定方案下采包封率数据，不要继续从文献聚合。规格见 `docs/data-spec-ee.md`。
+In all three rounds the advantage over the baseline fell to about zero once whole papers were held out. Labs use different assays, N/P ratios, buffers and payloads, and the same lipid can differ by 20 percentage points between two papers. The rounds grew from 73 to 370 units and this did not change, so more literature data will not fix it.
 
----
+The next step is to measure encapsulation ourselves under one fixed protocol. The specification is in `docs/data-spec-ee.md`. Longer term, the data should come from our own instrument: a measuring and control module for microfluidic mixers that records every run in one format. The plan is in `hardware/README.md`; none of it has been built yet.
 
-## 目录结构
+None of these numbers should be read as model accuracy. No model has yet beaten the nearest-neighbour baseline, which copies the value of the most similar molecule in the training set. An early version of this project reported R² = 0.43 from a random row split that put records from the same paper in both training and test sets; with grouped splits the same data gives about zero.
 
-### 本轮产出
+## Repository layout
 
-| 路径 | 内容 |
+| Path | Contents |
 |---|---|
-| `docs/handoff.md` | **交接文档：结论、判断、下一步、所有材料索引** |
-| `docs/algorithm-results-en.md` | 英文版三轮结果汇总 |
-| `docs/data-spec-ee.md` | 包封率数据采集规格 |
-| `docs/glossary.md` | 术语表（B0/B1/B2/B3、分组划分、pp、5/5 等） |
-| `docs/evaluation-protocol.md` | 第一轮评估协议，**在跑模型之前冻结** |
-| `docs/ee-feasibility-protocol.md` | 第二轮评估协议，**在跑模型之前冻结** |
-| `docs/data-inventory.md` | 数据盘点 |
-| `docs/feature-engineering.md` | 特征说明与泄漏检查 |
-| `docs/worklog/` | 四份过程日志 |
-| `modeling/INDEX.md` | 建模总表 |
-| `modeling/2026-10-19_smallmol-baseline/` | 第一轮完整产出（5 张图、metrics.json、逐条预测） |
-| `modeling/2026-10-20_ee-feasibility/` | 第二轮完整产出 |
-| `modeling/2026-10-20_largemol-sideproduct/` | 第三轮 + 跨子集对比 |
-| `lnp/` | 可复用模块：子集定义、特征、数据集、评估 |
-| `scripts/` | 八个入口脚本，每一步可单独重跑 |
-| `configs/` | 配置文件，换子集只改一行 |
-| `data/processed*/` | 特征矩阵与分析单元表 |
+| `lnp/` | Shared modules: subset definitions, features, dataset building, evaluation |
+| `scripts/` | Entry points, one per step, each can be rerun on its own |
+| `configs/` | Run configurations; switching between the small- and large-molecule subsets is a one-line change |
+| `data/raw/` | Source tables: the merged three-source table (1,934 rows), the LNP Atlas export and lipid SMILES |
+| `data/processed/`, `data/processed_large/` | Analysis units and feature matrices |
+| `modeling/` | One folder per run, never edited afterwards; `modeling/INDEX.md` lists them |
+| `docs/` | Frozen protocols, results, data specification, glossary and work logs |
+| `hardware/` | Plan for the measuring and control module: levels L0 to L4, architecture, control loop, prototype stages and the run record format |
+| `app/` | The Streamlit demo and the Hugging Face Space bundle for the earlier particle-size model |
+| `archive/2026-09_first-model/` | Code, data, results and notes from the first model, built in September 2026 |
 
-### 数据与历史产出
+For a first read: `docs/algorithm-results-en.md` summarises the three rounds in English, `docs/data-spec-ee.md` describes the planned experiment and `docs/glossary.md` explains the baselines and splits. The handoff notes and per-round reports are in Chinese.
 
-| 路径 | 内容 |
-|---|---|
-| `merged_formulations_v2.csv` | 三源合并后的主数据表，1934 行 |
-| `LNP_Atlas_DB_202509_v1_utf8.csv` | LNP Atlas 原始数据 |
-| `M1_*.md` 到 `M6_*.md` | 早期各阶段技术文档，按编号读可还原技术演进 |
-| `HF_upload/`、`M5_streamlit_app/` | 早期部署的 Streamlit 应用 |
-| `train_m4.py`、`featurize_m3.py`、`merge_schema.py` 等 | 早期脚本 |
-| `专利文献数据源调研报告.md`、`预印本数据搜索_进展记录_按数据形态.md` | 数据扩充的两条调研线 |
-
----
-
-## 怎么重跑
+## Reproducing the results
 
 ```bash
 pip install scikit-learn rdkit pyarrow matplotlib tabulate
 
-# 第一轮
+# Round 1: particle size, small molecules
 python3 scripts/build_features.py --config configs/smallmol_baseline.yaml
-python3 scripts/run_modeling.py   --config configs/smallmol_baseline.yaml --out modeling/<新日期>_<说明>
-python3 scripts/render_tables.py  --dir   modeling/<新日期>_<说明>
-python3 scripts/make_figures.py   --dir   modeling/<新日期>_<说明>
+python3 scripts/run_modeling.py   --config configs/smallmol_baseline.yaml --out modeling/<date>_<name>
+python3 scripts/render_tables.py  --dir   modeling/<date>_<name>
+python3 scripts/make_figures.py   --dir   modeling/<date>_<name>
 
-# 第二轮（包封率）
-python3 scripts/run_ee_feasibility.py --groups G1 --out modeling/<新日期>_<说明>
+# Round 2: encapsulation efficiency
+python3 scripts/run_ee_feasibility.py --groups G1 --out modeling/<date>_<name>
+
+# Large-molecule subset: same code, different config
+python3 scripts/build_features.py --config configs/largemol_baseline.yaml --tasks t1
 ```
 
-完整的环境注意事项见 `docs/handoff.md` 第六节。
+Gradient boosting uses scikit-learn's `HistGradientBoostingRegressor` in every round, so the rounds are comparable. A full Round 1 fit takes about 100 minutes; `run_modeling.py --schemes` runs it in parts.
 
----
+## Rules for new work
 
-## 规则
+Each modelling run gets its own folder, `modeling/YYYY-MM-DD_<name>/`, and earlier folders stay as they are. A frozen protocol is not changed to improve a result. If it has to change, that goes in a separate commit that states the reason and which results already existed. Results are reported with confidence intervals and the spread across seeds, never the best seed alone.
 
-- 每次建模新建 `modeling/YYYY-MM-DD_<简短说明>/`，**不覆盖、不修改以前的文件夹**
-- 评估协议冻结后不许为了结果好看而修改；确需修改必须单独提交并写明原因和当时已有的结果
-- 每个结果都要带置信区间和跨种子波动，不许只报最好的种子
+## Scope
 
----
-
-## 历史记录（下面是本轮之前的说法，已被上面的结论取代，保留以便追溯）
-
-早期版本报告过「粒径预测按论文分组交叉验证 R²=−0.135」「PDI 分组 R²=−0.033」，并把瓶颈判断为「样本量/数据多样性不足」。
-
-本轮的修正是：样本量确实不足，但那不是主要原因。更根本的问题是**目标变量选错**（粒径是工艺的函数）和**文献数据跨来源不可比**（每篇论文一种药一套工艺，分子效应不可识别）。样本量从 73 涨到 370 没有改变按论文分组后优势归零这个事实。
-
-另外，更早的版本曾报告过 R²=0.43 的「好成绩」，那是行级随机划分造成的，同一篇论文的数据同时出现在训练和测试里。严格分组后掉到 0 附近。这个教训记录在 `docs/handoff.md` 第九节。
-
-## 说明
-
-这个仓库只包含代码、训练数据、模型文件和技术文档。原项目文件夹里的个人文件（证件、签名、简历）和商务文件（基金申请草稿、外联邮件、合作意向书模板等）按要求不包含在内。
+This repository holds code, training data, model files and technical notes. Personal and business documents from the project folder are not included.

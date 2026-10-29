@@ -141,12 +141,6 @@
 | `lnp/evaluation.py` | **可复用评估模块**：划分、基线、指标、嵌套调参、cluster bootstrap |
 | `scripts/*.py` | 八个入口脚本，每一步都能单独重跑 |
 
-### 在线文档（私有，需要在页面 Share 菜单分享后别人才能打开）
-
-- 三轮结果汇总：https://claude.ai/artifact/2sF9c56BaUqnjBMruatN7X
-- 第一轮简报：https://claude.ai/code/artifact/a2219a1f-4902-45d7-8dce-375dde9ea290
-
-两份在线文档的内容在仓库里都有对应的 markdown 副本，所以即使链接失效也不丢信息。
 
 ---
 

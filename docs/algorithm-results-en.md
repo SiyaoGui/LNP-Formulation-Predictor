@@ -2,7 +2,6 @@
 
 2026-10-22
 
-> Repo copy of the shared doc at https://claude.ai/artifact/2sF9c56BaUqnjBMruatN7X
 > Detailed per-round reports are in `modeling/*/README.md` (Chinese).
 
 We ran three modelling rounds under one frozen evaluation protocol. Two produced no usable model; one did, under a specific condition. The headline is not an accuracy number, it is a diagnosis: **particle size is governed by the manufacturing process and carries almost no molecular signal, whereas encapsulation efficiency does carry molecular signal, but only within a single experimental setting.** Across all three rounds the apparent advantage disappears whenever whole publications are held out, which identifies between-laboratory incomparability, not sample size, as the binding constraint.

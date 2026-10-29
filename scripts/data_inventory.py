@@ -17,7 +17,7 @@ from rdkit.Chem.Scaffolds import MurckoScaffold
 RDLogger.DisableLog("rdApp.*")
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "merged_formulations_v2.csv"
+SRC = ROOT / "data" / "raw" / "merged_formulations_v2.csv"
 OUT_JSON = ROOT / "docs" / "data_inventory_stats.json"
 
 # 大分子 payload 的取值（核酸/蛋白），用于 large_molecule 子集定义
