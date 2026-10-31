@@ -572,3 +572,38 @@ G 不再需要额度，原计划给 G 的约 120 次可以释放。剩余 432 �
 
 **剩余约 426 次未使用。** 不建议为了用掉而用掉，理由见
 `docs/consensus-sweep-summary.md` 第一节的三道工具墙与三次饱和判定。
+
+---
+
+## 第 12 批（2026-10-31，到期前清空式检索，检索 50–64）
+
+会员次日到期。执行约束改为：**Consensus 次数不设限，cloud 用量尽量压低**。
+做法：每轮 3 次检索，批次之间不写分析，满 15 次用脚本统一抽取入库。
+
+| # | 检索式 | 命中 | 新增 | 重复 |
+|---|---|---|---|---|
+| 50 | process analytical technology in-line monitoring liposome LNP manufacturing | 20 | — | — |
+| 51 | quality by design critical process parameters liposome DoE | 20 | — | — |
+| 52 | microfluidic TFR and FRR effect on LNP size and encapsulation | 20 | — | — |
+| 53 | real-time feedback control of nanoparticle production closed loop | 20 | — | — |
+| 54 | batch-to-batch variability and reproducibility between operators and sites | 20 | — | — |
+| 55 | lyophilization cryoprotectant effect on LNP size and encapsulation retention | 20 | — | — |
+| 56 | receptor mediated transcytosis quantitative transport across brain endothelial monolayer | 20 | — | — |
+| 57 | focused ultrasound BBB opening nanoparticle quantitative brain concentration | 20 | — | — |
+| 58 | P-glycoprotein efflux effect on nanoparticle encapsulated drug brain accumulation | 20 | — | — |
+| 59 | eriodictyol pharmacokinetics bioavailability nanoformulation | 20 | — | — |
+| 60 | flavonoid nanoparticle brain delivery BBB permeability quantitative | 20 | — | — |
+| 61 | curcumin encapsulation efficiency variability across lipid carriers | 20 | — | — |
+| 62 | intranasal nose-to-brain LNP brain concentration quantitative | 20 | — | — |
+| 63 | machine learning prediction of nanoparticle size and EE from formulation parameters | 20 | — | — |
+| 64 | solid lipid nanoparticle size EE response surface methodology optimization | 20 | — | — |
+| **合计** | | **300** | **261** | **39** |
+
+逐条的新增/重复无法分摊，因为去重是对本批 300 条一次性做的（同一条可能被多个检索式命中）；
+批次级数字是真实的：**新增率 87.0%**。
+
+- 主表：469 → **729 行**（无重复 DOI）
+- 累计 Consensus 检索：**64 次**（原定配额 475，占 13.5%）
+- 许可字段对全部 730 条重跑 Crossref：CC 系列 383 / 仅出版商或 TDM 279 / 未列 64 / 未解析 4
+- 需全文 297 条，其中 160 条开放许可
+- `why_matters` 本批改为机械生成，口径写在 `docs/worklog/2026-10-31-consensus-batch12.md`
