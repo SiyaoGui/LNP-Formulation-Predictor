@@ -607,3 +607,30 @@ G 不再需要额度，原计划给 G 的约 120 次可以释放。剩余 432 �
 - 许可字段对全部 730 条重跑 Crossref：CC 系列 383 / 仅出版商或 TDM 279 / 未列 64 / 未解析 4
 - 需全文 297 条，其中 160 条开放许可
 - `why_matters` 本批改为机械生成，口径写在 `docs/worklog/2026-10-31-consensus-batch12.md`
+
+## 第 13 批（2026-10-31，检索 65–79）
+
+| # | 检索式（简写） |
+|---|---|
+| 65 | glioblastoma LNP brain tumor accumulation %ID |
+| 66 | transferrin receptor antibody NP brain uptake quantification |
+| 67 | PEG-lipid molar % effect on circulation and biodistribution |
+| 68 | ionizable lipid apparent pKa TNS assay vs delivery efficiency |
+| 69 | phytosterol substitution for cholesterol in LNP |
+| 70 | NLC liquid lipid ratio vs drug loading and crystallinity |
+| 71 | surfactant type/concentration vs zeta potential and stability |
+| 72 | dialysis vs ultrafiltration vs ultracentrifugation for EE |
+| 73 | in vitro BBB TEER and permeability across laboratories |
+| 74 | NTA vs DLS size discrepancy |
+| 75 | quercetin SLN oral bioavailability PK in rat |
+| 76 | resveratrol lipid NP brain delivery quantitative |
+| 77 | HPH vs ultrasonication vs microfluidics scale-up |
+| 78 | logP / MW vs encapsulation efficiency meta-analysis |
+| 79 | FAIR nanomedicine data and minimum reporting standards |
+
+- 命中 **298**，新增 **245**，重复 **53**，新增率 **82.2%**
+- 主表：729 → **974 行**
+- 累计 Consensus 检索：**79 次**（原定配额 475，占 16.6%）
+- Crossref 全表重跑：CC 系列 487 / 仅出版商或 TDM 386 / 未列 98 / 未解析 4
+- 需全文 441 条，其中 224 条开放许可
+- 连续两批新增率 87.0% 与 82.2%，**不触发饱和停止条件**
