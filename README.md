@@ -18,7 +18,7 @@ Encapsulation efficiency is a different case. There the molecular features carry
 
 In all three rounds the advantage over the baseline fell to about zero once whole papers were held out. Labs use different assays, N/P ratios, buffers and payloads, and the same lipid can differ by 20 percentage points between two papers. The rounds grew from 73 to 370 units and this did not change, so more literature data will not fix it.
 
-The next step is to measure encapsulation ourselves under one fixed protocol. The specification is in `docs/data-spec-ee.md`. Longer term, the data should come from our own instrument: a measuring and control module for microfluidic mixers that records every run in one format. The plan is in `hardware/README.md`; none of it has been built yet.
+The next step is to measure encapsulation ourselves under one fixed protocol. The specification is in `docs/data-spec-ee.md`; its first phase was revised on 23 October 2026 in `docs/phase1-design.md`, after an independent review of round 2 (`docs/round2-review-2026-10-23.md`, script `scripts/within_paper_check.py`) found that within single papers the molecular features carry almost no ranking signal. Longer term, the data should come from our own instrument: a measuring and control module for microfluidic mixers that records every run in one format. The plan is in `hardware/README.md`; none of it has been built yet.
 
 None of these numbers should be read as model accuracy. No model has yet beaten the nearest-neighbour baseline, which copies the value of the most similar molecule in the training set. An early version of this project reported R² = 0.43 from a random row split that put records from the same paper in both training and test sets; with grouped splits the same data gives about zero.
 
@@ -38,7 +38,7 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 | `brand/` | Visual identity: logo, colour and type tokens, icons, scientific illustrations, chart styles, motion and hardware photography rules |
 | `archive/2026-09_first-model/` | Code, data, results and notes from the first model, built in September 2026 |
 
-For a first read: `docs/algorithm-results-en.md` summarises the three rounds in English, `docs/data-spec-ee.md` describes the planned experiment and `docs/glossary.md` explains the baselines and splits. The handoff notes and per-round reports are in Chinese.
+For a first read: `docs/negative-result-brief-en.md` is a one-page English summary for outside readers, `docs/algorithm-results-en.md` summarises the three rounds in English, `docs/data-spec-ee.md` and `docs/phase1-design.md` describe the planned experiment and `docs/glossary.md` explains the baselines and splits. The handoff notes and per-round reports are in Chinese.
 
 ## Literature review (October 2026)
 
@@ -58,6 +58,7 @@ A structured search of the published literature, run on 28 October 2026, collect
 | `docs/competitive-landscape.md` | Published work by other groups and companies |
 | `docs/fulltext-acquisition-list.md` | The 152 papers that need full text, with licence status |
 | `docs/membrane-specific.md` | Earlier membrane-specific search; its conclusions are superseded |
+| `docs/literature-sourcing/` | The search brief and prompts used on 22 October 2026 to screen for papers that hold the process fixed and vary only the molecule, and the screening log template |
 
 ## Reproducing the results
 

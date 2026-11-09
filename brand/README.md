@@ -17,6 +17,7 @@ The visual language comes from two sources: the covers of the Chinese 人教版 
 | `dataviz/` | A matplotlib style and helper (`lipidlens_viz.py`), a Plotly template (`lipidlens_plotly.py`), seven example charts, and the Archivo font files the style needs |
 | `motion/` | Five short animations as self-contained HTML, each with a still SVG fallback |
 | `hardware/` | How to photograph and label hardware: camera positions, lighting, and the PROTOTYPE / RENDER labels |
+| `source/` | The HTML generator the original logo was exported from. It still uses Poppins and is kept for history only; use the files in `logo/` |
 
 ## The parts that matter most
 
