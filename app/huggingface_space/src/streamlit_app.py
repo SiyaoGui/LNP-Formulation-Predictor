@@ -144,7 +144,8 @@ def svg_data_uri(name):
     """An SVG file from this folder as a data URI for an <img>, so the ids inside
     each illustration (gradients, filters) cannot clash with the others."""
     data = (HERE / name).read_bytes()
-    return "data:image/svg+xml;base64," + base64.b64encode(data).decode("ascii")
+    mime = "image/webp" if name.endswith(".webp") else "image/svg+xml"
+    return f"data:{mime};base64," + base64.b64encode(data).decode("ascii")
 
 
 def html(markup):
@@ -283,7 +284,7 @@ with tab_overview:
         )
     with col_fig:
         html(
-            f'<figure class="ll-figure" style="margin-top:32px"><img src="{svg_data_uri("liposome.svg")}" '
+            f'<figure class="ll-figure" style="margin-top:32px"><img src="{svg_data_uri("liposome.webp")}" width="1260" height="820" '
             'alt="Schematic cross-section of a liposome: a lipid bilayer around a watery core">'
             '<figcaption class="ll-cap">What we make: a liposome. Schematic, not to scale; liposomes for drug '
             'delivery are often 50 to 200 nm across.</figcaption></figure>'

@@ -6,6 +6,7 @@ The Hugging Face Space at https://huggingface.co/spaces/AliceSnack/lnp-formulati
 |---|---|---|---|---|---|
 | v1 | 2026-10-28 | `space-v1-2026-11-09` | `21bc612` | `before-vi-redesign-2026-11-09` | Project page with four tabs; earlier model kept as a demo |
 | v2 | 2026-11-09 | `space-v2-2026-11-09` | `6300e29` | | Restyled to the LipidLens visual identity: header, status strip, cream section titles, ruled tables, dot-and-interval chart for round 2, SCHEMATIC label, liposome illustration, dashed PREDICTED frames, footer. Styles moved to `src/style.css`. Models and predictions unchanged |
+| v2.1 | 2026-11-09 | `space-v2.1-2026-11-09` | see the Space history | | Smoother scrolling: the full-width colour bands no longer make the page 5 px wider than the scroll area, the scroll area has an opaque background so the browser can scroll it on the GPU, and the liposome illustration is a 94 KB WebP instead of a 180 KB SVG with hundreds of gradients and a blur filter that was redrawn on every scroll frame |
 
 ## Rolling back the Space
 
