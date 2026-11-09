@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>LipidLens — Logo 生成器</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; background:#0e1a1f; color:#e8eef0; margin:0; padding:28px 32px; }
+  h1 { font-size:19px; margin:0 0 4px 0; font-weight:600; }
+  .sub { font-size:13px; color:#8fa6ae; margin:0 0 24px 0; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .card { background:#16272e; border:1px solid #24404a; border-radius:10px; padding:20px 22px; }
+  .card h2 { font-size:14px; margin:0 0 3px 0; font-weight:600; color:#cfe0e5; }
+  .card .hint { font-size:12px; color:#7e959d; margin:0 0 14px 0; }
+  .stage { border-radius:6px; padding:18px; display:flex; justify-content:center; align-items:center; }
+  .stage.t { background:
+      linear-gradient(45deg,#1d3038 25%,transparent 25%),
+      linear-gradient(-45deg,#1d3038 25%,transparent 25%),
+      linear-gradient(45deg,transparent 75%,#1d3038 75%),
+      linear-gradient(-45deg,transparent 75%,#1d3038 75%);
+    background-size:16px 16px; background-position:0 0,0 8px,8px -8px,-8px 0px;
+    background-color:#16272e; }
+  .stage.w { background:
+      linear-gradient(45deg,#e9eef0 25%,transparent 25%),
+      linear-gradient(-45deg,#e9eef0 25%,transparent 25%),
+      linear-gradient(45deg,transparent 75%,#e9eef0 75%),
+      linear-gradient(-45deg,transparent 75%,#e9eef0 75%);
+    background-size:16px 16px; background-position:0 0,0 8px,8px -8px,-8px 0px;
+    background-color:#fff; }
+  canvas { max-width:100%; height:auto; display:block; }
+  button { background:#2e7d8f; color:#fff; border:0; border-radius:6px; padding:9px 18px; font-size:13px; cursor:pointer; margin-top:14px; font-weight:600; }
+  button:hover { background:#3a95aa; }
+  .note { font-size:12px; color:#7e959d; margin-top:9px; line-height:1.5; }
+  .full { grid-column:1 / -1; }
+</style>
+</head>
+<body>
+
+<h1>LipidLens — Logo 生成器</h1>
+<p class="sub">格子 = 透明。<b>白色版给深底，深色版给浅底</b>——两个都要传进 Canva 品牌工具箱的 Logo 区。</p>
+
+<div class="grid">
+
+  <div class="card">
+    <h2>横版 · 白色（深底用）</h2>
+    <p class="hint">2400 × 720 px，≈ 8 英寸 @ 300dpi</p>
+    <div class="stage t"><canvas id="cw" width="2400" height="720" style="width:100%"></canvas></div>
+    <button onclick="dl('cw','LipidLens-white.png')">下载 LipidLens-white.png</button>
+  </div>
+
+  <div class="card">
+    <h2>横版 · 深色（浅底用）</h2>
+    <p class="hint">同尺寸。<b>Canva 里大部分模板是浅底，这版才是主力</b></p>
+    <div class="stage w"><canvas id="cd" width="2400" height="720" style="width:100%"></canvas></div>
+    <button onclick="dl('cd','LipidLens-navy.png')">下载 LipidLens-navy.png</button>
+  </div>
+
+  <div class="card">
+    <h2>图标 · 白色</h2>
+    <p class="hint">1200 × 1200 方形</p>
+    <div class="stage t"><canvas id="iw" width="1200" height="1200" style="width:240px"></canvas></div>
+    <button onclick="dl('iw','LipidLens-icon-white.png')">下载图标（白）</button>
+  </div>
+
+  <div class="card">
+    <h2>图标 · 深色</h2>
+    <p class="hint">头像、favicon、PPT 角标</p>
+    <div class="stage w"><canvas id="id" width="1200" height="1200" style="width:240px"></canvas></div>
+    <button onclick="dl('id','LipidLens-icon-navy.png')">下载图标（深）</button>
+  </div>
+
+  <div class="card full">
+    <p class="note"><b>图形含义</b>：外环加向心短线是脂质体截面（脂质尾链朝内），右上角加粗的那段弧代表"被筛选出来的那部分"——就是产品在做的事。<br>
+    <b>深色用的是品牌主色 #12333f</b>，和你 Canva 调色板里的"主色（Logo色）"完全一致。</p>
+  </div>
+
+</div>
+
+<script>
+const NAVY = '#12333f';
+
+function drawMark(ctx, cx, cy, R, lw, color){
+  ctx.strokeStyle = color;
+  ctx.lineCap = 'round';
+
+  ctx.lineWidth = lw;
+  ctx.beginPath();
+  ctx.arc(cx, cy, R, 0, Math.PI*2);
+  ctx.stroke();
+
+  const n = 20, inner = R*0.60, outer = R*0.855;
+  ctx.lineWidth = lw*0.78;
+  for (let i=0;i<n;i++){
+    const a = (i/n)*Math.PI*2 - Math.PI/2;
+    ctx.beginPath();
+    ctx.moveTo(cx+Math.cos(a)*inner, cy+Math.sin(a)*inner);
+    ctx.lineTo(cx+Math.cos(a)*outer, cy+Math.sin(a)*outer);
+    ctx.stroke();
+  }
+
+  ctx.lineWidth = lw*2.05;
+  ctx.beginPath();
+  ctx.arc(cx, cy, R, -Math.PI*0.42, -Math.PI*0.06);
+  ctx.stroke();
+}
+
+function drawLockup(id, color){
+  const c = document.getElementById(id), ctx = c.getContext('2d');
+  ctx.clearRect(0,0,c.width,c.height);
+  const S = 3;
+  ctx.save(); ctx.scale(S,S);
+
+  drawMark(ctx, 120, 120, 78, 9, color);
+
+  const size = 96;
+  ctx.fillStyle = color;
+  ctx.textBaseline = 'alphabetic';
+  ctx.font = '300 ' + size + 'px Poppins, Helvetica, Arial, sans-serif';
+  const w1 = ctx.measureText('Lipid').width;
+  const x0 = 248, base = 152;
+  ctx.fillText('Lipid', x0, base);
+  ctx.font = '700 ' + size + 'px Poppins, Helvetica, Arial, sans-serif';
+  ctx.fillText('Lens', x0 + w1, base);
+
+  ctx.restore();
+}
+
+function drawIcon(id, color){
+  const c = document.getElementById(id), ctx = c.getContext('2d');
+  ctx.clearRect(0,0,c.width,c.height);
+  drawMark(ctx, 600, 600, 420, 48, color);
+}
+
+function dl(id, name){
+  document.getElementById(id).toBlob(function(b){
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(b);
+    a.download = name;
+    a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
+  }, 'image/png');
+}
+
+drawLockup('cw', '#ffffff');
+drawLockup('cd', NAVY);
+drawIcon('iw', '#ffffff');
+drawIcon('id', NAVY);
+</script>
+
+</body>
+</html>
