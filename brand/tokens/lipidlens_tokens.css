@@ -1,0 +1,96 @@
+:root{
+  /* brand */
+  --ll-logo: #12333f;
+  --ll-paper: #FBFAF6;
+  --ll-cream: #F2EFE3;
+  --ll-ink: #1B211E;
+  --ll-g950: #16201A;
+  --ll-g900: #1E2B23;
+  --ll-g800: #2A3D31;
+  --ll-g700: #3A5442;
+  --ll-g600: #4C6D56;
+  --ll-g500: #6A8B72;
+  --ll-g400: #8FA994;
+  --ll-g300: #B3C6B5;
+  --ll-g200: #D3DFD3;
+  --ll-g100: #E9EFE7;
+  /* neutral */
+  --ll-n800: #3C4440;
+  --ll-n700: #4F5853;
+  --ll-n600: #626B66;
+  --ll-n400: #8F9792;
+  --ll-n300: #B4BAB5;
+  --ll-n200: #D2D6D1;
+  --ll-n100: #E8EBE7;
+  /* cyan */
+  --ll-c800: #24506B;
+  --ll-c700: #2F6283;
+  --ll-c500: #5487AA;
+  --ll-c300: #9DBBD2;
+  --ll-c100: #E2EBF2;
+  /* function */
+  --ll-ok: #2A6B45;
+  --ll-warn: #8A5A00;
+  --ll-err: #A3372B;
+  --ll-info: #2F6283;
+  /* dark */
+  --ll-d-bg: #151D18;
+  --ll-d-surf: #1E2A23;
+  --ll-d-line: #33443A;
+  --ll-d-txt: #E8EDE6;
+  --ll-d-mut: #A9B6AC;
+  --ll-d-acc: #9CC7A5;
+  --ll-d-cyan: #8DB9D6;
+  --ll-d-warn: #E0B25A;
+  --ll-d-err: #F08F80;
+  --ll-d-ok: #8FD1A6;
+  /* science */
+  --ll-s-head: #6F95D8;
+  --ll-s-head-l: #B6CCF1;
+  --ll-s-head-d: #3D62A6;
+  --ll-s-ion: #4FA3A5;
+  --ll-s-ion-l: #A7D6D6;
+  --ll-s-ion-d: #2C6E70;
+  --ll-s-tail: #C9A03C;
+  --ll-s-tail-l: #E8CF85;
+  --ll-s-chol: #B7A983;
+  --ll-s-chol-d: #857953;
+  --ll-s-drug: #E9A69C;
+  --ll-s-drug-d: #B9685D;
+  --ll-s-mol: #A9CF90;
+  --ll-s-mol-d: #6E9C55;
+  --ll-s-prot: #DADBEE;
+  --ll-s-prot-d: #9FA2C8;
+  --ll-s-peg: #8FB394;
+  --ll-s-water: #E7F1F6;
+  --ll-s-etoh: #F5EDD3;
+  /* dataviz */
+  --ll-v1: #1F3A2B;
+  --ll-v2: #3B7DA6;
+  --ll-v3: #C99A3A;
+  --ll-v4: #A7BFAE;
+  --ll-v-seq0: #F3F5EF;
+  --ll-v-seq1: #1E3B2A;
+  --ll-v-div-lo: #2F6283;
+  --ll-v-div-hi: #A06A12;
+  --ll-font: Archivo, "Noto Sans SC", Arial, sans-serif;
+  --ll-font-cjk-title: "Noto Serif SC", "Noto Sans SC", serif;
+  --ll-space-1: 4px;
+  --ll-space-2: 8px;
+  --ll-space-3: 12px;
+  --ll-space-4: 16px;
+  --ll-space-5: 24px;
+  --ll-space-6: 32px;
+  --ll-space-7: 48px;
+  --ll-space-8: 64px;
+  --ll-space-9: 96px;
+  --ll-radius-s: 2px;
+  --ll-radius-m: 4px;
+  --ll-radius-l: 8px;
+  --ll-ease-settle: cubic-bezier(0.2,0,0,1);
+  --ll-ease-draw: cubic-bezier(0.4,0,0.2,1);
+  --ll-ease-exit: cubic-bezier(0.4,0,1,1);
+  --ll-t-short: 200ms;
+  --ll-t-mid: 600ms;
+  --ll-t-long: 1200ms;
+}

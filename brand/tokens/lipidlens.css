@@ -1,0 +1,63 @@
+/* LipidLens component styles v2.0
+   Load after lipidlens_tokens.css. No framework needed.
+   Fonts: <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@85..100,400..700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet"> */
+
+body{margin:0;background:var(--ll-paper);color:var(--ll-ink);font:16px/1.7 var(--ll-font);font-variant-numeric:tabular-nums}
+.ll-wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+
+/* Horizontal bands: the only way to separate page sections */
+.ll-band{padding:64px 0}
+.ll-band--green{background:var(--ll-g700);color:var(--ll-paper)}
+.ll-band--light{background:var(--ll-g100)}
+.ll-band--paper{background:var(--ll-paper)}
+.ll-band--dark{background:var(--ll-d-bg);color:var(--ll-d-txt)}
+@media (max-width:760px){.ll-band{padding:48px 0}}
+
+/* Cream title block: section titles sit in a solid cream rectangle */
+.ll-title{display:inline-block;background:var(--ll-cream);color:var(--ll-ink);padding:16px 24px;margin:0 0 24px;font-size:28px;line-height:34px;font-weight:600}
+.ll-title small{display:block;font-size:13px;line-height:1.4;font-weight:500;color:var(--ll-n700)}
+.ll-title--cjk{font-family:var(--ll-font-cjk-title)}
+.ll-band--dark .ll-title{background:var(--ll-d-surf);color:var(--ll-d-txt)}
+@media (max-width:760px){.ll-title{font-size:22px;line-height:28px;padding:12px 16px}}
+
+/* Buttons */
+.ll-btn{display:inline-block;font:600 16px/1 var(--ll-font);padding:14px 20px;border-radius:var(--ll-radius-s);text-decoration:none;cursor:pointer;border:2px solid var(--ll-g700)}
+.ll-btn--primary{background:var(--ll-g700);color:var(--ll-paper)}
+.ll-btn--primary:hover{background:var(--ll-g800);border-color:var(--ll-g800)}
+.ll-btn--secondary{background:transparent;color:var(--ll-g800)}
+.ll-btn--secondary:hover{background:var(--ll-g100)}
+.ll-band--green .ll-btn--primary{background:var(--ll-paper);color:var(--ll-g800);border-color:var(--ll-paper)}
+.ll-band--dark .ll-btn--primary{background:var(--ll-d-acc);color:var(--ll-d-bg);border-color:var(--ll-d-acc)}
+.ll-btn:focus-visible,.ll-link:focus-visible{outline:3px solid var(--ll-c700);outline-offset:2px}
+
+.ll-link{color:var(--ll-c700);text-decoration:underline;text-underline-offset:3px}
+.ll-band--dark .ll-link{color:var(--ll-d-cyan)}
+
+/* Project status: shape carries the meaning, colour only supports it */
+.ll-status{display:inline-block;font:600 12px/1 var(--ll-font);letter-spacing:.04em;text-transform:uppercase;padding:6px 8px;min-width:104px;text-align:center;border-radius:var(--ll-radius-s);margin-right:8px}
+.ll-status--done{background:var(--ll-g700);color:var(--ll-paper);border:2px solid var(--ll-g700)}
+.ll-status--progress{background:transparent;color:var(--ll-g800);border:2px solid var(--ll-g700)}
+.ll-status--planned{background:transparent;color:var(--ll-n700);border:2px dashed var(--ll-n400)}
+
+/* Mandatory label for illustrative numbers */
+.ll-stamp{display:inline-block;background:var(--ll-cream);border:1px solid var(--ll-ink);font:700 12px/1 var(--ll-font);padding:5px 8px;color:var(--ll-ink)}
+
+/* Cards, tables, notes, figures */
+.ll-card{background:#fff;border:1px solid var(--ll-n200);border-radius:var(--ll-radius-m);padding:24px}
+.ll-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff}
+.ll-table th,.ll-table td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--ll-n200);vertical-align:top}
+.ll-table th{background:var(--ll-cream);font-weight:600}
+.ll-table td.num{text-align:right}
+.ll-note{background:var(--ll-c100);color:var(--ll-c800);padding:12px 16px;border-left:0;border-radius:var(--ll-radius-m);font-size:14px}
+.ll-figure{margin:0;background:#fff;border:1px solid var(--ll-n200);padding:16px}
+.ll-figure figcaption{font-size:13px;line-height:1.5;color:var(--ll-n700);margin-top:8px}
+.ll-figure figcaption b{color:var(--ll-ink)}
+
+/* Header */
+.ll-header{background:var(--ll-g700);color:var(--ll-paper)}
+.ll-header .ll-wrap{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px}
+.ll-header nav a{color:var(--ll-paper);text-decoration:none;margin-left:24px;font-size:15px}
+@media (max-width:760px){.ll-header nav{display:none}}
+
+/* Motion: everything static unless the user allows motion */
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

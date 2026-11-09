@@ -35,6 +35,7 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 | `docs/` | Frozen protocols, results, data specification, glossary, the literature review (below) and work logs |
 | `hardware/` | Plan for the measuring and control module: levels L0 to L4, architecture, control loop, prototype stages and the run record format |
 | `app/` | The Hugging Face Space (project page plus the earlier particle-size model as a demo) and a standalone Streamlit demo |
+| `brand/` | Visual identity: logo, colour and type tokens, icons, scientific illustrations, chart styles, motion and hardware photography rules |
 | `archive/2026-09_first-model/` | Code, data, results and notes from the first model, built in September 2026 |
 
 For a first read: `docs/algorithm-results-en.md` summarises the three rounds in English, `docs/data-spec-ee.md` describes the planned experiment and `docs/glossary.md` explains the baselines and splits. The handoff notes and per-round reports are in Chinese.

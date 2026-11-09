@@ -1,0 +1,42 @@
+# LipidLens matplotlib style. Use: plt.style.use("lipidlens.mplstyle")
+# Colours: v1 #1F3A2B (dark green), v2 #3B7DA6 (cyan-blue), v3 #C99A3A (ochre), v4 #A7BFAE (light green-grey)
+# Each series also changes marker and line style so charts survive greyscale printing.
+font.family: Archivo, DejaVu Sans, sans-serif
+font.size: 10
+text.color: 1B211E
+axes.labelcolor: 1B211E
+axes.edgecolor: 4F5853
+axes.linewidth: 0.8
+axes.facecolor: FBFAF6
+figure.facecolor: FBFAF6
+savefig.facecolor: FBFAF6
+axes.titlesize: 12
+axes.titleweight: 600
+axes.titlelocation: left
+axes.titlepad: 10
+axes.labelsize: 10
+axes.spines.top: False
+axes.spines.right: False
+axes.grid: True
+axes.grid.axis: y
+axes.axisbelow: True
+grid.color: D2D6D1
+grid.linewidth: 0.6
+xtick.color: 4F5853
+ytick.color: 4F5853
+xtick.labelsize: 9
+ytick.labelsize: 9
+xtick.direction: out
+ytick.direction: out
+legend.frameon: False
+legend.fontsize: 9
+lines.linewidth: 1.8
+lines.markersize: 6
+patch.edgecolor: 1B211E
+patch.linewidth: 0.6
+axes.prop_cycle: cycler('color', ['1F3A2B', '3B7DA6', 'C99A3A', 'A7BFAE']) + cycler('marker', ['o', 's', '^', 'D']) + cycler('linestyle', ['-', '--', '-.', ':'])
+image.cmap: Greens
+svg.fonttype: none
+figure.dpi: 110
+savefig.dpi: 200
+savefig.bbox: tight

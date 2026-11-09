@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LipidLens motion a3</title><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet"><style>
+:root{--ease-settle:cubic-bezier(0.2,0,0,1);--ease-draw:cubic-bezier(0.4,0,0.2,1);--t-short:200ms;--t-mid:600ms;--t-long:1200ms}
+.anim .m{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:no-preference){
+ .anim.play .asm{animation:asm var(--t-mid) var(--ease-settle) both;animation-delay:var(--d)}
+ @keyframes asm{from{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}to{transform:none;opacity:1}}
+ .anim.play .enter{animation:enter var(--t-long) var(--ease-draw) both .3s}
+ @keyframes enter{from{transform:translate(-330px,0)}to{transform:none}}
+ .anim.play .close{animation:close var(--t-mid) var(--ease-settle) both 1.5s}
+ @keyframes close{from{stroke-dashoffset:var(--gap)}to{stroke-dashoffset:0}}
+ .anim.play .fade{animation:fade var(--t-mid) var(--ease-settle) both;animation-delay:var(--d,0s)}
+ @keyframes fade{from{opacity:0}to{opacity:1}}
+ .anim.play .slide{animation:slidedown var(--t-long) var(--ease-settle) both .3s}
+ @keyframes slidedown{from{transform:translate(0,-170px)}to{transform:none}}
+ .anim.play .led{animation:led var(--t-short) linear both 1.6s}
+ @keyframes led{from{fill:#8FA994}to{fill:#E9EFE7}}
+ .anim.play .draw{stroke-dasharray:var(--len);animation:draw var(--t-long) var(--ease-draw) both;animation-delay:var(--d,0s)}
+ @keyframes draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+ .anim.play .drop{animation:drop var(--t-mid) var(--ease-settle) both;animation-delay:var(--d)}
+ @keyframes drop{from{transform:translate(0,-60px);opacity:0}to{transform:none;opacity:1}}
+ .anim.play .grow{transform-box:fill-box;transform-origin:center;animation:grow var(--t-mid) var(--ease-settle) both;animation-delay:var(--d)}
+ @keyframes grow{from{transform:scaleY(0)}to{transform:none}}
+ .anim .seg{transition:x var(--t-mid) var(--ease-settle),width var(--t-mid) var(--ease-settle)}
+}
+.anim text{font-family:Archivo,'Noto Sans SC',Arial,sans-serif}
+body{margin:0;padding:16px;background:#FBFAF6;font-family:Archivo,sans-serif;color:#1B211E}svg{width:100%;max-width:780px;height:auto;display:block}button{font:600 14px Archivo,sans-serif;padding:8px 12px;border:1px solid #3A5442;background:#fff;color:#2A3D31;margin:8px 6px 0 0}button[aria-pressed=true]{background:#3A5442;color:#fff}</style></head><body><h1 style="font-size:18px">选择性：同一个药物，不同目标膜，不同配方</h1><div><svg id="a3" data-memx="175" data-memw="280" data-recx="175" data-recw="280" class="anim select" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" role="img" aria-label="Selectivity: one drug, two target membranes, two different lipid recipes"><defs>
+<radialGradient id="gHead" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#B6CCF1"/><stop offset="0.55" stop-color="#6F95D8"/><stop offset="1" stop-color="#3D62A6"/></radialGradient>
+<radialGradient id="gIon" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#A7D6D6"/><stop offset="0.55" stop-color="#4FA3A5"/><stop offset="1" stop-color="#2C6E70"/></radialGradient>
+<radialGradient id="gDrug" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#F8D9D3"/><stop offset="0.6" stop-color="#E9A69C"/><stop offset="1" stop-color="#B9685D"/></radialGradient>
+<radialGradient id="gMol" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#E1F0D6"/><stop offset="0.6" stop-color="#A9CF90"/><stop offset="1" stop-color="#6E9C55"/></radialGradient>
+<linearGradient id="gProt" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#9FA2C8"/><stop offset="0.35" stop-color="#F1F1FA"/><stop offset="0.7" stop-color="#DADBEE"/><stop offset="1" stop-color="#9FA2C8"/></linearGradient>
+<linearGradient id="gChol" x1="0" x2="1"><stop offset="0" stop-color="#857953"/><stop offset="0.4" stop-color="#E2D8B8"/><stop offset="1" stop-color="#B7A983"/></linearGradient>
+<radialGradient id="gCore" cx="0.45" cy="0.4" r="0.7"><stop offset="0" stop-color="#FBF3DC"/><stop offset="1" stop-color="#EAD9A6"/></radialGradient>
+<filter id="soft" x="-10%" y="-10%" width="120%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="4"/><feOffset dy="4"/><feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2A3D31"/></marker>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2.2" height="6" fill="#FFFFFF" opacity="0.55"/></pattern></defs><rect width="520" height="300" fill="#FBFAF6"/><text x="20" y="30" text-anchor="start" style="font-family:Archivo,'Noto Sans SC',Arial,sans-serif;font-size:15px;font-weight:600;fill:#1B211E">Same drug, different target membrane, different recipe.</text><g transform="translate(70,150) scale(1.3)"><line x1="-14" y1="6" x2="0" y2="-6" stroke="#B9685D" stroke-width="3"/><line x1="0" y1="-6" x2="16" y2="4" stroke="#B9685D" stroke-width="3"/><line x1="0" y1="-6" x2="2" y2="-22" stroke="#B9685D" stroke-width="3"/><circle cx="-14" cy="6" r="9" fill="url(#gDrug)"/><circle cx="0" cy="-6" r="11" fill="url(#gDrug)"/><circle cx="16" cy="4" r="8" fill="url(#gDrug)"/><circle cx="2" cy="-22" r="7" fill="url(#gDrug)"/></g><text x="70" y="215" text-anchor="middle" style="font-family:Archivo,'Noto Sans SC',Arial,sans-serif;font-size:13px;font-weight:400;fill:#4F5853">Same drug</text><path d="M115 150 H160" stroke="#2A3D31" stroke-width="2" marker-end="url(#arr)"/><text x="175" y="92" text-anchor="start" style="font-family:Archivo,'Noto Sans SC',Arial,sans-serif;font-size:13px;font-weight:400;fill:#4F5853">Target membrane, lipid classes</text><rect id="mem0" class="seg" x="175.0" y="102" width="126.0" height="30" fill="#626B66" stroke="#1B211E" stroke-width="0.8"/><rect id="mem1" class="seg" x="301.0" y="102" width="56.0" height="30" fill="#8F9792" stroke="#1B211E" stroke-width="0.8"/><rect id="mem2" class="seg" x="357.0" y="102" width="70.0" height="30" fill="#B7A983" stroke="#1B211E" stroke-width="0.8"/><rect id="mem3" class="seg" x="427.0" y="102" width="28.0" height="30" fill="#B3C6B5" stroke="#1B211E" stroke-width="0.8"/><text id="tname" x="175" y="152" style="font-size:13px;font-weight:600;fill:#1B211E">Target A: e.g. blood-brain barrier endothelium</text><path d="M310 165 V190" stroke="#2A3D31" stroke-width="2" marker-end="url(#arr)"/><text x="175" y="214" text-anchor="start" style="font-family:Archivo,'Noto Sans SC',Arial,sans-serif;font-size:13px;font-weight:400;fill:#4F5853">Recipe to try first (lipid nanoparticle)</text><rect id="rec0" class="seg" x="175.0" y="224" width="112.0" height="30" fill="#4FA3A5" stroke="#1B211E" stroke-width="0.8"/><rect id="rec1" class="seg" x="287.0" y="224" width="56.0" height="30" fill="#6F95D8" stroke="#1B211E" stroke-width="0.8"/><rect id="rec2" class="seg" x="343.0" y="224" width="98.0" height="30" fill="#B7A983" stroke="#1B211E" stroke-width="0.8"/><rect id="rec3" class="seg" x="441.0" y="224" width="14.0" height="30" fill="#8FB394" stroke="#1B211E" stroke-width="0.8"/><rect x="175" y="224" width="280" height="30" fill="url(#hatch)" pointer-events="none"/><text x="20" y="284" text-anchor="start" style="font-family:Archivo,'Noto Sans SC',Arial,sans-serif;font-size:12px;font-weight:400;fill:#626B66">Illustrative. Ratios are placeholders, not model output. Hatched = predicted.</text></svg><p class="ctl"><button data-t="A">Target A</button> <button data-t="B">Target B</button> <button data-replay="a3">Replay</button></p></div><script>
+(function(){
+ var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function play(el){el.classList.remove('play');void el.getBoundingClientRect();el.classList.add('play');}
+ document.querySelectorAll('svg.anim').forEach(function(el){
+  if(reduce) return;
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){play(el);io.disconnect();}})},{threshold:.4});io.observe(el);} else play(el);
+ });
+ document.querySelectorAll('[data-replay]').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.dataset.replay);if(!reduce)play(el);});});
+ // selectivity: switch target membrane
+ var S={A:{mem:[.45,.20,.25,.10],rec:[.40,.20,.35,.05],name:'Target A: e.g. blood-brain barrier endothelium'},
+        B:{mem:[.30,.10,.15,.45],rec:[.50,.10,.385,.015],name:'Target B: e.g. liver cell'}};
+ function setT(svg,k){var s=S[k];['mem','rec'].forEach(function(row){var x=+svg.dataset[row+'x'],w=+svg.dataset[row+'w'];
+   s[row].forEach(function(f,i){var r=svg.querySelector('#'+row+i);r.setAttribute('x',x.toFixed(1));r.setAttribute('width',(f*w).toFixed(1));x+=f*w;});});
+   svg.querySelector('#tname').textContent=s.name;
+   svg.parentNode.querySelectorAll('[data-t]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.t===k)});}
+ document.querySelectorAll('svg.select').forEach(function(svg){
+   var k='A';setT(svg,k);
+   svg.parentNode.querySelectorAll('[data-t]').forEach(function(b){b.addEventListener('click',function(){k=b.dataset.t;setT(svg,k);})});
+   if(!reduce){var t=setInterval(function(){if(!document.hidden){k=(k==='A'?'B':'A');setT(svg,k);}},4200);
+     svg.parentNode.querySelectorAll('[data-t]').forEach(function(b){b.addEventListener('click',function(){clearInterval(t)})});}
+ });
+})();
+</script></body></html>
