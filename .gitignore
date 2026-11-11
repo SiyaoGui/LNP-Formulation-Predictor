@@ -6,3 +6,6 @@ __pycache__/
 venv/
 *.egg-info/
 .env
+
+# Source archive larger than the GitHub 100 MB limit; kept locally only
+data/raw/yanes2025_ivr/standardisation_nm_IVR.zip

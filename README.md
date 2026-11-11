@@ -30,9 +30,11 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 | `scripts/` | Modelling entry points, one per step, plus the PubMed and dataset-repository scans used in the literature review |
 | `configs/` | Run configurations; switching between the small- and large-molecule subsets is a one-line change |
 | `data/raw/` | Source tables: the merged three-source table (1,934 rows), the LNP Atlas export and lipid SMILES |
+| `data/candidate/` | Hand-transcribed data from two papers, kept out of the training set; see its own README for the sources, checks and recorded contradictions |
 | `data/processed/`, `data/processed_large/` | Analysis units and feature matrices |
 | `modeling/` | One folder per run, never edited afterwards; `modeling/INDEX.md` lists them |
 | `docs/` | Frozen protocols, results, data specification, glossary, the literature review (below) and work logs |
+| `docs/funding-ops/` | Method and format notes for the funding and investor-entry calendar, plus two read-only checking scripts. Content of the calendar itself is not in this repository |
 | `hardware/` | Plan for the measuring and control module: levels L0 to L4, architecture, control loop, prototype stages and the run record format |
 | `app/` | The Hugging Face Space (project page plus the earlier particle-size model as a demo) and a standalone Streamlit demo |
 | `brand/` | Visual identity: logo, colour and type tokens, icons, scientific illustrations, chart styles, motion and hardware photography rules |
