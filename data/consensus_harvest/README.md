@@ -10,7 +10,50 @@
 | 文件 | 说明 |
 |---|---|
 | `papers_all.tsv` | **原始抓取**。整个项目 746 个检索块的全部命中，带块级溯源。14124 条带 DOI 记录，9595 个去重 DOI（比成品表多约 130 个，因为含被去重或未采纳的命中）。无表头，列顺序见下。 |
+| `raw_batches/` | 早期批次的原始抓取与检索原文，见「早期批次」一节。 |
+| `nordic_scan/` | G 工作流（北欧验证合作方）PubMed 扫描的原始数据与报告，见「北欧扫描」一节。 |
+| `fulltext/` | 已下载的论文全文，见「论文全文」一节。 |
 | `pipeline/` | 流水线脚本。见下方「可复用」与「仅存档」两类区分。 |
+
+### 早期批次 `raw_batches/`
+
+`papers_all.tsv` 是后期从会话转录重新生成的，早期若干块在转录里已被压缩丢失。
+这几个文件是那些块的**唯一原始记录**：
+
+| 文件 | 内容 |
+|---|---|
+| `papers_b7.tsv` / `papers_b7b.tsv` / `papers_b8.tsv` / `papers_b10.tsv` | 早期批次抓取，列同 `papers_all.tsv`。合计 397 个去重 DOI，其中 15 个不在 `papers_all.tsv`、84 个不在成品表。 |
+| `b23_meta.tsv` | 批 23 的元数据抽取（列格式不同：块号 + 标题 + …）。 |
+| `b25_a.txt` … `b25_e.txt`、`b25_pick.txt` | 批 25 的 Consensus 检索**原文输出**，含完整摘要。 |
+| `b28_pkpd.txt` | 批 28（脑 PBPK / CNS 药代）检索原文输出，含完整摘要。 |
+
+**注意**：只存在于这些 TSV、既不在 `papers_all.tsv` 也不在成品表的 14 个 DOI 经核查
+基本是跑题命中（科学政策、图书馆学、1991 年 FASEB 摘要等），当初被正确地未采纳，
+不是有价值的数据丢失。
+
+`.txt` 文件的价值在于**完整摘要**：成品表的 `why_matters` 只保留最多 3 条定量片段，
+这几批的全文摘要只在这里有。
+
+### 北欧扫描 `nordic_scan/`
+
+G 工作流（成品表 25 行）的原始数据。结论已写进 `docs/validation-partners.md`，
+生成脚本在仓库 `scripts/pubmed_nordic_*.py`，但原始输出此前只在临时目录：
+
+| 文件 | 内容 |
+|---|---|
+| `pubmed_nordic.json` (2.4 MB) | PubMed E-utilities 按作者单位 `[ad]` 字段扫描的原始返回。 |
+| `pubmed_nordic2.json` (546 KB) | 第二轮扫描。 |
+| `nordic_analysis.json` (686 KB) | 机构与课题组聚合分析结果。 |
+| `inst_report.txt` / `people_report.txt` | 单位与人员的人读报告。 |
+
+### 论文全文 `fulltext/`
+
+| 文件 | 内容 |
+|---|---|
+| `pmc11565460.xml` | 一篇 Molecular Therapy Nucleic Acids 全文（PMC JATS XML）。本项目唯一已下载的论文全文。 |
+
+其余 6810 篇标 `needs_fulltext=Y` 的论文**均未下载**，`in_zotero` 全为 N。
+优先导入清单见 `docs/fulltext-acquisition-list.md`。
 
 ### `papers_all.tsv` 列（制表符分隔，无表头）
 
@@ -58,10 +101,27 @@ Crossref 跑之后新增的约 4000 行没覆盖到）。刷新办法：填好 `
 | `example_append_batch.py` | 每批次「追加」脚本示例（原名 `append_b162.py`）。核心逻辑在这里：按块号取命中 → 正则抽 DOI/年份/期刊 → 从摘要正则抽最多 3 条定量片段（粒径/包封率/电位/DTE/R² 等）→ 有定量则 `needs_fulltext=N` 并把片段写进 `why_matters`，无定量则标 `Y`「需全文」→ 预印本按期刊名判定 → 去重后 append。 |
 | `example_count_group.py` | 每组 3 批次的统计脚本示例（原名 `cnt160162.py`）。 |
 
+### 产生上面各数据文件的脚本
+
+| 脚本 | 产出 |
+|---|---|
+| `write_master.py` | 成品表 `master-candidates.csv` 的最初构建脚本。 |
+| `make_lists.py` | 生成 `docs/doi-list-*.txt` 与全文获取清单。 |
+| `pm.py` / `pm2.py` | PubMed E-utilities 扫描，产出 `nordic_scan/pubmed_nordic*.json`。 |
+| `people.py` | 产出 `nordic_scan/people_report.txt` 与 `inst_report.txt`。 |
+| `b23meta.py` / `b25meta.py` / `b25pick.py` | 产出 `raw_batches/b23_meta.tsv` 与 `b25_*.txt`。 |
+| `fix423.py` / `list29.py` | 一次性修表与清单脚本，留作记录。 |
+
+这些脚本里凡原本硬编码联系邮箱的（PubMed/Crossref courtesy 参数），**已全部替换为
+占位符 `YOUR_EMAIL@example.com`**，重跑前自行填入。
+
 **每批次的一次性脚本未保留**：整个项目约 500 个 `gen*.py` / `mk*.py` /
 `append_b*.py` / `cnt*.py` 和 136 个 `old_master*.csv` 快照是逐批抛弃的中间产物，
 方法已被上面四个示例完整表达，不再占仓库空间。要复现某一批，照 `example_*`
 改 `cfg_items` / `CFG` 即可。
+
+**`crossref.json` 不在本目录**：仓库根目录已有一份更全的（5105 个 DOI，临时目录那份
+只有 4977），以根目录那份为准。
 
 ## 一批是怎么产生的（方法概述）
 

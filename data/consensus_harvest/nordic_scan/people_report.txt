@@ -1,0 +1,214 @@
+
+==== 个人层面同时具备配方与脑/BBB能力（A 且 (B 或 D)）  (n=33) ====
+- Nataša Škalko-Basnet | UiT The Arctic University of Norway, NO | 一作或末位作者 15 篇 | A,C,D
+    email: natasa.skalko-basnet@uit.no
+    [A] 2026 10.3389/fddev.2026.1839747 Harnessing liposomal delivery to boost polyphenols' potential in chronic wound therapy.
+    [A] 2025 10.1016/j.xphs.2025.103876 Sustained release of betamethasone from solid lipid nanoparticles loaded polymeric hydrogels with natural emol
+- Nikos S Hatzakis | University of Copenhagen, DK | 一作或末位作者 12 篇 | A,C,D
+    [A] 2025 10.1021/acsami.5c16748 Polymer-Functionalized Liposomes as Universal Nanocarriers for Drug Delivery: Single Particle Insights on Size
+    [A] 2025 10.1021/acsami.5c16748 Polymer-Functionalized Liposomes as Universal Nanocarriers for Drug Delivery: Single Particle Insights on Size
+- Hélder A Santos | University of Helsinki, FI | 一作或末位作者 10 篇 | A,C,D
+    email: h.a.santos@umcg.nl, helder.santos@helsinki.fi
+    [A] 2025 10.1039/d4bm01405g Hybrid lipid nanoparticles derived from human mesenchymal stem cell extracellular vesicles by microfluidic son
+    [A] 2024 10.1021/acsanm.4c02996 Antifibrotic and Pro-regenerative Effects of SMAD3 siRNA and Collagen I mRNA-Loaded Lipid Nanoparticles in Hum
+- Anan Yaghmur | University of Copenhagen, DK | 一作或末位作者 10 篇 | A,C,D
+    email: anan.yaghmur@sund.ku.dk
+    [A] 2022 10.3390/molecules27144602 Microfluidic Nanomaterial Synthesis and In Situ SAXS, WAXS, or SANS Characterization: Manipulation of Size Cha
+    [A] 2021 10.3390/nano11061510 Continuous Microfluidic Production of Citrem-Phosphatidylcholine Nano-Self-Assemblies for Thymoquinone Deliver
+- Anna Herland | Karolinska Institutet, SE | 一作或末位作者 10 篇 | A,B,C,D
+    email: aherland@kth.se
+    [A] 2022 10.1186/s12987-022-00315-1 Dual effect of TAT functionalized DHAH lipid nanoparticles with neurotrophic factors in human BBB and microgli
+    [A] 2022 10.1186/s12987-022-00315-1 Dual effect of TAT functionalized DHAH lipid nanoparticles with neurotrophic factors in human BBB and microgli
+- Changzhu Wu | University of Southern Denmark, DK | 一作或末位作者 8 篇 | A,B,D
+    [A] 2025 10.1080/08982104.2025.2485428 PEGylated liposomes via ATRP for brain drug delivery.
+    [A] 2025 10.1080/08982104.2025.2485428 PEGylated liposomes via ATRP for brain drug delivery.
+- Torben Moos | Aalborg University, DK | 一作或末位作者 7 篇 | A,B,D
+    email: tmoos@hst.aau.dk
+    [A] 2022 10.3390/pharmaceutics14102237 Blood-Brain Barrier Transport of Transferrin Receptor-Targeted Nanoparticles.
+    [B] 2025 10.1186/s12987-025-00738-6 A novel vector design targeting the blood-brain barrier with the brain-specific AAV-BR1 vector enables ablumin
+- Jan Johansson | Karolinska Institutet, SE | 一作或末位作者 6 篇 | A,B,D
+    email: Janne.Johansson@ki.se, janne.johansson@ki.se
+    [A] 2026 10.1002/adbi.202500721 From Spider Webs to Brains: Can the Bri2 BRICHOS Molecular Chaperone Domain Transport Biological Drugs Into th
+    [B] 2026 10.1002/adbi.202500721 From Spider Webs to Brains: Can the Bri2 BRICHOS Molecular Chaperone Domain Transport Biological Drugs Into th
+- Helgi B Schiöth | Uppsala University, SE | 一作或末位作者 6 篇 | A,C,D
+    [A] 2023 10.3390/ijms24010787 Nanoparticles in Clinical Trials: Analysis of Clinical Trials, FDA Approvals and Use for COVID-19 Vaccines.
+    [A] 2023 10.3390/ijms24010787 Nanoparticles in Clinical Trials: Analysis of Clinical Trials, FDA Approvals and Use for COVID-19 Vaccines.
+- Sara Hernando | Karolinska Institutet, SE | 一作或末位作者 6 篇 | A,B,D
+    [A] 2022 10.1186/s12987-022-00315-1 Dual effect of TAT functionalized DHAH lipid nanoparticles with neurotrophic factors in human BBB and microgli
+    [A] 2022 10.1186/s12987-022-00315-1 Dual effect of TAT functionalized DHAH lipid nanoparticles with neurotrophic factors in human BBB and microgli
+- Anna Herland | KTH Royal Institute of Technology, SE | 一作或末位作者 6 篇 | A,B,C,D
+    email: aherland@kth.se
+    [A] 2022 10.1186/s12987-022-00315-1 Dual effect of TAT functionalized DHAH lipid nanoparticles with neurotrophic factors in human BBB and microgli
+    [B] 2023 10.1080/14686996.2023.2165871 Astrocyte 3D culture and bioprinting using peptide functionalized hyaluronan hydrogels.
+- Reidar Lund | University of Oslo, NO | 一作或末位作者 4 篇 | A,B,C
+    [A] 2026 10.1021/acsnano.6c09306 Nanoparticles Against Antimicrobial Resistance: Chemical Design, Assembly, and Emerging Applications.
+    [A] 2026 10.1021/acsnano.6c09306 Nanoparticles Against Antimicrobial Resistance: Chemical Design, Assembly, and Emerging Applications.
+- Thomas L Andresen | Technical University of Denmark (DTU), DK | 一作或末位作者 4 篇 | A,B,C
+    email: tlan@dtu.dk
+    [A] 2025 10.1093/jimmun/vkaf043 Micellar formulation provides potent and tolerable TLR7 agonist treatment for anti-cancer immunotherapy.
+    [A] 2025 10.1093/jimmun/vkaf043 Micellar formulation provides potent and tolerable TLR7 agonist treatment for anti-cancer immunotherapy.
+- Yi Sun | Technical University of Denmark (DTU), DK | 一作或末位作者 4 篇 | A,B,D
+    email: suyi@dtu.dk
+    [A] 2024 10.1021/acs.nanolett.3c05057 A Scalable Microfluidic Platform for Nanoparticle Formulation: For Exploratory- and Industrial-Level Scales.
+    [B] 2022 10.1016/j.jconrel.2022.10.037 Brain-targeted antigen-generating nanoparticles improve glioblastoma prognosis.
+- Maj Schneider Thomsen | Aalborg University, DK | 一作或末位作者 4 篇 | A,B,D
+    [A] 2022 10.3390/pharmaceutics14102237 Blood-Brain Barrier Transport of Transferrin Receptor-Targeted Nanoparticles.
+    [B] 2024 10.1038/s41598-024-78204-w Activation of glial cells induces proinflammatory properties in brain capillary endothelial cells in vitro.
+- Krzysztof Kucharz | University of Copenhagen, DK | 一作或末位作者 4 篇 | A,B,D
+    email: kucharz@sund.ku.dk
+    [B] 2026 10.1038/s41467-026-77474-4 Huntington's disease vasculopathy is barrier-type-selective and arteriolar-dominant with spatially-coupled ast
+    [B] 2023 10.3389/fnagi.2023.1089005 Preserved blood-brain barrier and neurovascular coupling in female 5xFAD model of Alzheimer's disease.
+- Cloé Moëlo | Karolinska Institutet, SE | 一作或末位作者 3 篇 | A,B,D
+    email: cloe.moelo@ki.se
+    [A] 2026 10.1002/adbi.202500721 From Spider Webs to Brains: Can the Bri2 BRICHOS Molecular Chaperone Domain Transport Biological Drugs Into th
+    [B] 2026 10.1002/adbi.202500721 From Spider Webs to Brains: Can the Bri2 BRICHOS Molecular Chaperone Domain Transport Biological Drugs Into th
+- Errika Voutyritsa | University of Copenhagen, DK | 一作或末位作者 3 篇 | A,C,D
+    [A] 2025 10.1021/acsami.5c16748 Polymer-Functionalized Liposomes as Universal Nanocarriers for Drug Delivery: Single Particle Insights on Size
+    [C] 2025 10.1021/acsami.5c16748 Polymer-Functionalized Liposomes as Universal Nanocarriers for Drug Delivery: Single Particle Insights on Size
+- Daniel Aili | Linköping University, SE | 一作或末位作者 3 篇 | A,B
+    email: daniel.aili@liu.se
+    [A] 2025 10.1039/d5tb00304k Orthogonal conjugation of anchoring-dependent membrane active peptides for tuning of liposome permeability.
+    [A] 2024 10.1039/d4tb01107d Influence of lipid vesicle properties on the function of conjugation dependent membrane active peptides.
+- Lulu Chen | University of Southern Denmark, DK | 一作或末位作者 3 篇 | A,B,D
+    [A] 2025 10.1080/08982104.2025.2485428 PEGylated liposomes via ATRP for brain drug delivery.
+    [B] 2025 10.1080/08982104.2025.2485428 PEGylated liposomes via ATRP for brain drug delivery.
+- Marianne Hiorth | University of Oslo, NO | 一作或末位作者 3 篇 | A,C,D
+    [A] 2023 10.1016/j.ijpharm.2023.123407 Stability and cytotoxicity of biopolymer-coated liposomes for use in the oral cavity.
+    [C] 2024 10.1039/d3nr05655d Stable "snow lantern-like" aggregates of silicon nanoparticles suitable as a drug delivery platform.
+- Sofie Snipstad | NTNU, NO | 一作或末位作者 3 篇 | A,B,D
+    [B] 2025 10.1016/j.ultrasmedbio.2025.07.007 Real-time Imaging of Vascular Changes and Extravasation in the Chicken Chorioallantoic Membrane (CAM) Model Ex
+    [B] 2021 10.3390/pharmaceutics13050640 Sonoporation Using Nanoparticle-Loaded Microbubbles Increases Cellular Uptake of Nanoparticles Compared to Co-
+- Margareta Hammarlund Udenaes | Uppsala University, SE | 一作或末位作者 3 篇 | A,B,D
+    [A] 2022 10.1002/cpt.2545 Understanding the Blood-Brain Barrier and Beyond: Challenges and Opportunities for Novel CNS Therapeutics.
+    [B] 2022 10.1002/cpt.2545 Understanding the Blood-Brain Barrier and Beyond: Challenges and Opportunities for Novel CNS Therapeutics.
+- Gizem Bor | University of Copenhagen, DK | 一作或末位作者 3 篇 | A,C,D
+    [C] 2022 10.1021/acsami.2c14375 PEGylation of Phosphatidylglycerol/Docosahexaenoic Acid Hexosomes with d-α-Tocopheryl Succinate Poly(ethylene 
+    [C] 2022 10.1016/j.jcis.2021.07.149 Cell medium-dependent dynamic modulation of size and structural transformations of binary phospholipid/ω-3 fat
+- Jonathan R Brewer | University of Southern Denmark, DK | 一作或末位作者 2 篇 | A,B
+    email: brewer@bmb.sdu.dk
+    [A] 2026 10.1016/j.ijpharm.2026.127292 Dermapen-mediated microchannels enable deep cutaneous delivery of liposomal and particulate model systems, wit
+    [A] 2026 10.1016/j.ejpb.2026.115128 Stratum corneum lipid remodeling as a proposed mechanism for liposomal penetration enhancement.
+- Mudhir Sabir Shekha | Uppsala University, SE | 一作或末位作者 2 篇 | A,B
+    [A] 2025 10.3389/fphar.2025.1695200 Curcumin: biochemistry, pharmacology, advanced drug delivery systems, and its epigenetic role in combating can
+    [B] 2025 10.3389/fneur.2025.1737468 CRISPR-Cas technologies in neurodegenerative disorders: mechanistic insights, therapeutic potential, and trans
+- Yogendra Kumar Mishra | University of Southern Denmark, DK | 一作或末位作者 2 篇 | A,C,D
+    email: mishra@mci.sdu.dk
+    [A] 2023 10.1039/d3tb90107f Correction: Lipid nanoparticle-based formulations for high-performance dentistry applications.
+    [A] 2023 10.1039/d3tb00431g Lipid nanoparticle-based formulations for high-performance dentistry applications.
+- Andrew J Urquhart | Technical University of Denmark (DTU), DK | 一作或末位作者 2 篇 | A,B,C,D
+    email: anur@dtu.dk
+    [A] 2024 10.1016/j.ejpb.2024.114571 Enhancing RNA encapsulation quantification in lipid nanoparticles: Sustainable alternatives to Triton X-100 in
+    [A] 2022 10.1016/j.jconrel.2022.04.050 Biopharmaceutical nanoclusters: Towards the self-delivery of protein and peptide therapeutics.
+
+==== 个人层面配方加表征方法学（A 且 C）  (n=39) ====
+- Nataša Škalko-Basnet | UiT The Arctic University of Norway, NO | 一作或末位作者 15 篇 | A,C,D
+    email: natasa.skalko-basnet@uit.no
+    [A] 2026 10.3389/fddev.2026.1839747 Harnessing liposomal delivery to boost polyphenols' potential in chronic wound therapy.
+    [A] 2025 10.1016/j.xphs.2025.103876 Sustained release of betamethasone from solid lipid nanoparticles loaded polymeric hydrogels with natural emol
+- Nikos S Hatzakis | University of Copenhagen, DK | 一作或末位作者 12 篇 | A,C,D
+    [A] 2025 10.1021/acsami.5c16748 Polymer-Functionalized Liposomes as Universal Nanocarriers for Drug Delivery: Single Particle Insights on Size
+    [A] 2025 10.1021/acsami.5c16748 Polymer-Functionalized Liposomes as Universal Nanocarriers for Drug Delivery: Single Particle Insights on Size
+- Hélder A Santos | University of Helsinki, FI | 一作或末位作者 10 篇 | A,C,D
+    email: h.a.santos@umcg.nl, helder.santos@helsinki.fi
+    [A] 2025 10.1039/d4bm01405g Hybrid lipid nanoparticles derived from human mesenchymal stem cell extracellular vesicles by microfluidic son
+    [A] 2024 10.1021/acsanm.4c02996 Antifibrotic and Pro-regenerative Effects of SMAD3 siRNA and Collagen I mRNA-Loaded Lipid Nanoparticles in Hum
+- Anan Yaghmur | University of Copenhagen, DK | 一作或末位作者 10 篇 | A,C,D
+    email: anan.yaghmur@sund.ku.dk
+    [A] 2022 10.3390/molecules27144602 Microfluidic Nanomaterial Synthesis and In Situ SAXS, WAXS, or SANS Characterization: Manipulation of Size Cha
+    [A] 2021 10.3390/nano11061510 Continuous Microfluidic Production of Citrem-Phosphatidylcholine Nano-Self-Assemblies for Thymoquinone Deliver
+- Anna Herland | Karolinska Institutet, SE | 一作或末位作者 10 篇 | A,B,C,D
+    email: aherland@kth.se
+    [A] 2022 10.1186/s12987-022-00315-1 Dual effect of TAT functionalized DHAH lipid nanoparticles with neurotrophic factors in human BBB and microgli
+    [A] 2022 10.1186/s12987-022-00315-1 Dual effect of TAT functionalized DHAH lipid nanoparticles with neurotrophic factors in human BBB and microgli
+- Lisa Myrseth Hemmingsen | UiT The Arctic University of Norway, NO | 一作或末位作者 7 篇 | A,C
+    [A] 2026 10.3389/fddev.2026.1839747 Harnessing liposomal delivery to boost polyphenols' potential in chronic wound therapy.
+    [A] 2026 10.3389/fddev.2026.1839747 Harnessing liposomal delivery to boost polyphenols' potential in chronic wound therapy.
+- Molly M Stevens | Karolinska Institutet, SE | 一作或末位作者 7 篇 | A,C
+    email: molly.stevens@dpag.ox.ac.uk
+    [A] 2026 10.1021/acsnano.5c19683 Polyanion Chemistry Engineers Ternary RNA Nanoparticle Structure/Function from the Inside-Out.
+    [A] 2025 10.1002/adma.202419538 Formulation and Characterization of Novel Ionizable and Cationic Lipid Nanoparticles for the Delivery of Splic
+- Mingshi Yang | University of Copenhagen, DK | 一作或末位作者 6 篇 | A,C
+    email: mingshi.yang@sund.ku.dk
+    [A] 2026 10.1016/j.phymed.2026.158327 Ginseng-derived cholesterol analogues enhance pulmonary siRNA delivery and alleviate allergic asthma.
+    [A] 2026 10.1016/j.jconrel.2026.114749 A functional lyoprotectant platform enables storage-stable, mucus-penetrating siRNA delivery to the lung.
+- Jørgen Kjems | Aarhus University, DK | 一作或末位作者 6 篇 | A,C
+    [A] 2026 10.1016/j.omtn.2026.102866 Optimizing C14120-based LNPs for in vitro and in vivo mRNA delivery.
+    [A] 2026 10.1016/j.omtn.2026.102866 Optimizing C14120-based LNPs for in vitro and in vivo mRNA delivery.
+- Lars Nilsson | Lund University, SE | 一作或末位作者 6 篇 | A,C
+    [A] 2026 10.64898/2026.01.16.699683 Structural heterogeneity in mRNA-LNP subpopulations revealed by AF4-SAXS: implications for cargo loading and c
+    [A] 2026 10.64898/2026.01.16.699683 Structural heterogeneity in mRNA-LNP subpopulations revealed by AF4-SAXS: implications for cargo loading and c
+- Helgi B Schiöth | Uppsala University, SE | 一作或末位作者 6 篇 | A,C,D
+    [A] 2023 10.3390/ijms24010787 Nanoparticles in Clinical Trials: Analysis of Clinical Trials, FDA Approvals and Use for COVID-19 Vaccines.
+    [A] 2023 10.3390/ijms24010787 Nanoparticles in Clinical Trials: Analysis of Clinical Trials, FDA Approvals and Use for COVID-19 Vaccines.
+- Anna Herland | KTH Royal Institute of Technology, SE | 一作或末位作者 6 篇 | A,B,C,D
+    email: aherland@kth.se
+    [A] 2022 10.1186/s12987-022-00315-1 Dual effect of TAT functionalized DHAH lipid nanoparticles with neurotrophic factors in human BBB and microgli
+    [B] 2023 10.1080/14686996.2023.2165871 Astrocyte 3D culture and bioprinting using peptide functionalized hyaluronan hydrogels.
+- Suman Basak | Technical University of Denmark (DTU), DK | 一作或末位作者 5 篇 | A,C
+    email: basaksuman8@gmail.com
+    [A] 2026 10.1016/j.bcp.2025.117460 A review on tumor-targeting liposomes: Fabrication, mechanism and applications.
+    [A] 2025 10.1021/acsabm.4c01579 Zwitterionic, Stimuli-Responsive Liposomes for Curcumin Drug Delivery: Enhancing M2 Macrophage Polarization an
+- Arto Urtti | University of Helsinki, FI | 一作或末位作者 5 篇 | A,C
+    email: arto.urtti@helsinki.fi
+    [A] 2025 10.1016/j.carbpol.2025.123920 Chitosan - hyaluronate based polyplexes for the delivery of oligonucleotides: structural properties and intrav
+    [A] 2024 10.1016/j.jconrel.2024.04.023 Barcode lipids for absolute quantitation of liposomes in ocular tissues.
+- Martin Brandl | University of Southern Denmark, DK | 一作或末位作者 5 篇 | A,C
+    email: mmb@sdu.dk
+    [A] 2023 10.1016/j.ejps.2023.106384 Interaction of liposomes with bile salts investigated by asymmetric flow field-flow fractionation (AF4): A nov
+    [A] 2021 10.3390/ijms221910456 Application of Asymmetrical Flow Field-Flow Fractionation for Characterizing the Size and Drug Release Kinetic
+- Martin Malmsten | University of Copenhagen, DK | 一作或末位作者 5 篇 | A,C
+    email: martin.malmsten@sund.ku.dk
+    [A] 2021 10.1016/j.bbagen.2019.129485 Effects of charge contrast and composition on microgel formation and interactions with bacteria-mimicking lipo
+    [C] 2024 10.1016/j.cis.2024.103120 Neutron reflectometry as a powerful tool to elucidate membrane interactions of drug delivery systems.
+- Reidar Lund | University of Oslo, NO | 一作或末位作者 4 篇 | A,B,C
+    [A] 2026 10.1021/acsnano.6c09306 Nanoparticles Against Antimicrobial Resistance: Chemical Design, Assembly, and Emerging Applications.
+    [A] 2026 10.1021/acsnano.6c09306 Nanoparticles Against Antimicrobial Resistance: Chemical Design, Assembly, and Emerging Applications.
+- Timo Laaksonen | University of Helsinki, FI | 一作或末位作者 4 篇 | A,C
+    email: timo.laaksonen@helsinki.fi
+    [A] 2026 10.1016/j.carbpol.2026.125855 Light-responsive liposomes for on-demand degradation of cellulose-based hydrogels.
+    [A] 2026 10.1016/j.carbpol.2026.125845 Low-solid content cellulose nanofiber/mixed-linkage glucan hydrogels for drug delivery and nanoparticle encaps
+
+==== 个人层面 BBB 模型能力为主（B 或 D，且无 A）  (n=11) ====
+- Hari Shanker Sharma | Uppsala University, SE | 一作或末位作者 14 篇 | B,D
+    email: Sharma@surgsci.uu.se, harishanker_sharma55@icloud.com
+    [B] 2026 10.1007/s00702-025-03084-x Retraction Note: Cardiac arrest-induced regional blood-brain barrier breakdown, edema formation and brain path
+    [B] 2023 10.1016/bs.irn.2023.07.002 Nicotine neurotoxicity exacerbation following engineered Ag and Cu (50-60 nm) nanoparticles intoxication. Neur
+- Gesine Paul | Lund University, SE | 一作或末位作者 8 篇 | B
+    email: gesine.paul-visse@med.lu.se
+    [B] 2025 10.1177/0271678X241261946 Pericyte response to ischemic stroke precedes endothelial cell death and blood-brain barrier breakdown.
+    [B] 2025 10.1177/0271678X241261946 Pericyte response to ischemic stroke precedes endothelial cell death and blood-brain barrier breakdown.
+- Dag Sehlin | Uppsala University, SE | 一作或末位作者 7 篇 | B
+    email: dag.sehlin@pubcare.uu.se, dag.sehlin@uu.se
+    [B] 2026 10.2967/jnumed.125.271194 Radionuclide Selection Influences Imaging Outcomes in Immuno-PET with a Brain-Penetrating Anti-Amyloid-β Antib
+    [B] 2025 10.1021/acsptsci.5c00359 Fluorine-18 ImmunoPET Imaging of Antibody Brain Kinetics and Amyloid-Beta Pathology.
+- Stina Syvänen | Uppsala University, SE | 一作或末位作者 7 篇 | B
+    email: stina.syvanen@pubcare.uu.se, stina.syvanen@uu.se
+    [B] 2025 10.1186/s40035-025-00532-2 Pretargeted brain PET imaging reveals amyloid-β pathology using a TCO-modified antibody and a fluorine-18-labe
+    [B] 2025 10.1016/j.neurot.2024.e00510 A brain-penetrant bispecific antibody lowers oligomeric alpha-synuclein and activates microglia in a mouse mod
+- Morten S Nielsen | Aarhus University, DK | 一作或末位作者 6 篇 | B,D
+    email: mn@biomed.au.dk
+    [B] 2026 10.1002/cbf.70240 Double-Stranded DNA Sensing cGAS-STING Immune Signaling in a Rat Co-Culture Model of the Blood-Brain Barrier.
+    [B] 2023 10.3390/ijms24065624 Modelling a Human Blood-Brain Barrier Co-Culture Using an Ultrathin Silicon Nitride Membrane-Based Microfluidi
+- Anders Wåhlin | Umeå University, SE | 一作或末位作者 6 篇 | B
+    email: anders.wahlin@umu.se
+    [B] 2026 10.1073/pnas.2526239123 Quantitative assessment of flow between cerebrospinal and interstitial fluid compartments in humans.
+    [B] 2026 10.1073/pnas.2526239123 Quantitative assessment of flow between cerebrospinal and interstitial fluid compartments in humans.
+- Greta Hultqvist | Uppsala University, SE | 一作或末位作者 6 篇 | B
+    email: Greta.Hultqvist@uu.se, greta.hultqvist@farmaci.uu.se
+    [B] 2025 10.1016/j.biopha.2025.118325 Somatostatin therapy, neprilysin activation, and amyloid beta reduction: A novel approach for Alzheimer's trea
+    [B] 2025 10.1007/s13346-025-01811-1 Serotransferrin enhances transferrin receptor-mediated brain uptake of antibodies.
+- Zsolt Illes | University of Southern Denmark, DK | 一作或末位作者 6 篇 | B
+    [B] 2023 10.3390/biomedicines11123170 New Enhancing MRI Lesions Associate with IL-17, Neutrophil Degranulation and Integrin Microparticles: Multi-Om
+    [B] 2023 10.3390/biomedicines11123170 New Enhancing MRI Lesions Associate with IL-17, Neutrophil Degranulation and Integrin Microparticles: Multi-Om
+- Mie Kristensen | University of Copenhagen, DK | 一作或末位作者 5 篇 | B
+    email: mie.kristensen@sund.ku.dk
+    [B] 2026 10.1016/j.brainres.2026.150563 Sex-dependent investigations of the temporal development of infarct size and blood-brain barrier permeability 
+    [B] 2026 10.1186/s12987-026-00781-x Evaluating sex as a biological variable in in vitro blood-brain barrier models: insights from primary mouse br
+- Magnus Schou | Karolinska Institutet, SE | 一作或末位作者 5 篇 | B
+    email: magnus.schou@astrazeneca.com
+    [B] 2025 10.1016/j.jpet.2025.103638 Brain exposure of the mesenchymal-epithelial transition inhibitor savolitinib in nonhuman primates: A positron
+    [B] 2023 10.1021/acschemneuro.3c00458 Microsome Mediated in Vitro Metabolism: A Convenient Method for the Preparation of the PET Radioligand Metabol
+- Matthias M Herth | University of Copenhagen, DK | 一作或末位作者 5 篇 | B,D
+    email: matthias.herth@sund.ku.dk
+    [B] 2025 10.1021/acschemneuro.4c00778 Radiofluorinated Analogs of NCS-382 as Potential PET Tracers for Imaging the CaMKIIα Hub Domain.
+    [B] 2024 10.1016/j.nucmedbio.2024.108905 Investigation of imaging the somatostatin receptor by opening the blood-brain barrier with melittin - A feasib

@@ -26,12 +26,20 @@
 | 新增进仓库的路径 | 内容 | 为什么必须搬 |
 |---|---|---|
 | `data/consensus_harvest/papers_all.tsv` | 原始抓取，746 个检索块全部命中，带块级溯源 | 只存在于 scratchpad，会丢；是成品表的上游，含成品表丢弃的块号溯源 |
-| `data/consensus_harvest/pipeline/` | 流水线脚本（可复用 4 个 + 存档 4 个）| 同上；是数据怎么来的唯一记录 |
-| `data/consensus_harvest/README.md` | 原始抓取的列字典、脚本分类、方法概述 | 让你能读懂上面两样 |
+| `data/consensus_harvest/raw_batches/` | 早期批次原始抓取（4 个 TSV）+ 批 23/25/28 检索原文（含**完整摘要**） | `papers_all.tsv` 是后期从转录重生成的，早期块已在转录里丢失，这是唯一原始记录 |
+| `data/consensus_harvest/nordic_scan/` | G 工作流 PubMed 扫描原始数据 3.6 MB + 单位与人员报告 | 结论在 `docs/validation-partners.md`、脚本在 `scripts/`，但原始输出只在 scratchpad |
+| `data/consensus_harvest/fulltext/pmc11565460.xml` | 本项目唯一已下载的论文全文 | 只存在于 scratchpad |
+| `data/consensus_harvest/pipeline/` | 流水线脚本 18 个（可复用 4 + 存档 4 + 产出上述数据的 10）| 同上；是数据怎么来的唯一记录 |
+| `data/consensus_harvest/README.md` | 列字典、各目录说明、脚本分类、方法概述 | 让你能读懂上面几样 |
 | 本文件 | 文献语料的完整交接 | 之前没有面向「数据工程」的语料交接文档 |
 
-约 500 个逐批次一次性脚本和 136 个 CSV 快照**没有搬**：它们是中间产物，方法已被
-`pipeline/example_*` 四个示例完整表达。详见 `data/consensus_harvest/README.md`。
+**没有搬的**：约 500 个逐批次一次性脚本和 136 个 CSV 快照（中间产物，方法已被
+`pipeline/example_*` 表达）；scratchpad 里的 `crossref.json`（仓库根目录那份更全，
+5105 个 DOI vs 4977）。详见 `data/consensus_harvest/README.md`。
+
+> 2026-11-11 二次排查补记：首轮交接只搬了 `papers_all.tsv` 和 8 个脚本，漏了上表中
+> `raw_batches/`、`nordic_scan/`、`fulltext/` 三类共 29 个数据文件。二次排查已补齐，
+> 临时目录里现已无任何未入库的数据。
 
 ---
 
