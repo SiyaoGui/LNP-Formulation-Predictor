@@ -30,6 +30,7 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 | `scripts/` | Entry points, one per step, each can be rerun on its own |
 | `configs/` | Run configurations; switching between the small- and large-molecule subsets is a one-line change |
 | `data/raw/` | Source tables: the merged three-source table (1,934 rows), the LNP Atlas export and lipid SMILES |
+| `data/consensus_harvest/` | Raw Consensus literature harvest (`papers_all.tsv`, 746 search blocks) and the pipeline scripts behind `docs/master-candidates.csv`; see its `README.md` |
 | `data/processed/`, `data/processed_large/` | Analysis units and feature matrices |
 | `modeling/` | One folder per run, never edited afterwards; `modeling/INDEX.md` lists them |
 | `docs/` | Frozen protocols, results, data specification, glossary and work logs |
@@ -38,6 +39,8 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 | `archive/2026-09_first-model/` | Code, data, results and notes from the first model, built in September 2026 |
 
 For a first read: `docs/algorithm-results-en.md` summarises the three rounds in English, `docs/data-spec-ee.md` describes the planned experiment and `docs/glossary.md` explains the baselines and splits. The handoff notes and per-round reports are in Chinese.
+
+The literature candidate table `docs/master-candidates.csv` (9,464 rows) was built by a large Consensus literature sweep. If you are picking up the data-engineering work on that corpus, start from `docs/handoff-data-engineering-2026-11-11.md`.
 
 ## Reproducing the results
 
