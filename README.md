@@ -30,6 +30,7 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 | `scripts/` | Modelling entry points, one per step, plus the PubMed and dataset-repository scans used in the literature review |
 | `configs/` | Run configurations; switching between the small- and large-molecule subsets is a one-line change |
 | `data/raw/` | Source tables: the merged three-source table (1,934 rows), the LNP Atlas export and lipid SMILES |
+| `data/consensus_harvest/` | Raw Consensus literature harvest (`papers_all.tsv`, 746 search blocks) and the pipeline scripts behind `docs/master-candidates.csv`; see its `README.md` |
 | `data/candidate/` | Hand-transcribed data from two papers, kept out of the training set; see its own README for the sources, checks and recorded contradictions |
 | `data/processed/`, `data/processed_large/` | Analysis units and feature matrices |
 | `modeling/` | One folder per run, never edited afterwards; `modeling/INDEX.md` lists them |
@@ -42,9 +43,9 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 
 For a first read: `docs/negative-result-brief-en.md` is a one-page English summary for outside readers, `docs/algorithm-results-en.md` summarises the three rounds in English, `docs/data-spec-ee.md` and `docs/phase1-design.md` describe the planned experiment and `docs/glossary.md` explains the baselines and splits. The handoff notes and per-round reports are in Chinese.
 
-## Literature review (October 2026)
+## Literature review (October to November 2026)
 
-A structured search of the published literature, run on 28 October 2026, collected 469 candidate papers (`docs/master-candidates.csv`). The files are in Chinese.
+A structured search of the published literature ran from 28 October to 9 November 2026. The candidate table `docs/master-candidates.csv` holds 9,464 rows, one per unique DOI, of which 6,810 are marked as still needing full text. The reports listed below were written against an earlier 469-paper version of that table and have not been redone against the full one, so their counts and conclusions describe the smaller set. The files are in Chinese.
 
 | File | Question it answers |
 |---|---|
@@ -61,6 +62,8 @@ A structured search of the published literature, run on 28 October 2026, collect
 | `docs/fulltext-acquisition-list.md` | The 152 papers that need full text, with licence status |
 | `docs/membrane-specific.md` | Earlier membrane-specific search; its conclusions are superseded |
 | `docs/literature-sourcing/` | The search brief and prompts used on 22 October 2026 to screen for papers that hold the process fixed and vary only the molecule, and the screening log template |
+
+If you are picking up the data-engineering work on that corpus, start from `docs/handoff-data-engineering-2026-11-11.md`. The raw harvest and the pipeline that produced the table are in `data/consensus_harvest/`.
 
 ## Reproducing the results
 
