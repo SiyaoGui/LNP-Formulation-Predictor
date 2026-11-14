@@ -1,0 +1,112 @@
+{
+  "baseline": {
+    "records": 272,
+    "records_within_mw_cap": 230,
+    "unique_compounds_inchikey": 22,
+    "unique_compounds_inchikey_within_mw_cap": 20,
+    "unique_compounds_smiles": 22,
+    "unique_scaffolds": 20,
+    "source_papers": 34
+  },
+  "formulation_tables": {
+    "Jaki 2026": {
+      "status": "已抽取",
+      "path": "data/processed/formulations_jaki2026.csv",
+      "records": 45,
+      "unique_compounds": 0,
+      "named_payloads": [
+        "ACBI2"
+      ],
+      "named_payloads_without_structure": [
+        "ACBI2"
+      ],
+      "unique_compounds_within_mw_cap": 0,
+      "overlap_with_baseline": 0,
+      "new_compounds": 0,
+      "licence": [
+        "CC-BY-4.0"
+      ]
+    }
+  },
+  "property_tables": {
+    "Khawar 2022": {
+      "status": "已抽取",
+      "path": "data/processed/partition_coefficients.csv",
+      "records": 490,
+      "records_experimental": 490,
+      "unique_compounds": 423,
+      "by_coefficient_type": {
+        "logKlipw": {
+          "records": 36,
+          "unique_compounds": 36
+        },
+        "logKlw": {
+          "records": 305,
+          "unique_compounds": 304
+        },
+        "logKpw": {
+          "records": 131,
+          "unique_compounds": 126
+        },
+        "logKtw": {
+          "records": 18,
+          "unique_compounds": 18
+        }
+      },
+      "connectable_to_baseline": 1,
+      "not_connectable": 422,
+      "licence": [
+        "CC-BY-4.0"
+      ]
+    }
+  },
+  "probe_tables": {
+    "Xu 2022": {
+      "status": "已抽取",
+      "path": "data/processed/probe_xu2022.csv",
+      "records": 20,
+      "named_payloads": [
+        "compound_4d",
+        "uncertain_one_of_4a_4d_13a_17a_17c"
+      ],
+      "unique_compounds": 0,
+      "unique_scaffolds": null,
+      "records_with_quantitative_ee": 12,
+      "records_failed_to_form": 7
+    }
+  },
+  "combined": {
+    "unique_compounds_before": 22,
+    "unique_compounds_after": 22,
+    "net_gain": 0
+  },
+  "enrichment_tables": {
+    "Yanes 2025": {
+      "status": "已抽取",
+      "path": "data/processed/yanes2025_enrichment.csv",
+      "records": 271,
+      "linked_to_repo_records": 271,
+      "new_unique_compounds": 0,
+      "new_formulation_records": 0,
+      "added_columns": [
+        "API_name",
+        "drug_loading",
+        "media_volume_mL",
+        "media_temp_oC",
+        "media_components",
+        "quality_units",
+        "quality_plot_resolution",
+        "quality_are_measurement_timepoint_number_sufficient?_>_5",
+        "quality_does_the_shape_resemble_a_profile?",
+        "quality_are_sufficient_numbers_of_repeats_used_and_average_presented?",
+        "quality_nan",
+        "source_row_id",
+        "release_curve_file",
+        "ivr_id_from_curve"
+      ],
+      "licence": [
+        "CC-BY-4.0"
+      ]
+    }
+  }
+}

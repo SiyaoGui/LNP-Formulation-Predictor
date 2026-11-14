@@ -27,12 +27,12 @@ None of these numbers should be read as model accuracy. No model has yet beaten 
 | Path | Contents |
 |---|---|
 | `lnp/` | Shared modules: subset definitions, features, dataset building, evaluation |
-| `scripts/` | Modelling entry points, one per step, plus the PubMed and dataset-repository scans used in the literature review |
+| `scripts/` | Modelling entry points, one per step, the PubMed and dataset-repository scans used in the literature review, and the extraction scripts for the external datasets in `data/raw/` |
 | `configs/` | Run configurations; switching between the small- and large-molecule subsets is a one-line change |
-| `data/raw/` | Source tables: the merged three-source table (1,934 rows), the LNP Atlas export and lipid SMILES |
+| `data/raw/` | Source tables: the merged three-source table (1,934 rows), the LNP Atlas export and lipid SMILES. Each external dataset from the October 2026 extraction round has its own folder with the original files, a README (source, download date, changes made) and a licence note; see `data/raw/README.md` |
 | `data/consensus_harvest/` | Raw Consensus literature harvest (`papers_all.tsv`, 746 search blocks) and the pipeline scripts behind `docs/master-candidates.csv`; see its `README.md` |
 | `data/candidate/` | Hand-transcribed data from two papers, kept out of the training set; see its own README for the sources, checks and recorded contradictions |
-| `data/processed/`, `data/processed_large/` | Analysis units and feature matrices |
+| `data/processed/`, `data/processed_large/` | Analysis units and feature matrices, plus the tables extracted from the external datasets |
 | `modeling/` | One folder per run, never edited afterwards; `modeling/INDEX.md` lists them |
 | `docs/` | Frozen protocols, results, data specification, glossary, the literature review (below) and work logs |
 | `docs/funding-ops/` | Method and format notes for the funding and investor-entry calendar, plus two read-only checking scripts. Content of the calendar itself is not in this repository |
@@ -65,10 +65,24 @@ A structured search of the published literature ran from 28 October to 9 Novembe
 
 If you are picking up the data-engineering work on that corpus, start from `docs/handoff-data-engineering-2026-11-11.md`. The raw harvest and the pipeline that produced the table are in `data/consensus_harvest/`.
 
+## External datasets (26 to 29 October 2026)
+
+This round asked whether published datasets could add new compounds to the training data. The collection rules were frozen before any search (`docs/literature-protocol.md`), and each dataset's licence was checked before download (`docs/data-licensing.md`). Four datasets under CC BY 4.0 were extracted into `data/processed/`:
+
+| Dataset | What it holds | What it added |
+|---|---|---|
+| Khawar 2022 | 490 lipid-water partition coefficients for 423 compounds | One compound overlaps the existing formulation records |
+| Yanes 2025 | The open release database behind the existing PMC_IVR table | No new compounds; nine extra fields for 271 of the 272 existing records |
+| Jaki 2026 | 45 formulations of one PROTAC from a design of experiments | Encapsulation values, but no structure recorded for the payload |
+| Xu 2022 | 20 records for paclitaxel derivatives, 7 of them failed loading | Encapsulation values, but no structure recorded for the payloads |
+
+None of the four added a small molecule with both a structure and an encapsulation value, which is what the models need. Five further datasets are on hold because their licences do not allow use in this project. The handoff for this round, in Chinese, is `docs/handoff-literature-data.md`.
+
 ## Reproducing the results
 
 ```bash
 pip install scikit-learn rdkit pyarrow matplotlib tabulate
+pip install pdfplumber python-docx   # only needed by the extraction scripts, scripts/extract_*.py
 
 # Round 1: particle size, small molecules
 python3 scripts/build_features.py --config configs/smallmol_baseline.yaml
@@ -84,6 +98,8 @@ python3 scripts/build_features.py --config configs/largemol_baseline.yaml --task
 ```
 
 Gradient boosting uses scikit-learn's `HistGradientBoostingRegressor` in every round, so the rounds are comparable. A full Round 1 fit takes about 100 minutes; `run_modeling.py --schemes` runs it in parts.
+
+`rdkit` is required: `scripts/build_features.py`, `scripts/data_inventory.py`, `scripts/report_compound_gain.py` and `scripts/extract_khawar2022.py` stop with an import error without it. The counts in `docs/data-inventory.md` were computed with RDKit 2026.09.1; later versions gave the same unique-compound and scaffold counts. The commands for re-running the four extractions are in section 3 of `docs/handoff-literature-data.md`. `python3 scripts/record_raw_checksums.py --verify` checks that the files under `data/raw/` still match their registered checksums; a local copy of the ignored `standardisation_nm_IVR.zip` shows up there as one unregistered file.
 
 ## Rules for new work
 
