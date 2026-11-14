@@ -5,6 +5,11 @@
 来源：Khawar 2022（`10.1038/s41598-022-19452-6`，CC BY 4.0，见 `docs/data-licensing.md` 2.1）
 状态：**schema 已定，等原始文件进仓库后抽取**
 
+> **2026-11 更正（数据未重抽）：** 下文把表 S14 的 logKtw 写成「组织/水」，实为三油酸甘油酯/水（triolein-water），
+> 属于储存脂一类。另外，表 S1、S2 里的 logKow 是原文的预测值，CSV 的 `log_kow` 列没有单独标注这一点；
+> `value_origin = experimental` 指的只是分配系数本身。表 S15 原文还给了预测值与残差两列，抽取时没有抽。
+> 详见 `docs/handoff-literature-data.md` 第二节与第四节第 5 条。
+
 ---
 
 ## 一、为什么单独建表

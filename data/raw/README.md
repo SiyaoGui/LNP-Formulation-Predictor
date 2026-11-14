@@ -2,12 +2,14 @@
 
 **本目录下的文件一律只读。** 抽取脚本不许改写这里的任何文件。
 
+本目录顶层的 `merged_formulations_v2.csv`、`merged_formulations_v2.parquet`、`LNP_Atlas_DB_202509_v1_utf8.csv`、`PMC_IVR_lipid_component_smiles.csv` 是早先建模轮次的输入表（见仓库 `README.md`），不归下面的规则管。下面的规则只管外部数据集的子文件夹。
+
 ## 规则
 
 1. 每个数据源一个文件夹，文件夹名格式 `<第一作者姓小写><年份>_<简称>`
 2. 每个文件夹必须有 `README.md`（来源链接、下载日期、授权、文件清单与校验值、做过哪些修改）和 `LICENSE.txt`
-3. **只有 `docs/data-licensing.md` 第二节列为「可用」的数据集才允许出现在这里。** 挂起的数据集不下载、不提交
-4. 校验值用 `python3 scripts/record_raw_checksums.py` 生成，不手填
+3. **只有 `docs/data-licensing.md` 第二节列为「可用」的数据集才允许在这里建文件夹，文件夹里只放该数据集本身的文件。** 挂起的数据集不下载、不提交
+4. 校验值用 `python3 scripts/record_raw_checksums.py` 生成，不手填。这个脚本会登记子文件夹里的所有文件，包括被 `.gitignore` 忽略的；本机留有 `yanes2025_ivr/standardisation_nm_IVR.zip` 的克隆里不要跑登记模式（不带 `--verify`），否则会把它登记进去
 5. 原始文件保持下载时的原名与原格式，不重命名、不转格式。格式转换在抽取脚本里做，产物写到 `data/processed/`
 
 ## 当前文件夹
@@ -23,18 +25,16 @@
 
 ## 原始文件的本地出处
 
-九个数据集（四个可用 + 五个挂起）的原始文件都在用户本机，已解压：
+九个数据集（四个可用加五个挂起）的原始文件都在用户本机的项目文件夹里，不在仓库内。
 
-```
-A:\Claude\Liposome AI algorithm-圣草酚\
-```
-
-**该目录下的文件夹编号是重复的，1 到 5 各出现两次。**
+**那里的文件夹编号是重复的，1 到 5 各出现两次。**
 可用的四个是 `1. Khawar 2022` / `2. Yanes 2025` / `3. Jaki 2026` / `4. Xu 2022`；
 挂起的五个是 `1. Khodadadi 2025` / `2. Lavagna 2026` / `3. Buttitta 2025` /
 `4. Han 2023` / `5. Shahiwala 2023`。
 往本目录拷文件时**按名字匹配，不要按编号**，否则会把挂起的数据集拷进来。
 
-缺口：`yanes2025_ivr/standardisation_nm_IVR.zip`（约 269 MB，数字化释放曲线）
-超过 GitHub 单文件 100 MB 上限，已列入 `.gitignore`，仓库里没有，
-只在本地 `2. Yanes 2025` 文件夹下。当前抽取未用到它。
+缺口：`yanes2025_ivr/standardisation_nm_IVR.zip`（约 269 MB，诺丁汉机构库的存档）
+超过 GitHub 单文件 100 MB 上限，已列入 `.gitignore`，仓库里没有。
+它约 94% 的内容是第三方论文 PDF（35 个单独的 PDF，加上数据库里内嵌的 34 篇），
+**不要放进 Git LFS 或任何公开存储**。存档本身公开可下（DOI `10.17639/nott.7542`），
+要用释放曲线时只提取 `data/drug_release/` 下的曲线文件。当前抽取未用到它。
