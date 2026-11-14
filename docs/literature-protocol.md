@@ -2,7 +2,7 @@
 
 日期：2026-10-26
 适用范围：用 Consensus 连接器系统性扩充 LipidLens 小分子 LNP 制剂数据集
-状态：**已确认并冻结**（2026-10-27）。不因「想多收一些数据」而放宽任何一条
+状态：**已确认并冻结**（2026-10-27）。不因「想多收一些数据」而放宽任何一条。2026-11-14 修订一处字段说明，见文末「修订记录」
 
 本协议先于任何检索写成。确认之后，第二步到第四步的全部判定都只依据本文，不另立标准。
 
@@ -111,7 +111,7 @@
 | `paper_journal` | [新] | str | 否 | 来自 Consensus 返回结果 |
 | `source_location` | [新] | str | 是 | 数值在原文的位置，如 `Table 2, row 4` / `Fig 3b` / `Table S1`。**N4 要求** |
 | `value_read_from` | [新] | enum | 是 | `table` / `text` / `figure_digitized` / `supplementary` |
-| `extracted_by` | [新] | str | 是 | 提取者（本轮为 `claude` 或人名），便于回溯 |
+| `extracted_by` | [新] | str | 是 | 提取者（抽取脚本路径或人名），便于回溯 |
 | `extraction_date` | [新] | date | 是 | |
 
 ### 3.2 载荷分子
@@ -509,3 +509,9 @@ doxorubicin, amphotericin B, bupivacaine, rhodamine B, carboxyfluorescein, ateno
 3. **提取靠读全文，本轮由我做，没有第二人独立复核**。标准的数据提取要求双人独立提取再比对。本轮做不到，所以 `extraction_confidence` 和 `source_location` 两列是唯一的事后复核手段，必须填全
 4. **图里数字化读数的误差没有量化**。C 级记录的误差幅度未知
 5. **`block_varies_by = payload` 的 block 也只在该论文的单一配方下成立**，换配方是否还成立无法从文献回答
+
+---
+
+## 修订记录
+
+- 2026-11-14：第 3.1 节 `extracted_by` 的说明改为「抽取脚本路径或人名」。原因：让该字段直接指向产出记录的脚本，便于复现；Xu 2022 的产物本来就是这样填的，两份产物的写法因此统一。只改溯源字段的写法，纳入与排除标准、字段结构和全部数值不变。修订时已有的结果是 `data/processed/formulations_jaki2026.csv`（45 条）和 `data/processed/probe_xu2022.csv`（20 条），其中 Jaki 2026 那 45 条的 `extracted_by` 同步改为 `scripts/extract_jaki2026.py`。
