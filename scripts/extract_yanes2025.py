@@ -26,7 +26,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "processed" / "yanes2025_enrichment.csv"
-BASELINE = ROOT / "merged_formulations_v2.csv"
+BASELINE = ROOT / "data" / "raw" / "merged_formulations_v2.csv"
 
 SOURCE_DOI = "10.1016/j.ijpx.2025.100393"
 SOURCE_LICENSE = "CC-BY-4.0"

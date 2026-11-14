@@ -32,7 +32,7 @@ RDLogger.DisableLog("rdApp.*")
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "processed" / "partition_coefficients.csv"
-BASELINE = ROOT / "merged_formulations_v2.csv"
+BASELINE = ROOT / "data" / "raw" / "merged_formulations_v2.csv"
 
 SOURCE_DOI = "10.1038/s41598-022-19452-6"
 SOURCE_LICENSE = "CC-BY-4.0"

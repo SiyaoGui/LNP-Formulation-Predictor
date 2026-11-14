@@ -27,7 +27,7 @@ from rdkit.Chem.Scaffolds import MurckoScaffold
 RDLogger.DisableLog("rdApp.*")
 
 ROOT = Path(__file__).resolve().parent.parent
-BASELINE = ROOT / "merged_formulations_v2.csv"
+BASELINE = ROOT / "data" / "raw" / "merged_formulations_v2.csv"
 OUT_JSON = ROOT / "docs" / "compound_gain_stats.json"
 
 # 与 scripts/data_inventory.py 保持一致的小分子子集定义
