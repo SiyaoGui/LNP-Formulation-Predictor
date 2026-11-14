@@ -10,15 +10,16 @@
 
 ## 原始下载链接
 
-文件由用户在本地浏览器下载后提交进仓库（容器网络策略不允许直连出版社域名）。
+文件由用户在本地浏览器下载后提交进仓库（抽取所在环境访问不到出版社网站）。
 文件名里的 `S2590156726001477` 是 ScienceDirect 的 PII，可据此复原下载位置：
 
 - 文章页面：https://www.sciencedirect.com/science/article/pii/S2590156726001477
 - 正文 PDF：同页 "Download full issue / PDF"，落地名 `1-s2.0-S2590156726001477-main.pdf`
 - 补充材料：同页 "Appendix A. Supplementary data"，落地名 `1-s2.0-S2590156726001477-mmc1.docx`
-- `linked-discoveries-42598203-50rows-2026-10-28.csv` **不是本文的补充材料**，
-  是以本文 PMID 42598203 为中心导出的 PubMed 引文网络（50 行，含 Cited by / Cites）。
-  见下方「文件清单」说明。
+
+2026-11-14 删去了原先也放在本目录的 `linked-discoveries-42598203-50rows-2026-10-28.csv`。
+它是以本文 PMID 42598203 为中心导出的 PubMed 相关文献列表（50 行），其中 49 篇不是本文，
+每行带该篇的完整摘要。这些摘要不在本文的 CC BY 4.0 授权范围内，抽取也没有用到这个文件。
 
 ## 下载日期
 
@@ -46,7 +47,6 @@
 |---|---|---|
 | `1-s2.0-S2590156726001477-main.pdf` | 11,440,827 | `eb88e7b1c275418f5bf2f429c442ef69b22d2b371cdae649338296a50e99ffd7` |
 | `1-s2.0-S2590156726001477-mmc1.docx` | 4,058,883 | `175423b92c3f878e68f1e37e31769df13a668b4d9fdc8cb48dc3cd632580dc63` |
-| `linked-discoveries-42598203-50rows-2026-10-28.csv` | 93,843 | `a69d78c2fb52c3ed7bab810dedba9415a879433a3ee942d07dfdc996f6c8dde6` |
 <!-- CHECKSUMS:END -->
 
 ## 做过哪些修改

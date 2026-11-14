@@ -31,7 +31,7 @@ doi,year,first_author,title_short,payload,is_small_molecule,block_class,evidence
 10.1016/j.fhfh.2021.100024,2021,Sakellari,SLN and NLC formulation design curcumin,curcumin,yes,L,E1,纳入,变固态脂质种类 液态脂质浓度 表面活性剂种类与浓度,未知,yes,SLN/NLC 需标 carrier_subtype
 10.3390/pharmaceutics13040437,2021,Mura,SLN vs NLC hydrochlorothiazide,hydrochlorothiazide,yes,L,E1,纳入,SLN 与 NLC 系列 x 不同表面活性剂组合,未知,yes,
 10.1016/s0378-5173(99)00426-3,2000,Jenning,Comparison of wax and glyceride SLN,retinol,yes,L,E1,纳入,蜡质 vs 甘油酯基质 比较包封,未知,yes,
-10.3390/nano9040489,2019,Shi,1-laurin-3-palmitin novel SLN matrix,thymol,yes,L,E1,纳入,1,3-LP vs GMS vs PPP 三种基质 载量 16/4/12%,3-9,yes,
+10.3390/nano9040489,2019,Shi,1-laurin-3-palmitin novel SLN matrix,thymol,yes,L,E1,纳入,"1,3-LP vs GMS vs PPP 三种基质 载量 16/4/12%",3-9,yes,
 10.3390/foods12102045,2023,Yu,Curcumin SLN different lipids and emulsifiers,curcumin,yes,L,E1,纳入,MLCD/TP x 三种表面活性剂 EE 87.54-95.32%,6,yes,
 10.1016/j.foodchem.2022.133412,2022,Guo,SLN phytosterols glyceride acyl chain number,phytosterols,partial,L,E1,待定,GMS/GDS/GTS 三基质 但植物甾醇是混合物,3,yes,需确认是否单一化学实体
 10.1016/j.foodchem.2022.134465,2022,Shu,NLC lutein natural synthetic emulsifiers,lutein,yes,L,E1,纳入,三种乳化剂 EE 94.73/90.39/88.86%,3,yes,

@@ -266,7 +266,7 @@ def to_repo_schema(rec):
         "source_doi": SOURCE_DOI,
         "source_license": SOURCE_LICENSE,
         "source_attribution": SOURCE_ATTRIBUTION,
-        "extracted_by": "claude",
+        "extracted_by": "scripts/extract_jaki2026.py",
         "extraction_date": "2026-10-29",
         "qc_flag": "ok",
         "qc_reason": None,
